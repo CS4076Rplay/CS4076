@@ -42,7 +42,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         Title = new QLabel(centralWidget);
         Title->setObjectName(QStringLiteral("Title"));
-        Title->setGeometry(QRect(130, 40, 161, 71));
+        Title->setGeometry(QRect(130, 60, 111, 31));
         playButton = new QPushButton(centralWidget);
         playButton->setObjectName(QStringLiteral("playButton"));
         playButton->setGeometry(QRect(140, 100, 93, 28));
@@ -63,6 +63,9 @@ public:
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+#ifndef QT_NO_SHORTCUT
+        Title->setBuddy(Title);
+#endif // QT_NO_SHORTCUT
 
         retranslateUi(MainWindow);
         QObject::connect(pushButton, SIGNAL(clicked()), MainWindow, SLOT(close()));

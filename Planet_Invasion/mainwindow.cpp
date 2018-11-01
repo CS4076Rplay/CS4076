@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "inventoryui.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,4 +17,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_playButton_clicked()
 {
     ui->Title->setText("Loading Game..");
+   InventoryUI inventory;
+    inventory.setModal(true);
+    inventory.exec();
 }

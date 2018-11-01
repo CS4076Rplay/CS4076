@@ -24,15 +24,27 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    inventoryui.cpp \
+    inventory.cpp \
+    item.cpp \
+    weapon.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    inventoryui.h \
+    inventory.h \
+    item.h \
+    weapon.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    inventoryui.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    assets.qrc

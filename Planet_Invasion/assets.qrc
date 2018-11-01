@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/Images/Weapons">
+        <file>BattleAxe.png</file>
+        <file>Flail.png</file>
+        <file>Hammer.png</file>
+        <file>Ji.png</file>
+        <file>Knife.png</file>
+        <file>MachineGun.png</file>
+        <file>NinjaStar.png</file>
+        <file>Nunchuks.png</file>
+        <file>Revolver.png</file>
+        <file>Sword.png</file>
+    </qresource>
+    <qresource prefix="/Story">
+        <file>chapter1.txt</file>
+        <file>chapter2.txt</file>
+        <file>chapter3.txt</file>
+        <file>chapter4.txt</file>
+        <file>chapters.txt</file>
+        <file>intro.txt</file>
+        <file>main.txt</file>
+        <file>player.txt</file>
+        <file>story.txt</file>
+    </qresource>
+</RCC>
