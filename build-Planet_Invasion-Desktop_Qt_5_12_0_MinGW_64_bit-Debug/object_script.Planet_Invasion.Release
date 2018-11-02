@@ -10,10 +10,14 @@ INPUT(
 ./release\clickableqlabel.o
 ./release\charactercreator.o
 ./release\chapterscreen.o
+./release\player.o
+./release\race.o
+./release\gamescreen.o
 ./release\qrc_assets.o
 ./release\moc_mainwindow.o
 ./release\moc_inventoryui.o
 ./release\moc_clickableqlabel.o
 ./release\moc_charactercreator.o
 ./release\moc_chapterscreen.o
+./release\moc_gamescreen.o
 );

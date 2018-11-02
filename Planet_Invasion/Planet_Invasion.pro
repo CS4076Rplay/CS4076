@@ -35,7 +35,8 @@ SOURCES += \
     charactercreator.cpp \
     chapterscreen.cpp \
     player.cpp \
-    race.cpp
+    race.cpp \
+    gamescreen.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -49,13 +50,15 @@ HEADERS += \
     charactercreator.h \
     chapterscreen.h \
     player.h \
-    race.h
+    race.h \
+    gamescreen.h
 
 FORMS += \
         mainwindow.ui \
     inventoryui.ui \
     charactercreator.ui \
-    chapterscreen.ui
+    chapterscreen.ui \
+    gamescreen.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

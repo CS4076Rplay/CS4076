@@ -15,7 +15,6 @@ vector<string> split(string& line, char& delimetter)
 
         for ( i = 0; i < line.size(); i++)
         {
-
             if (line[i] == delimetter)
             {
 
@@ -41,22 +40,28 @@ vector<string> FileParser::loadFile()
     vector<string> result;
     string s;
     QFile mFile(filename);
-    if(!mFile.open(QFile::ReadOnly|QFile::Text))
+    if(mFile.open(QFile::ReadOnly|QFile::Text))
     {
       //  qDebug()<<"could not find path: "<<filename<<endl;
-    }
+
     QTextStream in(&mFile);
-   while(!mFile.atEnd())
+    QString line;
+        do
         {
+            line = in.readLine();
+            cout<<line.toStdString()<<endl;
+        /*
             QString line=in.readLine();
             s=line.toStdString();
             cout<<s<<endl;
-            result.push_back(s);
+            result.push_back(s); */
         }
+        while(!line.isNull());
         mFile.close();
-
+    }
     return result;
 }
+
 vector<vector<string>>FileParser:: loadFile(int columns)
 {
     cout<<columns<<endl;
@@ -230,7 +235,7 @@ void FileParser::editFile(const string&oldval, const string&newval,int width)
 
     //exception handling [Index out of bounds Exception]
     if(i>items.size())
-        cout<<"Treid to grab an element that never existed"<<endl;
+        cout<<"Tried to grab an element that never existed"<<endl;
     else if(j>items[0].size())
         cout<<"Treid to grab an element that never existed"<<endl;
     else{
