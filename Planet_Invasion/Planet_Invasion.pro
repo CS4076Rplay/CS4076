@@ -33,7 +33,10 @@ SOURCES += \
     fileparser.cpp \
     clickableqlabel.cpp \
     charactercreator.cpp \
-    chapterscreen.cpp
+    chapterscreen.cpp \
+    chapter2.cpp \
+    room.cpp \
+    gamescreen.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -45,13 +48,17 @@ HEADERS += \
     fileparser.h \
     clickableqlabel.h \
     charactercreator.h \
-    chapterscreen.h
+    chapterscreen.h \
+    chapter2.h \
+    room.h \
+    gamescreen.h
 
 FORMS += \
         mainwindow.ui \
     inventoryui.ui \
     charactercreator.ui \
-    chapterscreen.ui
+    chapterscreen.ui \
+    gamescreen.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -10,10 +10,14 @@ INPUT(
 ./debug\clickableqlabel.o
 ./debug\charactercreator.o
 ./debug\chapterscreen.o
+./debug\chapter2.o
+./debug\room.o
+./debug\gamescreen.o
 ./debug\qrc_assets.o
 ./debug\moc_mainwindow.o
 ./debug\moc_inventoryui.o
 ./debug\moc_clickableqlabel.o
 ./debug\moc_charactercreator.o
 ./debug\moc_chapterscreen.o
+./debug\moc_gamescreen.o
 );

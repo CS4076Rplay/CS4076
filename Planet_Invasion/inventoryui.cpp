@@ -85,7 +85,7 @@ InventoryUI::InventoryUI(QWidget *parent) :
         QString img=QString::fromStdString(weapons[i].getUrl());
         QPixmap pix(":/Images/Weapons/"+img);
         label[i]->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
-         connect(label[i],SIGNAL(clicked(weapons[i])),this,SLOT(MOUSE_CLICKED(weapons[i])));
+        connect(label[i],SIGNAL(clicked(weapons[i])),this,SLOT(MOUSE_CLICKED(weapons[i])));
 
         string s=img.toStdString();
         cout<<i<<":"<<s<<endl;

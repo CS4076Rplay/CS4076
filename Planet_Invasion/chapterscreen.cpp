@@ -1,5 +1,7 @@
 #include "chapterscreen.h"
 #include "ui_chapterscreen.h"
+#include "chapter2.h"
+#include "gamescreen.h"
 
 ChapterScreen::ChapterScreen(QWidget *parent) :
     QDialog(parent),
@@ -19,14 +21,25 @@ ChapterScreen::ChapterScreen(QWidget *parent) :
     layout->addWidget(option3,1,0);
     layout->addWidget(option4,1,1);
 
-    connect(option1,SIGNAL(clicked()), this, SLOT(handlebutton()));
+    connect(option1,SIGNAL(clicked()), this, SLOT(handlebutton1()));
+    connect(option2,SIGNAL(clicked()), this, SLOT(handlebutton2()));
+
 }
 
-void ChapterScreen::handlebutton(){
+void ChapterScreen::handlebutton1(){
+    hide();
     InventoryUI inventory;
     inventory.setModal(true);
     inventory.exec();
 }
+
+void ChapterScreen::handlebutton2(){
+    hide();
+    chapter = new Chapter2();
+    game = new GameScreen(this);
+    game->show();
+}
+
 ChapterScreen::~ChapterScreen()
 {
     delete ui;
