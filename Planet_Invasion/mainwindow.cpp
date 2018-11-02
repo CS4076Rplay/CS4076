@@ -10,8 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     //loadPlayer
-  //  FileParser *playerfile=new FileParser(":/Story/player.txt");
-    vector<String> playerInfo;//=playerfile->loadFile();//name,class,hp,stk,def,spd,intel
+   FileParser *playerfile=new FileParser(":/Story/player.txt");
+    vector<String> playerInfo=playerfile->loadFile();//name,class,hp,stk,def,spd,intel
     map<String,RACETYPES> races;
                //SHADOWALKER,MOONMAGE,BRUTE,AI
                races["SHADOWALKER"]=SHADOWALKER;

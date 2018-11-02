@@ -39,19 +39,24 @@ vector<string> FileParser::loadFile()
 {
     QString filename=QString::fromStdString(path);
     vector<string> result;
+   // result.push_back("S");
     string s;
     QFile mFile(filename);
     if(!mFile.open(QFile::ReadOnly|QFile::Text))
     {
-      //  qDebug()<<"could not find path: "<<filename<<endl;
+      qDebug()<<"could not find path: "<<filename<<endl;
     }
     QTextStream in(&mFile);
-   while(!mFile.atEnd())
-        {
-            QString line=in.readLine();
-            s=line.toStdString();
-            cout<<s<<endl;
-            result.push_back(s);
+    int i=0;
+      QString line="";
+   while(!line.isNull())
+        { i++;
+            line=in.readLine();
+            string s=line.toStdString();
+            cout<<i<<":"<< s<<endl;
+           result.push_back(s);
+           cout<<result[0]<<endl;
+
         }
         mFile.close();
 
