@@ -49,12 +49,11 @@ vector<string> FileParser::loadFile()
         do
         {
             line = in.readLine();
-            cout<<line.toStdString()<<endl;
-        /*
-            QString line=in.readLine();
+
             s=line.toStdString();
-            cout<<s<<endl;
-            result.push_back(s); */
+            cout<<"++"<<s<<endl;
+            if(s!="")
+            result.push_back(s);
         }
         while(!line.isNull());
         mFile.close();

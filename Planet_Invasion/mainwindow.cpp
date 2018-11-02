@@ -13,10 +13,10 @@ MainWindow::MainWindow(QWidget *parent) :
     FileParser *playerfile=new FileParser(":/Story/player.txt");
     vector<String> playerInfo = playerfile->loadFile();//name,class,hp,stk,def,spd,intel
     map<String,RACETYPES> races;
-               //SHADOWALKER,MOONMAGE,BRUTE,AI
+               //SHADOWALKER,MOONMAGE,KNIGHT,AI
                races["SHADOWALKER"]=SHADOWALKER;
                races["MOONMAGE"]=MOONMAGE;
-               races["BRUTE"]=BRUTE;
+               races["KNIGHT"]=KNIGHT;
                races["AI"]=AI;
     if(playerInfo.size()<=0)
     {
@@ -46,8 +46,7 @@ void MainWindow::on_playButton_clicked()
         cout<<"Here"<<endl;
         newGame->show();
         //for testing
-        chapter = new ChapterScreen(this);
-        chapter -> show();
+
     }else
     {
         chapter = new ChapterScreen(this);
