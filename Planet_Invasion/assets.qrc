@@ -21,5 +21,6 @@
         <file>main.txt</file>
         <file>player.txt</file>
         <file>story.txt</file>
+        <file>inventory.txt</file>
     </qresource>
 </RCC>

@@ -7,41 +7,41 @@ Item::Item()
 
 string Item::getName()
 {
-    return  *name;
+    return  name;
 }
 string Item::getId()
 {
-    return  *id;
+    return  id;
 }
 string Item::getDescription()
 {
-    return *description;
+    return description;
 }
 string Item::getUrl()
 {
-    return *url;
+    return url;
 }
 void Item::setName(const string& n)
 {
-     *name=n;
+     name=n;
 }
 void Item::setId(const string& i)
 {
-    *id=i;
+    id=i;
 }
 void Item::setDescription(const string& desc)
 {
-   *description=desc;
+   description=desc;
 }
 void Item::setUrl(const string& u)
 {
-    *url=u;
+    url=u;
 }
 
 Item::Item(const string& n,const string& i,const string& desc,const string& u)
 {
-    *name=n;
-    *id=i;
-    *description=desc;
-    *url=u;
+    name=n;
+    id=i;
+    description=desc;
+    url=u;
 }

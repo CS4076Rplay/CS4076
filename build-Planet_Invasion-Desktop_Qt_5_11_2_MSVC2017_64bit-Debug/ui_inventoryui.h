@@ -79,7 +79,7 @@ public:
 
         slot1 = new QVBoxLayout();
         slot1->setObjectName(QStringLiteral("slot1"));
-        slot1->setContentsMargins(10, 10, 10, 10);
+        slot1->setContentsMargins(0, 0, 0, 0);
         use_s1 = new QPushButton(InventoryUI);
         use_s1->setObjectName(QStringLiteral("use_s1"));
         use_s1->setEnabled(false);

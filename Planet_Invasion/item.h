@@ -6,17 +6,14 @@ using namespace std;
 class Item
 {
 protected:
-    string *name;
-    string *id;
-    string *description;
-    string *url;
+    string name;
+    string id;
+    string description;
+    string url;
 public:
     Item();
     Item(const string&,const string&,const string&,const string&);
-    string toString()
-    {
-        return (*name)+","+(*id)+","+(*description)+","+(*url);
-    }
+
     //getters
     string getName();
     string getId();
@@ -27,7 +24,10 @@ public:
     void setId(const string&);
     void setDescription(const string&);
     void setUrl(const string&);
-
+    string toString()
+    {
+        return (name)+","+(id)+","+(description)+","+(url);
+    }
 
 };
 

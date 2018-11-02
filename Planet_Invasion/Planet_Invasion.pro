@@ -28,18 +28,27 @@ SOURCES += \
     inventoryui.cpp \
     inventory.cpp \
     item.cpp \
-    weapon.cpp
+    weapon.cpp \
+    keyitem.cpp \
+    fileparser.cpp \
+    clickableqlabel.cpp \
+    charactercreator.cpp
 
 HEADERS += \
         mainwindow.h \
     inventoryui.h \
     inventory.h \
     item.h \
-    weapon.h
+    weapon.h \
+    keyitem.h \
+    fileparser.h \
+    clickableqlabel.h \
+    charactercreator.h
 
 FORMS += \
         mainwindow.ui \
-    inventoryui.ui
+    inventoryui.ui \
+    charactercreator.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
