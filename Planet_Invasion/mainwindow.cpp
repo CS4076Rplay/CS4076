@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "inventoryui.h"
+#include "charactercreator.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,7 +18,11 @@ MainWindow::~MainWindow()
 void MainWindow::on_playButton_clicked()
 {
     ui->Title->setText("Loading Game..");
-   InventoryUI inventory;
+ /*  InventoryUI inventory;
     inventory.setModal(true);
-    inventory.exec();
+    inventory.exec();*/
+    CharacterCreator cc;
+        cc.setModal(true);
+        cc.exec();
+
 }

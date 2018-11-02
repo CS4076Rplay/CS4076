@@ -32,7 +32,9 @@ SOURCES += \
     keyitem.cpp \
     fileparser.cpp \
     clickableqlabel.cpp \
-    charactercreator.cpp
+    charactercreator.cpp \
+    player.cpp \
+    race.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,7 +45,9 @@ HEADERS += \
     keyitem.h \
     fileparser.h \
     clickableqlabel.h \
-    charactercreator.h
+    charactercreator.h \
+    player.h \
+    race.h
 
 FORMS += \
         mainwindow.ui \
