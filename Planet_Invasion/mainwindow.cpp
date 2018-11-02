@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_playButton_clicked()
 {
     ui->Title->setText("Loading Game..");
-   InventoryUI inventory;
-    inventory.setModal(true);
-    inventory.exec();
+    hide();
+    chapter = new ChapterScreen(this);
+    chapter -> show();
 }

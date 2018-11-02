@@ -18,8 +18,15 @@ ChapterScreen::ChapterScreen(QWidget *parent) :
     layout->addWidget(option2,0,1);
     layout->addWidget(option3,1,0);
     layout->addWidget(option4,1,1);
+
+    connect(option1,SIGNAL(clicked()), this, SLOT(handlebutton()));
 }
 
+void ChapterScreen::handlebutton(){
+    InventoryUI inventory;
+    inventory.setModal(true);
+    inventory.exec();
+}
 ChapterScreen::~ChapterScreen()
 {
     delete ui;

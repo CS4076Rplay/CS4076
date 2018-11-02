@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QPushButton>
 #include <QGridLayout>
-
+#include "inventoryui.h"
 namespace Ui {
 class ChapterScreen;
 }
@@ -18,11 +18,14 @@ public:
     ~ChapterScreen();
 signals:
     void mainwindow();
+private slots:
+    void handlebutton();
 
 private:
     Ui::ChapterScreen *ui;
     QGridLayout *layout;
     QPushButton *option1, *option2, *option3, *option4;
+    InventoryUI *inventory;
 };
 
 #endif // CHAPTERSCREEN_H

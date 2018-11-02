@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "chapterscreen.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,6 +21,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    ChapterScreen *chapter;
 };
 
 #endif // MAINWINDOW_H
