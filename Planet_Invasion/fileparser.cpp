@@ -2,6 +2,9 @@
 #include <fstream>
 #include<iostream>
 #include <stdio.h>
+#include<QString>
+#include<QDebug>
+#include<QFile>
 //Operation
 
 vector<string> split(string& line, char& delimetter)
@@ -34,64 +37,89 @@ vector<string> split(string& line, char& delimetter)
 }
 vector<string> FileParser::loadFile()
 {
+    QString filename=QString::fromStdString(path);
     vector<string> result;
     string s;
-    ifstream reader(path);
-    if(!reader)
+    QFile mFile(filename);
+    if(!mFile.open(QFile::ReadOnly|QFile::Text))
     {
-         cout<<"Problem opening file, maybe incorrect path \""<<path<<"\""<<endl;
+      //  qDebug()<<"could not find path: "<<filename<<endl;
     }
-    else{
-        while(getline(reader,s))
+    QTextStream in(&mFile);
+   while(!mFile.atEnd())
         {
+            QString line=in.readLine();
+            s=line.toStdString();
+            cout<<s<<endl;
             result.push_back(s);
         }
-        reader.close();
-    }
+        mFile.close();
+
     return result;
 }
 vector<vector<string>>FileParser:: loadFile(int columns)
 {
-    vector<vector<string>>result;
+    cout<<columns<<endl;
+      QString filename=QString::fromStdString(path);
+
+      //vector<vector<QString>>result;
+  vector<vector<string>>result;
     for(int i=0;i<columns;i++)
         result.push_back(vector<string>());
     vector<string>temp;
-    ifstream reader(path);
-    if(!reader)
+    QFile mFile(filename); cout<<path<<endl;
+    if(!mFile.open(QFile::ReadOnly|QFile::Text))
     {
-        cout<<"Problem opening file, maybe incorrect path \""<<path<<"\""<<endl;
+       // qDebug()<<"could not find path: "<<filename<<endl;
     }
-    else{
-        string s;
-        while(getline(reader,s))
-        {
-            temp=split(s,delimeter);//returs vector with columns
-            /**e.g: in text.txt
-            we have:
-               hello,i,am,adam
-               what,is,our,name
-            at index 0 in temp we have hello, 2 is i...*/
-            if((int)temp.size()>=columns){
-                //if we didnt create enough columns we add the extra ones needed in order to avoid a Segmentation fault
-                int s=(int)temp.size()-columns;
-                for(int j=0;j<s;j++)
-                {
-                    result.push_back(vector<string>());
-                }
+    QTextStream in(&mFile);
+    String s;
+    while(!mFile.atEnd())
+    {
+        QString line=in.readLine();
+        s=line.toStdString();
+        temp=split(s,delimeter);//returs vector with columns
+        /**e.g: in text.txt
+        we have:
+           hello,i,am,adam
+           what,is,our,name
+        at index 0 in temp we have hello, 1 is i...*/
+        if((int)temp.size()>=columns){
+            //if we didnt create enough columns we add the extra ones needed in order to avoid a Segmentation fault
+            int s=(int)temp.size()-columns;
+            for(int j=0;j<s;j++)
+            {
+                result.push_back(vector<string>());
             }
-            for(unsigned int i=0;i<result.size();i++){
-                //add all the values we parsed into multidimensional list
-            result[i].push_back(temp[i]);
+        }
+        cout<<result.size()<<endl;
+        for(string s:temp)
+        cout<<s<<endl;
+        for(unsigned int i=0;i<result.size();i++){
+            //add all the values we parsed into multidimensional list
+        result[i].push_back(temp[i]);
+            for(string s:result[0])
+            cout<<s<<endl;
 
-            }
-        }reader.close();
     }
+
+  }
+       mFile.close();
+
     return result;
 
 }//LoadFile and Turn it to an Object
 void FileParser::saveFile(const string& str)
 {
-    ofstream writer(path,ios::app);
+    QString filename=QString::fromStdString(path);
+    QFile mFile(filename);
+    if(!mFile.open(QFile::WriteOnly|QFile::Text))
+    {
+       // qDebug()<<"Could not find path: "<<filename<<endl;
+
+    }
+    QTextStream writer(&mFile);
+   /* ofstream writer(path,ios::app);
     if(!writer)
     {
         cout<<"Problem opening file, maybe incorrect path \""<<path<<"\""<<endl;
@@ -100,30 +128,45 @@ void FileParser::saveFile(const string& str)
         writer<<str<<endl;
         writer.close();
     }
+    */
+    QString qstr=QString::fromStdString(str);
+    writer<<qstr<<endl;
+    mFile.flush();
+    mFile.close();
 
 
 }
 void FileParser::saveAllToFile(vector<vector<string>> items)
 {
 
+    QString filename=QString::fromStdString(path);
+    QFile mFile(filename);
+    if(!mFile.open(QFile::WriteOnly|QFile::Text))
+    {
+        //qDebug()<<"Could not find path: "<<filename<<endl;
 
-    ofstream writer(path);
+    }
+    QTextStream writer(&mFile);
+
+    /*ofstream writer(path);
     if(!writer)
     {
           cout<<"Problem oppeing file, maybe in correct path \""<<path<<"\""<<endl;
     }
-    else{
+    else{*/
         for(vector<string> vec:items)
         { unsigned int i=0;
             for(string s: vec)
             {
+                QString qs=QString::fromStdString(s);
                 if(i>=vec.size())
-                    writer<<s;
-                else {writer<<s<<delimeter;i++;}
+                    writer<<qs;
+                else {writer<<qs<<delimeter;i++;}
             }writer<<endl;
         }
-        writer.close();
-    }
+        mFile.flush();
+        mFile.close();
+   // }
 }
 FileParser::FileParser(const string& path, const char& delimeter)
 {

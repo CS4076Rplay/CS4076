@@ -1,1 +1,7 @@
-name,class,hp,atk,def,spd,intelligence,empty,empty,empty,empty
+name
+class
+0
+0
+0
+0
+0
