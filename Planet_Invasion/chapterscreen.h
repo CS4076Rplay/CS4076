@@ -29,6 +29,7 @@ private:
     QPushButton *option1, *option2, *option3, *option4;
     InventoryUI *inventory;
     GameScreen *game;
+
 };
 
 #endif // CHAPTERSCREEN_H

@@ -38,6 +38,10 @@ SOURCES += \
     player.cpp \
     race.cpp \
     gamescreen.cpp \
+    room.cpp \
+    chapter2.cpp \
+    chapter1.cpp \
+    chapter.cpp
     intro.cpp
 
 HEADERS += \
@@ -54,6 +58,10 @@ HEADERS += \
     player.h \
     race.h \
     gamescreen.h \
+    room.h \
+    chapter2.h \
+    chapter1.h \
+    chapter.h
     intro.h
 
 FORMS += \

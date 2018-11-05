@@ -1,21 +1,19 @@
 #ifndef CHAPTER_H
 #define CHAPTER_H
+#include <string>
+#include "room.h"
 
-#include "vector"
-#include "string"
 using namespace std;
-typedef string String;
+
 class Chapter
 {
-private:
-    vector<String>storyline;
-public:
-    vector<String> getStoryline();
-    void setStoryLine(vector<String>);
-    Chapter();
-    Chapter(vector<string>);
-    ~Chapter();
+protected:
+    void createRoom();
+    Room *currentRoom;
 
+public:
+    void goRoom(const string& direction);
+    string getDescription();
 };
 
 #endif // CHAPTER_H
