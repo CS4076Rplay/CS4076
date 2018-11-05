@@ -13,6 +13,9 @@ INPUT(
 ./release\player.o
 ./release\race.o
 ./release\gamescreen.o
+./release\room.o
+./release\chapter2.o
+./release\chapter1.o
 ./release\qrc_assets.o
 ./release\moc_mainwindow.o
 ./release\moc_inventoryui.o

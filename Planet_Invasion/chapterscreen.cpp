@@ -34,6 +34,7 @@ void ChapterScreen::handlebutton2(){
    game  = new GameScreen(this);
    game->show();
 }
+
 ChapterScreen::~ChapterScreen()
 {
     delete ui;
