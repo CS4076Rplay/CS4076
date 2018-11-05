@@ -16,6 +16,7 @@ INPUT(
 ./release\room.o
 ./release\chapter2.o
 ./release\chapter1.o
+./release\chapter.o
 ./release\qrc_assets.o
 ./release\moc_mainwindow.o
 ./release\moc_inventoryui.o

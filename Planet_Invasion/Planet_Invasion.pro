@@ -39,7 +39,8 @@ SOURCES += \
     gamescreen.cpp \
     room.cpp \
     chapter2.cpp \
-    chapter1.cpp
+    chapter1.cpp \
+    chapter.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -57,7 +58,8 @@ HEADERS += \
     gamescreen.h \
     room.h \
     chapter2.h \
-    chapter1.h
+    chapter1.h \
+    chapter.h
 
 FORMS += \
         mainwindow.ui \

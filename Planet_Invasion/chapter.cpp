@@ -1,22 +1,13 @@
 #include "chapter.h"
+#include "room.h"
 
-using namespace std;
-Chapter::Chapter()
-{
-   
+void Chapter::goRoom(const string& direction) {
+    Room* nextRoom = currentRoom->nextRoom(direction);
+
+    currentRoom = nextRoom;
 }
-Chapter::Chapter(vector<String>storyline)
-{
-   this->storyline=storyline;
+
+string Chapter::getDescription(){
+    return currentRoom->getDescription();
 }
-vector<String>Chapter:: getStoryline()
-{
-    return storyline;
-}
-void Chapter:: setStoryLine(vector<String>){
-    this -> storyline = storyline;
-}
-Chapter::~Chapter()
-{
-    
-}
+

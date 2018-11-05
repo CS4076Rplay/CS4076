@@ -2,18 +2,16 @@
 #define CHAPTER2_H
 
 #include "room.h"
+#include "chapter.h"
 
-class Chapter2
+class Chapter2: public Chapter
 {
 private:
-    Room *currentRoom, *a, *b, *c, *d, *e, *f, *g, *h, *i, *j;
+    Room *a, *b, *c, *d, *e, *f, *g, *h, *i, *j;
     void createRooms();
-    void printIntro();
 
 public:
     Chapter2();
-    void goRoom(string direction);
-    string getDescription();
 };
 
 #endif // CHAPTER2_H

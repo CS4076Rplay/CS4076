@@ -16,6 +16,7 @@ INPUT(
 ./debug\room.o
 ./debug\chapter2.o
 ./debug\chapter1.o
+./debug\chapter.o
 ./debug\qrc_assets.o
 ./debug\moc_mainwindow.o
 ./debug\moc_inventoryui.o

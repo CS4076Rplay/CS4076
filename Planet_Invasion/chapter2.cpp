@@ -18,7 +18,7 @@ void Chapter2::createRooms(){
     j = new Room("j");
 
     a->setExits(b, NULL, NULL, NULL);
-    b->setExits(d, c, NULL, NULL);
+    b->setExits(d, c, a, NULL);
     c->setExits(e, g, NULL, b );
     d->setExits(f, e, b, NULL);
     e->setExits(NULL, NULL, c, d);
@@ -30,12 +30,3 @@ void Chapter2::createRooms(){
     currentRoom = a;
 }
 
-void Chapter2::goRoom(string direction) {
-    Room* nextRoom = currentRoom->nextRoom(direction);
-
-    currentRoom = nextRoom;
-}
-
-string Chapter2::getDescription(){
-    return currentRoom->getDescription();
-}

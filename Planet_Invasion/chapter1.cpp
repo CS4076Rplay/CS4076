@@ -30,11 +30,3 @@ void Chapter1::createRooms(){
     currentRoom = a;
 }
 
-void Chapter1::goRoom(string direction) {
-    Room* nextRoom = currentRoom->nextRoom(direction);
-
-    currentRoom = nextRoom;
-}
-string Chapter1::getDescription(){
-    return currentRoom->getDescription();
-}
