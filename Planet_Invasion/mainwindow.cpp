@@ -9,14 +9,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setupFiles();
+}
+
+void MainWindow::setupFiles()
+{
+
     //loadPlayer
     FileParser *playerfile=new FileParser(":/Story/player.txt");
     vector<String> playerInfo = playerfile->loadFile();//name,class,hp,stk,def,spd,intel
     map<String,RACETYPES> races;
-               //SHADOWALKER,MOONMAGE,BRUTE,AI
+               //SHADOWALKER,MOONMAGE,KNIGHT,AI
                races["SHADOWALKER"]=SHADOWALKER;
                races["MOONMAGE"]=MOONMAGE;
-               races["BRUTE"]=BRUTE;
+               races["KNIGHT"]=KNIGHT;
                races["AI"]=AI;
     if(playerInfo.size()<=0)
     {
@@ -29,8 +35,11 @@ MainWindow::MainWindow(QWidget *parent) :
             stoi(playerInfo[4]),stoi(playerInfo[5]),stoi(playerInfo[6]));
     }
 
+    //loadIntro
+    FileParser *introFile=new FileParser(":/Story/intro.txt");
+    intro=introFile->loadFile(true);
+    cout<<intro<<endl;
 }
-
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -41,13 +50,13 @@ void MainWindow::on_playButton_clicked()
     ui->Title->setText("Loading Game..");
     hide();
     CharacterCreator *newGame=new CharacterCreator(this);
+   newGame->intro=this->intro;
     if(player==nullptr)
     {
         cout<<"Here"<<endl;
         newGame->show();
         //for testing
-        chapter = new ChapterScreen(this);
-        chapter -> show();
+
     }else
     {
         chapter = new ChapterScreen(this);

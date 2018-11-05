@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/Images/Weapons">
+    <qresource prefix="/Images/Characters">
         <file>BattleAxe.png</file>
         <file>Flail.png</file>
         <file>Hammer.png</file>
@@ -10,6 +10,12 @@
         <file>Nunchuks.png</file>
         <file>Revolver.png</file>
         <file>Sword.png</file>
+        <file>AI.png</file>
+        <file>Knight.png</file>
+        <file>Shadowalker.png</file>
+        <file>Mage1.png</file>
+        <file>earth1.jpg</file>
+        <file>planetx.jpg</file>
     </qresource>
     <qresource prefix="/Story">
         <file>chapter1.txt</file>

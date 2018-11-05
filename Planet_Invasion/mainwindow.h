@@ -16,6 +16,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+   void setupFiles();
 
 private slots:
     void on_playButton_clicked();
@@ -24,6 +25,7 @@ private:
     Ui::MainWindow *ui;
     ChapterScreen *chapter;
     Player *player;
+    string intro;
 };
 
 #endif // MAINWINDOW_H

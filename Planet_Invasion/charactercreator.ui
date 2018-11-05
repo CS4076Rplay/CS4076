@@ -17,14 +17,36 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="characterImg">
+      <widget class="QLabel" name="label_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>CHOOSE A RACE</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox">
+      <widget class="QLabel" name="characterImg">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="assets.qrc">:/Images/Characters/Shadowalker.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="raceSelector">
        <item>
         <property name="text">
          <string>SHADOWALKER</string>
@@ -37,7 +59,7 @@
        </item>
        <item>
         <property name="text">
-         <string>BRUTE</string>
+         <string>KNIGHT</string>
         </property>
        </item>
        <item>
@@ -48,7 +70,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="charDesc">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -56,33 +78,112 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>Shadowalker are A Race of Amazonian Warriors Trained in The Art Of Stealth, They Use Thier Speed And Intelligence to capture or Kill their Target, It is said that Shadowalker have a unique skill of Invisibilty when they hold their breath</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="topMargin">
+      <number>15</number>
+     </property>
      <item>
-      <widget class="QLabel" name="characterNameLabel">
-       <property name="text">
-        <string>Name</string>
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMinimumSize</enum>
+       </property>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Name:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="unameSpace">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Enter A Name</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="Line" name="line_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="AntributePointLabel">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>50/50 points </string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Antributes:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>SAVE</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="AntributePointLabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -104,26 +205,20 @@
             </sizepolicy>
            </property>
            <property name="value">
-            <number>0</number>
+            <number>100</number>
            </property>
           </widget>
          </item>
         </layout>
        </item>
-       <item>
-        <widget class="QSlider" name="healthSlide">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
       </layout>
+     </item>
+     <item>
+      <widget class="Line" name="line_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -145,7 +240,7 @@
             </sizepolicy>
            </property>
            <property name="value">
-            <number>0</number>
+            <number>30</number>
            </property>
           </widget>
          </item>
@@ -153,11 +248,20 @@
        </item>
        <item>
         <widget class="QSlider" name="strSlide">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>30</number>
+         </property>
+         <property name="value">
+          <number>30</number>
          </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -186,7 +290,7 @@
             </sizepolicy>
            </property>
            <property name="value">
-            <number>0</number>
+            <number>30</number>
            </property>
           </widget>
          </item>
@@ -194,11 +298,17 @@
        </item>
        <item>
         <widget class="QSlider" name="defSlide">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>30</number>
          </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -227,7 +337,7 @@
             </sizepolicy>
            </property>
            <property name="value">
-            <number>0</number>
+            <number>30</number>
            </property>
           </widget>
          </item>
@@ -235,11 +345,17 @@
        </item>
        <item>
         <widget class="QSlider" name="spdSlide">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>30</number>
          </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -268,7 +384,7 @@
             </sizepolicy>
            </property>
            <property name="value">
-            <number>0</number>
+            <number>30</number>
            </property>
           </widget>
          </item>
@@ -276,11 +392,17 @@
        </item>
        <item>
         <widget class="QSlider" name="intelSlide">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>30</number>
          </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -293,53 +415,23 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="assets.qrc"/>
+ </resources>
  <connections>
   <connection>
-   <sender>healthSlide</sender>
+   <sender>intelSlide</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>healthBar</receiver>
+   <receiver>intelBar</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>664</x>
-     <y>224</y>
+     <x>623</x>
+     <y>524</y>
     </hint>
     <hint type="destinationlabel">
-     <x>676</x>
-     <y>178</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>strSlide</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>strBar</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>621</x>
-     <y>299</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>639</x>
-     <y>258</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>defSlide</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>defBar</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>617</x>
-     <y>381</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>628</x>
-     <y>344</y>
+     <x>636</x>
+     <y>491</y>
     </hint>
    </hints>
   </connection>
@@ -360,50 +452,34 @@
    </hints>
   </connection>
   <connection>
-   <sender>intelSlide</sender>
+   <sender>defSlide</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>intelBar</receiver>
+   <receiver>defBar</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>623</x>
-     <y>524</y>
+     <x>617</x>
+     <y>381</y>
     </hint>
     <hint type="destinationlabel">
-     <x>636</x>
-     <y>491</y>
+     <x>628</x>
+     <y>344</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>comboBox</sender>
-   <signal>currentTextChanged(QString)</signal>
-   <receiver>label</receiver>
-   <slot>setText(QString)</slot>
+   <sender>strSlide</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>strBar</receiver>
+   <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>92</x>
-     <y>507</y>
+     <x>621</x>
+     <y>299</y>
     </hint>
     <hint type="destinationlabel">
-     <x>48</x>
-     <y>534</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>comboBox</sender>
-   <signal>currentTextChanged(QString)</signal>
-   <receiver>characterImg</receiver>
-   <slot>setText(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>184</x>
-     <y>502</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>210</x>
-     <y>412</y>
+     <x>639</x>
+     <y>258</y>
     </hint>
    </hints>
   </connection>
