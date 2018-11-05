@@ -38,11 +38,13 @@ SOURCES += \
     player.cpp \
     race.cpp \
     gamescreen.cpp \
-    room.cpp \
-    chapter2.cpp \
+    intro.cpp \
+    chapter.cpp \
     chapter1.cpp \
-    chapter.cpp
-    intro.cpp
+    chapter2.cpp \
+    room.cpp
+
+
 
 HEADERS += \
         mainwindow.h \
@@ -58,11 +60,12 @@ HEADERS += \
     player.h \
     race.h \
     gamescreen.h \
-    room.h \
-    chapter2.h \
+    intro.h \
+    chapter.h \
     chapter1.h \
-    chapter.h
-    intro.h
+    chapter2.h \
+    room.h
+
 
 FORMS += \
         mainwindow.ui \
