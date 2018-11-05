@@ -14,6 +14,8 @@
         <file>Knight.png</file>
         <file>Shadowalker.png</file>
         <file>Mage1.png</file>
+        <file>earth1.jpg</file>
+        <file>planetx.jpg</file>
     </qresource>
     <qresource prefix="/Story">
         <file>chapter1.txt</file>

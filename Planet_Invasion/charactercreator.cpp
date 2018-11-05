@@ -1,6 +1,9 @@
 #include "charactercreator.h"
 #include "ui_charactercreator.h"
-
+#include "player.h"
+#include "fileparser.h"
+#include "intro.h"
+#include <iostream>
 
 CharacterCreator::CharacterCreator(QWidget *parent) :
     QDialog(parent),
@@ -19,11 +22,12 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
     QString *img=new QString();
     QString *desc=new QString();
     int health=100;
-    int speed=30;
-    int strength=30;
-    int intel=30;
-    int defense=30;
+    int speed=45;
+    int strength=45;
+    int intel=45;
+    int defense=45;
 
+    cout<<arg1.toStdString()<<endl;
     if(arg1=="SHADOWALKER")
        {
         *img="Shadowalker.png";
@@ -66,24 +70,75 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
      QPixmap pix(":/Images/Characters/"+(*img));
      ui->characterImg->setPixmap(pix.scaled(150,150,Qt::KeepAspectRatio));
      ui->charDesc->setText(*desc);
-     ui->spdSlide->setMinimum(speed);
-     ui->strSlide->setMinimum(strength);
-     ui->defSlide->setMinimum(defense);
-     ui->intelSlide->setMinimum(intel);
+     ui->spdBar->setValue(speed);
+     ui->strBar->setValue(strength);
+     ui->defBar->setValue(defense);
+     ui->intelBar->setValue(intel);
 
 }
 
 void CharacterCreator::on_strSlide_valueChanged(int value)
 {
-    static int points=50;
-    int curPoint=50;
 
-    if(value<=points)
+
+}
+
+void CharacterCreator::on_pushButton_clicked()
+{
+    //create player
+    string uname;
+    RACETYPES race;
+    String r;
+    int health;
+    int speed;
+    int strength;
+    int intel;
+    int defense;
+    string save;
+
+    uname=(ui->unameSpace->text().toStdString());
+   
+    if(ui->raceSelector->currentText()=="SHADOWALKER")
     {
-
-        curPoint-=value;
-        ui->AntributePointLabel->setText(QString::fromStdString(std::to_string(curPoint)+"/20 Points"));
+        r="SHADOWALKER";
+        race=SHADOWALKER;
     }
-    else ui->strBar->setEnabled(false);
+    else if(ui->raceSelector->currentText()=="MOONMAGE")
+    {
+        r="MOONMAGE";
+        race=MOONMAGE;
+    }
+    else if(ui->raceSelector->currentText()=="KNIGHT")
+    {
+        r="KNIGHT";
+        race=KNIGHT;
+    }
 
+    else if(ui->raceSelector->currentText()=="AI")
+    {
+        r="AI";
+        race=AI;
+    }
+    if(uname.empty())uname="Miaximilian";
+
+   
+    health=ui->healthBar->value();
+    speed=ui->spdBar->value();
+     strength=ui->strBar->value();
+     intel=ui->intelBar->value();
+     defense=ui->defBar->value();
+
+     save=uname+"\n"+r+"\n"+to_string(health)+"\n"+to_string(strength)+"\n"+to_string(defense)+"\n"+to_string(speed)+"\n"+to_string(intel);
+
+    Player *player=new Player(uname,race,health,speed,strength,intel,defense);
+    FileParser *playerFile=new FileParser("E:/qProjects/AlienInvasion/CS4076/Planet_Invasion/player.txt");
+    playerFile->saveFile(save);
+
+    hide();
+    cout<<"@CS\n"<<uname<<endl;
+    Intro *intro=new Intro(this);
+    intro->intro=this->intro;
+    intro->name=uname;
+    intro->race=r;
+    intro->show();
 }

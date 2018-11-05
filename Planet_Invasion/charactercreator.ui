@@ -17,6 +17,19 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
+      <widget class="QLabel" name="label_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>CHOOSE A RACE</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="characterImg">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -105,7 +118,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="unameSpace">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -145,6 +158,19 @@
         </widget>
        </item>
        <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>SAVE</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QLabel" name="AntributePointLabel">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -153,7 +179,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>50/50 points </string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -222,6 +248,9 @@
        </item>
        <item>
         <widget class="QSlider" name="strSlide">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -269,6 +298,9 @@
        </item>
        <item>
         <widget class="QSlider" name="defSlide">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -313,6 +345,9 @@
        </item>
        <item>
         <widget class="QSlider" name="spdSlide">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -357,6 +392,9 @@
        </item>
        <item>
         <widget class="QSlider" name="intelSlide">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -382,34 +420,18 @@
  </resources>
  <connections>
   <connection>
-   <sender>strSlide</sender>
+   <sender>intelSlide</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>strBar</receiver>
+   <receiver>intelBar</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>621</x>
-     <y>299</y>
+     <x>623</x>
+     <y>524</y>
     </hint>
     <hint type="destinationlabel">
-     <x>639</x>
-     <y>258</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>defSlide</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>defBar</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>617</x>
-     <y>381</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>628</x>
-     <y>344</y>
+     <x>636</x>
+     <y>491</y>
     </hint>
    </hints>
   </connection>
@@ -430,18 +452,34 @@
    </hints>
   </connection>
   <connection>
-   <sender>intelSlide</sender>
+   <sender>defSlide</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>intelBar</receiver>
+   <receiver>defBar</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>623</x>
-     <y>524</y>
+     <x>617</x>
+     <y>381</y>
     </hint>
     <hint type="destinationlabel">
-     <x>636</x>
-     <y>491</y>
+     <x>628</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>strSlide</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>strBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>621</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>639</x>
+     <y>258</y>
     </hint>
    </hints>
   </connection>

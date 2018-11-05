@@ -9,6 +9,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setupFiles();
+}
+
+void MainWindow::setupFiles()
+{
+
     //loadPlayer
     FileParser *playerfile=new FileParser(":/Story/player.txt");
     vector<String> playerInfo = playerfile->loadFile();//name,class,hp,stk,def,spd,intel
@@ -29,8 +35,11 @@ MainWindow::MainWindow(QWidget *parent) :
             stoi(playerInfo[4]),stoi(playerInfo[5]),stoi(playerInfo[6]));
     }
 
+    //loadIntro
+    FileParser *introFile=new FileParser(":/Story/intro.txt");
+    intro=introFile->loadFile(true);
+    cout<<intro<<endl;
 }
-
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -41,6 +50,7 @@ void MainWindow::on_playButton_clicked()
     ui->Title->setText("Loading Game..");
     hide();
     CharacterCreator *newGame=new CharacterCreator(this);
+   newGame->intro=this->intro;
     if(player==nullptr)
     {
         cout<<"Here"<<endl;

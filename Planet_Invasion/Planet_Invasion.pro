@@ -8,6 +8,7 @@ QT       += core gui widgets
 
 TARGET = Planet_Invasion
 TEMPLATE = app
+INCLUDEPATH += .
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -36,7 +37,8 @@ SOURCES += \
     chapterscreen.cpp \
     player.cpp \
     race.cpp \
-    gamescreen.cpp
+    gamescreen.cpp \
+    intro.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -51,14 +53,16 @@ HEADERS += \
     chapterscreen.h \
     player.h \
     race.h \
-    gamescreen.h
+    gamescreen.h \
+    intro.h
 
 FORMS += \
         mainwindow.ui \
     inventoryui.ui \
     charactercreator.ui \
     chapterscreen.ui \
-    gamescreen.ui
+    gamescreen.ui \
+    intro.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

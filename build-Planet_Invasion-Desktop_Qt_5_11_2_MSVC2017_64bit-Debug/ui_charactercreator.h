@@ -18,6 +18,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QProgressBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QVBoxLayout>
 
@@ -28,6 +29,7 @@ class Ui_CharacterCreator
 public:
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
+    QLabel *label_3;
     QLabel *characterImg;
     QComboBox *raceSelector;
     QLabel *charDesc;
@@ -35,10 +37,11 @@ public:
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_9;
     QLabel *label;
-    QLineEdit *lineEdit;
+    QLineEdit *unameSpace;
     QFrame *line_2;
     QHBoxLayout *horizontalLayout_10;
     QLabel *label_2;
+    QPushButton *pushButton;
     QLabel *AntributePointLabel;
     QVBoxLayout *verticalLayout_6;
     QHBoxLayout *horizontalLayout_7;
@@ -75,11 +78,18 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        characterImg = new QLabel(CharacterCreator);
-        characterImg->setObjectName(QStringLiteral("characterImg"));
+        label_3 = new QLabel(CharacterCreator);
+        label_3->setObjectName(QStringLiteral("label_3"));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy);
+
+        verticalLayout->addWidget(label_3);
+
+        characterImg = new QLabel(CharacterCreator);
+        characterImg->setObjectName(QStringLiteral("characterImg"));
         sizePolicy.setHeightForWidth(characterImg->sizePolicy().hasHeightForWidth());
         characterImg->setSizePolicy(sizePolicy);
         characterImg->setPixmap(QPixmap(QString::fromUtf8(":/Images/Characters/Shadowalker.png")));
@@ -126,12 +136,12 @@ public:
 
         horizontalLayout_9->addWidget(label);
 
-        lineEdit = new QLineEdit(CharacterCreator);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        sizePolicy.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
-        lineEdit->setSizePolicy(sizePolicy);
+        unameSpace = new QLineEdit(CharacterCreator);
+        unameSpace->setObjectName(QStringLiteral("unameSpace"));
+        sizePolicy.setHeightForWidth(unameSpace->sizePolicy().hasHeightForWidth());
+        unameSpace->setSizePolicy(sizePolicy);
 
-        horizontalLayout_9->addWidget(lineEdit);
+        horizontalLayout_9->addWidget(unameSpace);
 
 
         verticalLayout_2->addLayout(horizontalLayout_9);
@@ -154,6 +164,13 @@ public:
         label_2->setSizePolicy(sizePolicy1);
 
         horizontalLayout_10->addWidget(label_2);
+
+        pushButton = new QPushButton(CharacterCreator);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy);
+
+        horizontalLayout_10->addWidget(pushButton);
 
         AntributePointLabel = new QLabel(CharacterCreator);
         AntributePointLabel->setObjectName(QStringLiteral("AntributePointLabel"));
@@ -220,6 +237,7 @@ public:
 
         strSlide = new QSlider(CharacterCreator);
         strSlide->setObjectName(QStringLiteral("strSlide"));
+        strSlide->setEnabled(false);
         sizePolicy2.setHeightForWidth(strSlide->sizePolicy().hasHeightForWidth());
         strSlide->setSizePolicy(sizePolicy2);
         strSlide->setMinimum(30);
@@ -253,6 +271,7 @@ public:
 
         defSlide = new QSlider(CharacterCreator);
         defSlide->setObjectName(QStringLiteral("defSlide"));
+        defSlide->setEnabled(false);
         sizePolicy2.setHeightForWidth(defSlide->sizePolicy().hasHeightForWidth());
         defSlide->setSizePolicy(sizePolicy2);
         defSlide->setMinimum(30);
@@ -285,6 +304,7 @@ public:
 
         spdSlide = new QSlider(CharacterCreator);
         spdSlide->setObjectName(QStringLiteral("spdSlide"));
+        spdSlide->setEnabled(false);
         sizePolicy2.setHeightForWidth(spdSlide->sizePolicy().hasHeightForWidth());
         spdSlide->setSizePolicy(sizePolicy2);
         spdSlide->setMinimum(30);
@@ -317,6 +337,7 @@ public:
 
         intelSlide = new QSlider(CharacterCreator);
         intelSlide->setObjectName(QStringLiteral("intelSlide"));
+        intelSlide->setEnabled(false);
         sizePolicy2.setHeightForWidth(intelSlide->sizePolicy().hasHeightForWidth());
         intelSlide->setSizePolicy(sizePolicy2);
         intelSlide->setMinimum(30);
@@ -332,10 +353,10 @@ public:
 
 
         retranslateUi(CharacterCreator);
-        QObject::connect(strSlide, SIGNAL(valueChanged(int)), strBar, SLOT(setValue(int)));
-        QObject::connect(defSlide, SIGNAL(valueChanged(int)), defBar, SLOT(setValue(int)));
-        QObject::connect(spdSlide, SIGNAL(valueChanged(int)), spdBar, SLOT(setValue(int)));
         QObject::connect(intelSlide, SIGNAL(valueChanged(int)), intelBar, SLOT(setValue(int)));
+        QObject::connect(spdSlide, SIGNAL(valueChanged(int)), spdBar, SLOT(setValue(int)));
+        QObject::connect(defSlide, SIGNAL(valueChanged(int)), defBar, SLOT(setValue(int)));
+        QObject::connect(strSlide, SIGNAL(valueChanged(int)), strBar, SLOT(setValue(int)));
 
         QMetaObject::connectSlotsByName(CharacterCreator);
     } // setupUi
@@ -343,6 +364,7 @@ public:
     void retranslateUi(QDialog *CharacterCreator)
     {
         CharacterCreator->setWindowTitle(QApplication::translate("CharacterCreator", "Dialog", nullptr));
+        label_3->setText(QApplication::translate("CharacterCreator", "CHOOSE A RACE", nullptr));
         characterImg->setText(QString());
         raceSelector->setItemText(0, QApplication::translate("CharacterCreator", "SHADOWALKER", nullptr));
         raceSelector->setItemText(1, QApplication::translate("CharacterCreator", "MOONMAGE", nullptr));
@@ -351,10 +373,11 @@ public:
 
         charDesc->setText(QApplication::translate("CharacterCreator", "Shadowalker are A Race of Amazonian Warriors Trained in The Art Of Stealth, They Use Thier Speed And Intelligence to capture or Kill their Target, It is said that Shadowalker have a unique skill of Invisibilty when they hold their breath", nullptr));
         label->setText(QApplication::translate("CharacterCreator", "Name:", nullptr));
-        lineEdit->setInputMask(QString());
-        lineEdit->setPlaceholderText(QApplication::translate("CharacterCreator", "Enter A Name", nullptr));
+        unameSpace->setInputMask(QString());
+        unameSpace->setPlaceholderText(QApplication::translate("CharacterCreator", "Enter A Name", nullptr));
         label_2->setText(QApplication::translate("CharacterCreator", "Antributes:", nullptr));
-        AntributePointLabel->setText(QApplication::translate("CharacterCreator", "50/50 points ", nullptr));
+        pushButton->setText(QApplication::translate("CharacterCreator", "SAVE", nullptr));
+        AntributePointLabel->setText(QString());
         label_7->setText(QApplication::translate("CharacterCreator", "HEALTH", nullptr));
         label_6->setText(QApplication::translate("CharacterCreator", "STRENGTH", nullptr));
         label_8->setText(QApplication::translate("CharacterCreator", "DEFENSE", nullptr));
