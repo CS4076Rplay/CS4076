@@ -1,8 +1,10 @@
-The year is 2099 Planet Earth Has is dying, Threatend by an Unweavery storm of astroids, The Planet is thrown into chaos
-War is widespread, values such as religion, rights, respect, morality and Love has been replaced with Fear, Hate and The deperation of Survival.
-Families have been torn apart, Kids killed mercilessly. In Middle Of All This Terror, stands a Fortress of solitude called The D.O.M.E or (Dayz Of More Evolution).
-Wher all the greatest minds the earth has to offer are Working Tirelessly in order to find humanities next Refuge.
-With An Estimate Time of 20 Days, and Liomited Resources they Must Formulate a Solution, Before All is too Late and The whole of Man kind is wiped out.
-When All Seemed Lost A Scientist By The name of HARATO ATSUKO Discovered a Planet A Small planet Behind the Earth's Moon, with the Same Gravity as the earth.
-A Team of Skilled Individuals [Marine, Doctor, Genius Programmer] Wereput Together to Undertake A mission no one Would Dare To Accept.
-With only 12 days left They hadto Hurry Before thier Home Planets is Destroyed.
+People of earth lived in harmony, different races,ethnicity and religion respected each other and treated each other as equals,
+until the year 2099, Earth was attacked by strange Astroids, very few people survied those that did survive are either in hiding or turned to what we call doomers.
+Doomers were once humans that has been mutated by the polution from the astroids. Doomers are in 2 different classes (shadow,inferno).
+Shadow Doomers can be recognized by the dark clouds that follows them. This is where their power comes from, the souls of their victims forms a dark cloud that follows them, Their Weakness is light.
+Inferno Doomers are the definition of hell spawns, one Touch from the lava spit will incinerate their enemies. only way to stop is by water.
+A Scientist By The name of HARATO ATSUKO Discovered a cure, but has been captured.
+Inferno Doomers destroyed a few of the $race race and infected the rest.
+From the ashes of the $race race $name is aflicted with finding this cure in order save the $race race.
+$name : "They will pay each an every one of them ";
+narator: You look around and are surrounded by darkness, the ashes of your clan is underneath you feet

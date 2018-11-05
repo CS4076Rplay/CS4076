@@ -2,7 +2,7 @@
 #define RACE_H
 #include <string>
 using namespace std;
-enum RACETYPES{SHADOWALKER,MOONMAGE,BRUTE,AI};
+enum RACETYPES{SHADOWALKER,MOONMAGE,KNIGHT,AI};
 class Race
 {
 protected:

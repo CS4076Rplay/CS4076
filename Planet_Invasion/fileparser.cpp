@@ -5,12 +5,12 @@
 #include<QString>
 #include<QDebug>
 #include<QFile>
-//Operation
 
-vector<string> split(string& line, char& delimetter)
+//Operation
+std::vector<std::string> FileParser::split(const std::string& line, const char& delimetter)
 {
-     vector<string> list = {};
-        string str;
+     std::vector<std::string> list = {};
+        std::string str;
         unsigned int i;
 
         for ( i = 0; i < line.size(); i++)
@@ -49,17 +49,35 @@ vector<string> FileParser::loadFile()
         do
         {
             line = in.readLine();
-            cout<<line.toStdString()<<endl;
-        /*
-            QString line=in.readLine();
+
             s=line.toStdString();
-            cout<<s<<endl;
-            result.push_back(s); */
+            cout<<"++"<<s<<endl;
+            if(s!="")
+            result.push_back(s);
         }
         while(!line.isNull());
         mFile.close();
     }
     return result;
+}
+string FileParser::loadFile(const bool& readAll)
+{
+    QString filename=QString::fromStdString(path);
+    vector<string> result;
+    string s;
+    QFile mFile(filename);
+    if(mFile.open(QFile::ReadOnly|QFile::Text))
+    {
+      //  qDebug()<<"could not find path: "<<filename<<endl;
+    }
+    QTextStream in(&mFile);
+    QString line= in.readAll();
+
+            s=line.toStdString();
+
+        mFile.close();
+
+    return s;
 }
 
 vector<vector<string>>FileParser:: loadFile(int columns)
@@ -116,11 +134,12 @@ vector<vector<string>>FileParser:: loadFile(int columns)
 }//LoadFile and Turn it to an Object
 void FileParser::saveFile(const string& str)
 {
+    //"E:/qProjects/AlienInvasion/CS4076/Planet_Invasion/player.txt"
     QString filename=QString::fromStdString(path);
     QFile mFile(filename);
     if(!mFile.open(QFile::WriteOnly|QFile::Text))
     {
-       // qDebug()<<"Could not find path: "<<filename<<endl;
+       qDebug()<<"Could not find path: "<<filename<<endl;
 
     }
     QTextStream writer(&mFile);

@@ -19,7 +19,9 @@ private:
 public:
     //Operation
     vector<vector<string>> loadFile(int);
-    vector<string>loadFile();//LoadFile and Turn it to an Object
+    vector<string>split(const std::string&, const char&);
+    vector<string>loadFile();
+    string loadFile(const bool&);//LoadFile and Turn it to an Object
     void saveFile(const string&);
     void saveAllToFile(const vector<vector<string>>);
     void editFile(const string&,const string&,int);
