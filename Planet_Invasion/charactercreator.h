@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <string>
 #include "player.h"
+#include "story.h"
 namespace Ui {
 class CharacterCreator;
 }
@@ -28,6 +29,9 @@ private slots:
 private:
     Ui::CharacterCreator *ui;
     std::string intro;
+    Inventory *inventory;
+    Story *storyline;
+
 
 
 };

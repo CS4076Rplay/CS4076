@@ -1,1 +1,2 @@
-Knife,Knife1,Knife is weak but it does damage,Knife.png,50,70
+Knife,WEAPON,Knife is weak but it does damage,Knife.png,50,70
+Hammer,WEAPON,Hammer does damage,Hammer.png,50,70

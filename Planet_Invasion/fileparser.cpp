@@ -91,45 +91,56 @@ vector<vector<string>>FileParser:: loadFile(int columns)
         result.push_back(vector<string>());
     vector<string>temp;
     QFile mFile(filename); cout<<path<<endl;
-    if(!mFile.open(QFile::ReadOnly|QFile::Text))
+
+    if(mFile.open(QFile::ReadOnly|QFile::Text))
     {
-       // qDebug()<<"could not find path: "<<filename<<endl;
-    }
+      // qDebug()<<"could not find path: "<<filename<<endl;
+
     QTextStream in(&mFile);
-    String s;
-    while(!mFile.atEnd())
-    {
-        QString line=in.readLine();
-        s=line.toStdString();
-        temp=split(s,delimeter);//returs vector with columns
-        /**e.g: in text.txt
-        we have:
-           hello,i,am,adam
-           what,is,our,name
-        at index 0 in temp we have hello, 1 is i...*/
-        if((int)temp.size()>=columns){
-            //if we didnt create enough columns we add the extra ones needed in order to avoid a Segmentation fault
-            int s=(int)temp.size()-columns;
-            for(int j=0;j<s;j++)
+    QString line=""; string s;
+         while(!line.isNull())
+        {
+
+            line = in.readLine();
+
+            s=line.toStdString();
+            temp=split(s,delimeter);
+            cout<<"++"<<s<<endl;
+            cout<<temp.size()<<endl;
+            if(s!="")
             {
-                result.push_back(vector<string>());
+                //returs vector with columns
+                /**e.g: in text.txt
+                we have:
+                   hello,i,am,adam
+                   what,is,our,name
+                at index 0 in temp we have hello, 1 is i...*/
+                if((int)temp.size()>=columns){
+                    //if we didnt create enough columns we add the extra ones needed in order to avoid a Segmentation fault
+                    int s=(int)temp.size()-columns;
+                    for(int j=0;j<s;j++)
+                    {
+                        cout<<"adding one more"<<endl;
+                        result.push_back(vector<string>());
+                    }
+                }
+                cout<<result.size()<<endl;
+                for(string s:temp)
+                cout<<s<<endl;
+                for(unsigned int i=0;i<result.size();i++){
+                    //add all the values we parsed into multidimensional list
+                result[i].push_back(temp[i]);
+                    for(string s:result[0])
+                    cout<<s<<endl;
+
+            }
             }
         }
-        cout<<result.size()<<endl;
-        for(string s:temp)
-        cout<<s<<endl;
-        for(unsigned int i=0;i<result.size();i++){
-            //add all the values we parsed into multidimensional list
-        result[i].push_back(temp[i]);
-            for(string s:result[0])
-            cout<<s<<endl;
 
+        mFile.close();
     }
-
-  }
-       mFile.close();
-
     return result;
+
 
 }//LoadFile and Turn it to an Object
 void FileParser::saveFile(const string& str)

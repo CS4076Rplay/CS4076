@@ -1,7 +1,7 @@
-Gooes
-SHADOWALKER
+T-REX1
+AI
 100
-30
-30
-30
-30
+75
+65
+75
+75

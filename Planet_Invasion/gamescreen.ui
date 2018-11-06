@@ -43,9 +43,22 @@
        </widget>
       </item>
       <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>TextLabel</string>
+         <string>You are in the middle of nowhere</string>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -108,7 +121,7 @@
     <item>
      <widget class="QProgressBar" name="progressBar">
       <property name="value">
-       <number>24</number>
+       <number>100</number>
       </property>
      </widget>
     </item>
@@ -120,7 +133,7 @@
      <x>0</x>
      <y>0</y>
      <width>464</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

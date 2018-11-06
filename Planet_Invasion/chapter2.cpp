@@ -3,6 +3,15 @@
 
 Chapter2::Chapter2()
 {
+
+    createRooms();
+}
+Chapter2::Chapter2( Player *player, Inventory *inventory, Story *storyline)
+
+{
+      this->player=player;
+        this->inventory=inventory;
+    this->storyline=storyline;
     createRooms();
 }
 void Chapter2::createRooms(){

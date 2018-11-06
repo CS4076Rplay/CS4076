@@ -1,2 +1,46 @@
-\bunknown voice\b: $name, get Away from there its not safe!
-You open your eyes and see smoke everywhere, You've crash landed into an unknown Area,
+You are Dead!!~
+    unknown voice: $name , stand up we need you!
+    narator : You hear a voice from the distance, it seems to be coming from up head, what do you do? ~
+    $name : I've got a strange feeling about this.
+    unkown voice :Grrr!
+    $name : What the Hell was that
+    narrator : A fireball is hurled at you,Its a weak Inferno Bloomer with Health:100 Attack: 12 Defence:0!! what will you do?
+    unknown voice : Help!~
+    $name: Is that what i think it is?
+    narrator: Ahead of you is a bright golden chest, it appears to be unopened. I wonder what kind of treasures it holds.~
+    $name : Why Did just get cold all of the sudden?
+    child $race voice: why did you abandon us $name , We needed you and you left us to die
+    $name : Whose's there...I didn't Abandon you...i'll rescue all of you!!
+    $name : Where are you going
+    female $race voice: I thought you loved me, Why did you leave me to suffer such a cruel fate
+    narrator: You turn around, a figure in the shape of your wife appears to be floating above you, it's her GHOST
+    $name : What sort of madness is this, Aliea is that you? darling i do love you, please stop this..All of you stop , i'll fix everything
+    narrator: You fall to your knees with fear, *GROAN* Darkness Surrounds you. it appears a Shadow Doomer has been behing all the terror that was inflicted upon you
+    $name : YOU WILL SUFFER FOR THIS!!!~
+    narrator: Hey, look it's A treasure chest, wonder what's inside~
+    narrator: ahead of you is an Inferno Doomer, Be Carefull it's quite Strong.
+    $name : Just how many of you guys are here?? ~
+    unknown voice: *aaargh* help me! ~
+    evil voice: DIE!!
+    narrator: An Inferno Doomer hurls towards you with incredible speed, careful its a fast one
+    narrator: Destroy it and take the chest behind it~
+    unknown voice: please don't kill me.
+    narrator:that voice seems to be louder now i wonder who it is?
+    $name : Who is that? hang in there i'm almost there
+    ~evil voice: You must die!!
+    narrator: Wow she looks very strong, this will be a tough battle
+    evil voice: I will obleterate you...
+    narator: An inferno doomer covered in flames approaches you with fury in her eyes
+    unknown voice: who's there? Help me please!
+    ~narator : You walk into a room, ahead of you is a Familiar face, the room seem to only occupy this person
+    $name : No it can't be? AIDEN? is that you?
+    Aiden: Dad? DAAAAAD, Please help me, i don't want to die
+    narator: You Run Towards him and hug him tight, the voice appears to have been your son's, he has been captured by an Inferno Doomer.
+    Aiden: Dad We need to go now before it comes back!!!
+    narrator: You start you free your son, Out from behing you, you hear a growl
+    INFERN: Who Dare touches the Great INFERN's meal...
+    $name : Aiden Run..i'll take care of this, MY SON IS NOT YOU MEAL!!!
+    narator: You rush towards the doomer with destruction in your eyes, This one is Different from the rest, Careful!
+
+
+

@@ -53,6 +53,11 @@ void InventoryUI::saveToInventory(T& item)
         KeyItem k=(KeyItem)item;
         keys.push_back(k);
     }
+    else if(it.getId()=="HP")
+    {
+        Hp h=(Hp)item;
+        hps.push_back(h);
+    }
 }
 void InventoryUI::MOUSE_CLICKED()
 {
@@ -70,8 +75,8 @@ InventoryUI::InventoryUI(QWidget *parent) :
     ui(new Ui::InventoryUI)
 {
     ui->setupUi(this);
-
-    loadTemporaryInfo(&weapons);
+    //loadTemporaryInfo(&weapons);
+    setupInventory();
      cout<<"HERE"<<endl;
     ClickableQLabel *label[9];
     for(int i=0;i<9;i++)
@@ -187,42 +192,64 @@ InventoryUI::InventoryUI(QWidget *parent) :
 
 void InventoryUI::setupInventory()
 {
-
-    FileParser *inventoryfile =new FileParser("E:/qProjects/AlienInvasion/CS4076/Planet_Invasion/inventory.txt",',');
-    vector<vector<string>> inventoryElements= inventoryfile->loadFile(6);//name,id,desc,url,power,speed
-    for(unsigned int i=0;i<inventoryElements.size();i++)
+    vector<vector<string>> inventoryInfo;
+    for(int i=0;i<6;i++)
+    inventoryInfo.push_back(vector<string>());
+    //Knife,Knife1,Knife is weak but it does damage,Knife.png,50,70
+    for(unsigned int i=0;i<inventoryInfo.size();i++)
+    cout<<i<<endl;
+       inventoryInfo[0].push_back("Knife");
+    inventoryInfo[1].push_back("WEAPON");
+    inventoryInfo[2].push_back("Knife is Weak but it does Damage");
+    inventoryInfo[3].push_back("Knife.png");
+    inventoryInfo[4].push_back("50");
+    inventoryInfo[5].push_back("70");
+    cout<<"fdfg"<<endl;
+    for(unsigned int i=0;i<inventoryInfo[0].size();i++)
     {
-
-            if(inventoryElements[i][1]=="WEAPON")
-            {
-                Weapon w(stoi(inventoryElements[i][4]),stoi(inventoryElements[i][5]));
-                w.setName(inventoryElements[i][0]);
-                w.setId(inventoryElements[i][1]);
-                w.setDescription(inventoryElements[i][2]);
-                w.setUrl(":Images/"+inventoryElements[i][3]);
-
-               weapons.push_back(w);
-            }
-            else  if(inventoryElements[i][1]=="KEY")
-            {
-                KeyItem k(inventoryElements[i][4]);
-                k.setName(inventoryElements[i][0]);
-                k.setId(inventoryElements[i][1]);
-                k.setDescription(inventoryElements[i][2]);
-                k.setUrl(":Images/"+inventoryElements[i][3]);
-
-               keys.push_back(k);
-            }
-
-
+        Item *item=new Item(inventoryInfo[0][i],inventoryInfo[1][i],inventoryInfo[2][i],inventoryInfo[3][i]);
+        inventory->addItem(*item);
+        if(inventoryInfo[1][i]=="WEAPON")
+        {
+            Weapon *weapon=new Weapon(stoi(inventoryInfo[4][i]),stoi(inventoryInfo[5][i]));
+            weapon->setName(inventoryInfo[0][i]);
+            weapon->setId(inventoryInfo[1][i]);
+            weapon->setDescription(inventoryInfo[2][i]);
+            weapon->setUrl(inventoryInfo[3][i]);
+            inventory->addWeapon(weapon);
+        }
+        if(inventoryInfo[1][i]=="HP")
+        {
+            Hp *hp=new Hp(stoi(inventoryInfo[4][i]));
+            hp->setName(inventoryInfo[0][i]);
+            hp->setId(inventoryInfo[1][i]);
+            hp->setDescription(inventoryInfo[2][i]);
+            hp->setUrl(inventoryInfo[3][i]);
+            inventory->addHp(hp);
+        }
+        for(Weapon w: inventory->getWeapons())
+        {
+            cout<<w.getName();
+        }
     }
-    for(Weapon w:weapons)
-    {
-        cout<<w.toString()<<endl;
-    }
+    cout<<"setting up inventory"<<endl;
+    cout<<inventory->getWeapons().size()<<endl;
+   for(Weapon w:inventory->getWeapons())
+   {
+       cout<<w.getName()<<endl;
+       weapons.push_back(w);
+   }
+   for(Hp h:inventory->getHp())
+   {
+       hps.push_back(h);
+   }
+
 }
 
-
+void InventoryUI::setInventory(Inventory* inventory)
+{
+    this->inventory=inventory;
+}
 InventoryUI::~InventoryUI()
 {
     delete ui;

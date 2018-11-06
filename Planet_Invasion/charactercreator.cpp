@@ -5,10 +5,12 @@
 #include "intro.h"
 #include <iostream>
 
+
 CharacterCreator::CharacterCreator(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CharacterCreator)
 {
+
     ui->setupUi(this);
 }
 
@@ -136,9 +138,11 @@ void CharacterCreator::on_pushButton_clicked()
 
     hide();
     cout<<"@CS\n"<<uname<<endl;
-    Intro *intro=new Intro(this);
-    intro->intro=this->intro;
-    intro->name=uname;
-    intro->race=r;
+    Story().replace_all(intro,"$name",uname);
+    Story().replace_all(intro,"$race",r);
+    Intro *intro=new Intro(this,this->intro,player);
+    intro->setInventory(inventory);
+    intro->setStoryLine(storyline);
+   intro->setIntro(this->intro);
     intro->show();
 }

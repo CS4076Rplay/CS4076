@@ -2,37 +2,14 @@
 #include "ui_intro.h"
 #include <QDebug>
 #include "fileparser.h"
+#include "gamescreen.h"
 
-bool replace(std::string& str, const std::string& from, const std::string& to) {
-    size_t start_pos = str.find(from);
-    if(start_pos == std::string::npos)
-        return false;
-    str.replace(start_pos, from.length(), to);
-    return true;
-}
-
-bool contains(std::string& str,const std::string& find)
-{
-    std::vector<string> strAsList=FileParser().split(str,' ');
-    for(string s:strAsList)
-    {
-        if(s==find)return true;
-    }
-    return false;
-}
-void replace_all(std::string& str, const std::string& from, const std::string& to)
-{
-   if(contains(str,from))
-      {
-        replace(str,from,to);
-        replace_all(str,from,to);
-      }
-}
-
-Intro::Intro(QWidget *parent) :
+Intro::Intro(QWidget *parent,string intro,Player *player) :
     QDialog(parent),
     ui(new Ui::Intro)
 {
+    this->intro=intro;
+    this->player=player;
     ui->setupUi(this);
     QPixmap pix(":/Images/Characters/earth1.jpg");
     ui->introPic->setPixmap(pix.scaled(300,300,Qt::KeepAspectRatio));
@@ -40,17 +17,36 @@ Intro::Intro(QWidget *parent) :
     QPixmap pix1(":/Images/Characters/planetx.jpg");
     ui->introimg2->setPixmap(pix1.scaled(300,300,Qt::KeepAspectRatio));
    // printf("@Intrp\n%s",intro);
-    intro=FileParser(":/Story/intro.txt").loadFile(true);
-  name="Haley";
-  race="SHADOWALKER";
+    //intro=FileParser(":/Story/intro.txt").loadFile(true);
+  //name="Haley";
+  //race="SHADOWALKER";
   cout<<"$"<<race<<endl;
-    replace_all(intro,"$name",name);
-    replace_all(intro,"$race",race);
+
 
     ui->introlbl->setText(QString::fromStdString(intro));
+}
+
+void Intro::setStoryLine(Story *storyline)
+{
+    this->storyline=storyline;
+}
+void Intro::setInventory( Inventory *inventory)
+{
+    this->inventory=inventory;
+}
+void Intro::setIntro(const string& intro)
+{
+    this->intro=intro;
 }
 
 Intro::~Intro()
 {
     delete ui;
+}
+
+void Intro::on_pushButton_clicked()
+{
+    hide();
+   GameScreen *newG =  new GameScreen("chapter1", this,storyline,player,inventory);
+    newG -> show();
 }

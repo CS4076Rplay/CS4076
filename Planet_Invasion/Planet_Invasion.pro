@@ -42,7 +42,12 @@ SOURCES += \
     chapter.cpp \
     chapter1.cpp \
     chapter2.cpp \
-    room.cpp
+    room.cpp \
+    story.cpp \
+    s_chapter.cpp \
+    enemy.cpp \
+    battle.cpp \
+    hp.cpp
 
 
 
@@ -64,7 +69,12 @@ HEADERS += \
     chapter.h \
     chapter1.h \
     chapter2.h \
-    room.h
+    room.h \
+    story.h \
+    s_chapter.h \
+    enemy.h \
+    battle.h \
+    hp.h
 
 
 FORMS += \

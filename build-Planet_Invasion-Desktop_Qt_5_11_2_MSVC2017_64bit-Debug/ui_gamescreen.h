@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -33,14 +34,15 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton;
     QHBoxLayout *horizontalLayout_10;
-    QLabel *label_2;
+    QLabel *description;
+    QFrame *line;
     QLabel *label;
     QHBoxLayout *horizontalLayout_6;
     QGridLayout *gridLayout;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_6;
+    QPushButton *south;
+    QPushButton *north;
+    QPushButton *east;
+    QPushButton *west;
     QHBoxLayout *horizontalLayout_9;
     QPushButton *pushButton_8;
     QPushButton *pushButton_7;
@@ -74,13 +76,22 @@ public:
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName(QStringLiteral("label_2"));
+        description = new QLabel(centralwidget);
+        description->setObjectName(QStringLiteral("description"));
 
-        horizontalLayout_10->addWidget(label_2);
+        horizontalLayout_10->addWidget(description);
+
+        line = new QFrame(centralwidget);
+        line->setObjectName(QStringLiteral("line"));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        horizontalLayout_10->addWidget(line);
 
         label = new QLabel(centralwidget);
         label->setObjectName(QStringLiteral("label"));
+        label->setScaledContents(true);
+        label->setWordWrap(true);
 
         horizontalLayout_10->addWidget(label);
 
@@ -91,25 +102,25 @@ public:
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        south = new QPushButton(centralwidget);
+        south->setObjectName(QStringLiteral("south"));
 
-        gridLayout->addWidget(pushButton_3, 1, 0, 1, 1);
+        gridLayout->addWidget(south, 1, 0, 1, 1);
 
-        pushButton_4 = new QPushButton(centralwidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        north = new QPushButton(centralwidget);
+        north->setObjectName(QStringLiteral("north"));
 
-        gridLayout->addWidget(pushButton_4, 0, 0, 1, 1);
+        gridLayout->addWidget(north, 0, 0, 1, 1);
 
-        pushButton_5 = new QPushButton(centralwidget);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        east = new QPushButton(centralwidget);
+        east->setObjectName(QStringLiteral("east"));
 
-        gridLayout->addWidget(pushButton_5, 1, 1, 1, 1);
+        gridLayout->addWidget(east, 1, 1, 1, 1);
 
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        west = new QPushButton(centralwidget);
+        west->setObjectName(QStringLiteral("west"));
 
-        gridLayout->addWidget(pushButton_6, 0, 1, 1, 1);
+        gridLayout->addWidget(west, 0, 1, 1, 1);
 
 
         horizontalLayout_6->addLayout(gridLayout);
@@ -134,14 +145,14 @@ public:
 
         progressBar = new QProgressBar(centralwidget);
         progressBar->setObjectName(QStringLiteral("progressBar"));
-        progressBar->setValue(24);
+        progressBar->setValue(100);
 
         verticalLayout->addWidget(progressBar);
 
         GameScreen->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GameScreen);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 464, 21));
+        menubar->setGeometry(QRect(0, 0, 464, 26));
         GameScreen->setMenuBar(menubar);
         toolBar = new QToolBar(GameScreen);
         toolBar->setObjectName(QStringLiteral("toolBar"));
@@ -157,12 +168,12 @@ public:
         GameScreen->setWindowTitle(QApplication::translate("GameScreen", "MainWindow", nullptr));
         pushButton_2->setText(QApplication::translate("GameScreen", "Inventory", nullptr));
         pushButton->setText(QApplication::translate("GameScreen", "Options", nullptr));
-        label_2->setText(QApplication::translate("GameScreen", "TextLabel", nullptr));
-        label->setText(QApplication::translate("GameScreen", "TextLabel", nullptr));
-        pushButton_3->setText(QApplication::translate("GameScreen", "South", nullptr));
-        pushButton_4->setText(QApplication::translate("GameScreen", "North", nullptr));
-        pushButton_5->setText(QApplication::translate("GameScreen", "East", nullptr));
-        pushButton_6->setText(QApplication::translate("GameScreen", "West", nullptr));
+        description->setText(QApplication::translate("GameScreen", "TextLabel", nullptr));
+        label->setText(QApplication::translate("GameScreen", "You are in the middle of nowhere", nullptr));
+        south->setText(QApplication::translate("GameScreen", "South", nullptr));
+        north->setText(QApplication::translate("GameScreen", "North", nullptr));
+        east->setText(QApplication::translate("GameScreen", "East", nullptr));
+        west->setText(QApplication::translate("GameScreen", "West", nullptr));
         pushButton_8->setText(QApplication::translate("GameScreen", "Attack", nullptr));
         pushButton_7->setText(QApplication::translate("GameScreen", "Defence", nullptr));
         toolBar->setWindowTitle(QApplication::translate("GameScreen", "toolBar", nullptr));

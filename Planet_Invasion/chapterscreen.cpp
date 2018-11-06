@@ -25,7 +25,7 @@ ChapterScreen::ChapterScreen(QWidget *parent) :
 }
 
 void ChapterScreen::handlebutton1(){
-    game  = new GameScreen("chapter1", this);
+    game  = new GameScreen("chapter1", this,storyline,player,inventory);
     game->show();
     hide();
     /**InventoryUI inventory;
@@ -34,7 +34,7 @@ void ChapterScreen::handlebutton1(){
 }
 
 void ChapterScreen::handlebutton2(){
-   game  = new GameScreen("chapter2", this);
+   game  = new GameScreen("chapter2", this,storyline,player,inventory);
    game->show();
    hide();
 }

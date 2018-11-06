@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "chapterscreen.h"
 #include "player.h"
+#include "story.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +27,9 @@ private:
     ChapterScreen *chapter;
     Player *player;
     string intro;
+    Inventory *inventory;
+    Story *storyline;
+
 };
 
 #endif // MAINWINDOW_H

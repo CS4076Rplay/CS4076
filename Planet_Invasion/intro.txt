@@ -6,5 +6,5 @@ Inferno Doomers are the definition of hell spawns, one Touch from the lava spit 
 A Scientist By The name of HARATO ATSUKO Discovered a cure, but has been captured.
 Inferno Doomers destroyed a few of the $race race and infected the rest.
 From the ashes of the $race race $name is aflicted with finding this cure in order save the $race race.
-$name : "They will pay each an every one of them ";
-narator: You look around and are surrounded by darkness, the ashes of your clan is underneath you feet
+ $name : "They will pay each an every one of them ";
+ narator: You look around and are surrounded by darkness, the ashes of your clan is underneath you feet
