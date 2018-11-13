@@ -13,7 +13,7 @@ private:
     bool boss;
  public:
     Enemy();
-    Enemy(int&,const int&,const int&,const int&,const DOOMER&,const bool);
+    Enemy(int,const int&,const int&,const int&,const DOOMER&,const bool);
     void setHealth(int);
     int getHealth();
     int getDefence();

@@ -36,6 +36,14 @@ void MainWindow::setupFiles()
             stoi(playerInfo[4]),stoi(playerInfo[5]),stoi(playerInfo[6]));
     }
 
+    if(player!=nullptr)
+    switch(player->getRaceType())
+    {
+    case SHADOWALKER:{player->setBoost(5);player->setAbility("invisibility");}break;
+    case AI:{player->setBoost(60);player->setAbility("Atomic Destruction");}break;
+    case KNIGHT:{player->setBoost(25);player->setAbility("Last Stand");}break;
+    case MOONMAGE:{player->setBoost(25);player->setAbility("Heal");}break;
+    }
     //loadIntro
     FileParser *introFile=new FileParser(":/Story/intro.txt");
     intro=introFile->loadFile(true);
@@ -54,7 +62,7 @@ void MainWindow::setupFiles()
     inventory=new Inventory();
    // FileParser *inventoryFile=new FileParser(":Story/inventory.txt",',');//problem loading from file
     vector<vector<string>> inventoryInfo;
-    for(int i=0;i<6;i++)
+    for(int i=0;i<7;i++)
     inventoryInfo.push_back(vector<string>());
     //Knife,Knife1,Knife is weak but it does damage,Knife.png,50,70
     for(unsigned int i=0;i<inventoryInfo.size();i++)
@@ -63,8 +71,35 @@ void MainWindow::setupFiles()
     inventoryInfo[1].push_back("WEAPON");
     inventoryInfo[2].push_back("Knife is Weak but it does Damage");
     inventoryInfo[3].push_back("Knife.png");
-    inventoryInfo[4].push_back("50");
-    inventoryInfo[5].push_back("70");
+    inventoryInfo[4].push_back("5");
+    inventoryInfo[5].push_back("7");
+    inventoryInfo[6].push_back("knife.wav");
+
+    inventoryInfo[0].push_back("Hammer");
+ inventoryInfo[1].push_back("WEAPON");
+ inventoryInfo[2].push_back("Hammer does Damage");
+ inventoryInfo[3].push_back("Hammer.png");
+ inventoryInfo[4].push_back("10");
+ inventoryInfo[5].push_back("2");
+   inventoryInfo[6].push_back("bash.wav");
+
+ inventoryInfo[0].push_back("25HP");
+inventoryInfo[1].push_back("HP");
+inventoryInfo[2].push_back("Adds 25 more health to your current health");
+inventoryInfo[3].push_back("25h.png");
+inventoryInfo[4].push_back("25");
+inventoryInfo[5].push_back("0");
+  inventoryInfo[6].push_back("smallGulp.wav");
+
+inventoryInfo[0].push_back("100HP");
+inventoryInfo[1].push_back("HP");
+inventoryInfo[2].push_back("Adds 100 more health to your current health");
+inventoryInfo[3].push_back("100h.png");
+inventoryInfo[4].push_back("100");
+inventoryInfo[5].push_back("0");
+  inventoryInfo[6].push_back("largeGulp.wav");
+
+
     cout<<"fdfg"<<endl;
     for(unsigned int i=0;i<inventoryInfo[0].size();i++)
     {
@@ -77,7 +112,9 @@ void MainWindow::setupFiles()
             weapon->setId(inventoryInfo[1][i]);
             weapon->setDescription(inventoryInfo[2][i]);
             weapon->setUrl(inventoryInfo[3][i]);
+            weapon->setSoundUrl(inventoryInfo[6][i]);
             inventory->addWeapon(weapon);
+
         }
         if(inventoryInfo[1][i]=="HP")
         {
@@ -86,6 +123,7 @@ void MainWindow::setupFiles()
             hp->setId(inventoryInfo[1][i]);
             hp->setDescription(inventoryInfo[2][i]);
             hp->setUrl(inventoryInfo[3][i]);
+            hp->setSoundUrl(inventoryInfo[6][i]);
             inventory->addHp(hp);
         }
         for(Weapon w: inventory->getWeapons())

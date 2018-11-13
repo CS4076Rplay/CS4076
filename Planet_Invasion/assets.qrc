@@ -16,6 +16,17 @@
         <file>Mage1.png</file>
         <file>earth1.jpg</file>
         <file>planetx.jpg</file>
+        <file>25h.png</file>
+        <file>50h.png</file>
+        <file>100h.png</file>
+        <file>room0.png</file>
+        <file>_infern.png</file>
+        <file>_infern_guardian.png</file>
+        <file>i_doomer.png</file>
+        <file>treasure.jpg</file>
+        <file>morgana.png</file>
+        <file>morgana_Guardian.png</file>
+        <file>shadwDoomer.png</file>
     </qresource>
     <qresource prefix="/Story">
         <file>chapter1.txt</file>
@@ -28,5 +39,28 @@
         <file>player.txt</file>
         <file>story.txt</file>
         <file>inventory.txt</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>_infern.png</file>
+        <file>_infern_guardian.png</file>
+        <file>i_doomer.png</file>
+        <file>treasure.jpg</file>
+    </qresource>
+    <qresource prefix="/Sounds">
+        <file>infernoDommer.wav</file>
+        <file>knife.wav</file>
+        <file>meele.flac</file>
+        <file>sword.mp3</file>
+        <file>largeGulp.wav</file>
+        <file>smallGulp.wav</file>
+        <file>bash.wav</file>
+        <file>iD1.wav</file>
+        <file>iD2.wav</file>
+        <file>ai_ouch.wav</file>
+        <file>m_hurt.wav</file>
+        <file>sw_death.wav</file>
+        <file>sw_ouch.wav</file>
+        <file>destroyed.wav</file>
+        <file>blocked.wav</file>
     </qresource>
 </RCC>

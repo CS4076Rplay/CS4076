@@ -1,7 +1,8 @@
 #include "room.h"
-#
-Room::Room(string description){
+#include <iostream>
+Room::Room(string description,string roomImg){
 this->description = description;
+this->roomImg=roomImg;
 }
 
 void Room::setExits(Room *north, Room *east, Room *south, Room *west){
@@ -29,8 +30,54 @@ Room* Room::nextRoom(string direction) {
     return next->second; // If there is a room, remove the "second" (Room*)
                 // part of the "pair" (<string, Room*>) and return it.
 }
+void Room::addEnemy(Enemy *enemy)
+{
+    this->enemy=enemy;
+
+}
+void Room::removeEnemy()
+{
+    enemy=nullptr;
+    roomImg="clearRoom.png";
+
+}
+Enemy* Room::getEnemy()
+{
+    return enemy;
+}
+Weapon*  Room::getWeapon()
+{
+    return weapon;
+}
+
+void  Room::addWeapon(Weapon* weapon)
+{
+    this->weapon=weapon;
+}
+void  Room::removeWeapon()
+{
+
+    weapon=nullptr;
+}
+
+Hp*  Room::getHp()
+{
+    return hp;
+}
+void  Room::addHp(Hp* hp)
+{
+    this->hp=hp;
+}
+void  Room::removeHp()
+{
+    hp=nullptr;
+}
 
 string Room::getDescription(){
     return description;
+}
+string Room::getImg()
+{
+    return roomImg;
 }
 

@@ -51,7 +51,7 @@ vector<string> FileParser::loadFile()
             line = in.readLine();
 
             s=line.toStdString();
-            cout<<"++"<<s<<endl;
+
             if(s!="")
             result.push_back(s);
         }
@@ -105,8 +105,7 @@ vector<vector<string>>FileParser:: loadFile(int columns)
 
             s=line.toStdString();
             temp=split(s,delimeter);
-            cout<<"++"<<s<<endl;
-            cout<<temp.size()<<endl;
+
             if(s!="")
             {
                 //returs vector with columns

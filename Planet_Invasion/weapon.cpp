@@ -25,3 +25,4 @@ void Weapon::setPower(const int& pwr)
 {
     power=pwr;
 }
+

@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui widgets
+QT       += core gui multimedia
+greaterThan(QT_MAJOR_VERSION, 4):QT +=widgets
 
 TARGET = Planet_Invasion
 TEMPLATE = app
@@ -22,7 +23,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 CONFIG += c++11
-
+CONFIG += resources_big
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
@@ -47,7 +48,8 @@ SOURCES += \
     s_chapter.cpp \
     enemy.cpp \
     battle.cpp \
-    hp.cpp
+    hp.cpp \
+    gamesscreenthread.cpp
 
 
 
@@ -74,7 +76,8 @@ HEADERS += \
     s_chapter.h \
     enemy.h \
     battle.h \
-    hp.h
+    hp.h \
+    gamesscreenthread.h
 
 
 FORMS += \

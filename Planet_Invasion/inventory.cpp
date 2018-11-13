@@ -16,6 +16,14 @@ void Inventory::setItems(vector<Item>& items)
 {
     this -> items=items;
 }
+void Inventory::setWeapons(vector<Weapon> weapons)
+{
+    this -> weapons=weapons;
+}
+void Inventory::setHps(vector<Hp> hps)
+{
+    this -> potions=hps;
+}
 vector<Weapon> Inventory::getWeapons()
 {
     return  weapons;

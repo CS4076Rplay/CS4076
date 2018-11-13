@@ -4,10 +4,16 @@
 void Chapter::goRoom(const string& direction) {
     Room* nextRoom = currentRoom->nextRoom(direction);
 
-    currentRoom = nextRoom;
+    if(nextRoom!=nullptr)currentRoom = nextRoom;
 }
 
 string Chapter::getDescription(){
     return currentRoom->getDescription();
 }
+string Chapter::getImage()
+{
+    return currentRoom->getImg();
+}
 
+Chapter::~Chapter()
+{}

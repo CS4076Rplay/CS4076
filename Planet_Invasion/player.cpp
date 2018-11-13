@@ -32,59 +32,24 @@ string Player::getName()
 }
 int Player::getHealth()
 {
-    switch(raceType)
-    {
-        case SHADOWALKER:return health+10;
-        case MOONMAGE:return health+5;
-        case KNIGHT:return health+45;
-        case AI:return health+12;
 
-    }
-    return 0;
+    return health;
 }
 int Player::getAttack()
 {
-    switch(raceType)
-    {
-        case SHADOWALKER:return attack+10;
-        case MOONMAGE:return attack+5;
-        case KNIGHT:return attack+45;
-        case AI:return attack+12;
-
-    } return 0;
+    return attack;
 }
 int Player::getDefence()
 {
-    switch(raceType)
-    {
-        case SHADOWALKER:return defence+35;
-        case MOONMAGE:return defence+15;
-        case KNIGHT:return defence+30;
-        case AI:return defence+25;
-   // default:return defence;
-    } return 0;
+    return defence;
 }
 int Player::getSpeed()
 {
-    switch(raceType)
-    {
-        case SHADOWALKER:return speed+40;
-        case MOONMAGE:return speed+26;
-        case KNIGHT:return speed+10;
-        case AI:return speed+30;
-   // default:return speed;
-    } return 0;
+    return speed;
 }
 int Player::getintelligence()
 {
-    switch(raceType)
-    {
-        case SHADOWALKER:return intelligence+20;
-        case MOONMAGE:return intelligence+40;
-        case KNIGHT:return intelligence+10;
-        case AI:return intelligence+40;
-    //default:return intelligence;
-    } return 0;
+    return intelligence;
 }
 
 //setters

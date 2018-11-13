@@ -10,6 +10,7 @@ protected:
     string id;
     string description;
     string url;
+    string soundUrl;
 public:
     Item();
     Item(const string&,const string&,const string&,const string&);
@@ -19,11 +20,14 @@ public:
     string getId();
     string getDescription();
     string getUrl();
+    string getSoundUrl();
+
     //setters
     void setName(const string&);
     void setId(const string&);
     void setDescription(const string&);
     void setUrl(const string&);
+    void setSoundUrl(const string&);
     string toString()
     {
         return (name)+","+(id)+","+(description)+","+(url);

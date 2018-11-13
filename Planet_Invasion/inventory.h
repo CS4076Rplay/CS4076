@@ -22,6 +22,9 @@ public:
     void addHp(Hp*);
     void addItem(const Item& item);
     void setItems(vector<Item>&);
+    void setWeapons(vector<Weapon>);
+    void setHps(vector<Hp>);
+
 
 };
 

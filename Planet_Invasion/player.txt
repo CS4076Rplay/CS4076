@@ -1,7 +1,7 @@
-T-REX1
-AI
+Eilean
+SHADOWALKER
 100
-75
+55
+80
+85
 65
-75
-75

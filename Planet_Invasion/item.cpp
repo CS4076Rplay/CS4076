@@ -37,7 +37,14 @@ void Item::setUrl(const string& u)
 {
     url=u;
 }
-
+void Item::setSoundUrl(const string& soundUrl)
+{
+    this->soundUrl=soundUrl;
+}
+string Item::getSoundUrl()
+{
+    return soundUrl;
+}
 Item::Item(const string& n,const string& i,const string& desc,const string& u)
 {
     name=n;

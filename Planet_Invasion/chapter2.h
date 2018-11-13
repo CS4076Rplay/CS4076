@@ -16,6 +16,7 @@ private:
 public:
     Chapter2();
     Chapter2( Player*, Inventory*, Story*);
+    Room* resetRoom();
 };
 
 #endif // CHAPTER2_H

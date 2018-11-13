@@ -47,6 +47,16 @@ Intro::~Intro()
 void Intro::on_pushButton_clicked()
 {
     hide();
-   GameScreen *newG =  new GameScreen("chapter1", this,storyline,player,inventory);
+    Weapon cW;
+     Weapon *tempWeapon=new Weapon(50,50);
+     tempWeapon->setName("Hammer of Sorrow");
+     tempWeapon->setDescription("weapon once held by Zeldon before he lost his entire family");
+     tempWeapon->setId("WEAPON");
+     tempWeapon->setUrl("Hammer.png");
+
+
+    inventory->getWeapons().size()>0?cW=inventory->getWeapons()[0]:cW=*tempWeapon;
+
+    GameScreen* newG  = new GameScreen("chapter1", this,storyline,player,inventory,&cW);
     newG -> show();
 }

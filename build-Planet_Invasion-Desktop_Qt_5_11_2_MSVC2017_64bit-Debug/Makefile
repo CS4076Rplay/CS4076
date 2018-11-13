@@ -264,8 +264,10 @@ Makefile: ..\Planet_Invasion\Planet_Invasion.pro ..\..\..\..\Qt\5.11.2\msvc2017_
 		..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\lex.prf \
 		..\Planet_Invasion\Planet_Invasion.pro \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\lib\qtmaind.prl \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Multimedia.prl \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Widgets.prl \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Gui.prl \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Network.prl \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Core.prl
 	$(QMAKE) -o Makefile ..\Planet_Invasion\Planet_Invasion.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
 ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\spec_pre.prf:
@@ -457,8 +459,10 @@ Makefile: ..\Planet_Invasion\Planet_Invasion.pro ..\..\..\..\Qt\5.11.2\msvc2017_
 ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\lex.prf:
 ..\Planet_Invasion\Planet_Invasion.pro:
 ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\qtmaind.prl:
+..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Multimedia.prl:
 ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Widgets.prl:
 ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Gui.prl:
+..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Network.prl:
 ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Planet_Invasion\Planet_Invasion.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"

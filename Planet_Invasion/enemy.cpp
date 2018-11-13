@@ -9,7 +9,7 @@ Enemy::Enemy()
     this->doomer=INFERNO;
     this->boss=false;
 }
-Enemy::Enemy(int& health,const int& strength,const int& defence,const int& speed,const DOOMER& doomer,const bool boss)
+Enemy::Enemy(int health,const int& strength,const int& defence,const int& speed,const DOOMER& doomer,const bool boss)
 {
     this->health=health;
     this->strength=strength;

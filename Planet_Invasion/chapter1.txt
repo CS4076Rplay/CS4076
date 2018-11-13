@@ -8,15 +8,8 @@ You are Dead!!~
     unknown voice : Help!~
     $name: Is that what i think it is?
     narrator: Ahead of you is a bright golden chest, it appears to be unopened. I wonder what kind of treasures it holds.~
-    $name : Why Did just get cold all of the sudden?
-    child $race voice: why did you abandon us $name , We needed you and you left us to die
-    $name : Whose's there...I didn't Abandon you...i'll rescue all of you!!
-    $name : Where are you going
-    female $race voice: I thought you loved me, Why did you leave me to suffer such a cruel fate
-    narrator: You turn around, a figure in the shape of your wife appears to be floating above you, it's her GHOST
-    $name : What sort of madness is this, Aliea is that you? darling i do love you, please stop this..All of you stop , i'll fix everything
-    narrator: You fall to your knees with fear, *GROAN* Darkness Surrounds you. it appears a Shadow Doomer has been behing all the terror that was inflicted upon you
-    $name : YOU WILL SUFFER FOR THIS!!!~
+   $name : i'm getting Tired of you guys!
+   narrator: Another Inferno Doomer just appeared~
     narrator: Hey, look it's A treasure chest, wonder what's inside~
     narrator: ahead of you is an Inferno Doomer, Be Carefull it's quite Strong.
     $name : Just how many of you guys are here?? ~
