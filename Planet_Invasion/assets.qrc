@@ -27,6 +27,11 @@
         <file>morgana.png</file>
         <file>morgana_Guardian.png</file>
         <file>shadwDoomer.png</file>
+        <file>treasure.png</file>
+        <file>ai_ic.png</file>
+        <file>k_ic.png</file>
+        <file>mage_ic.png</file>
+        <file>sw_ic.png</file>
     </qresource>
     <qresource prefix="/Story">
         <file>chapter1.txt</file>
@@ -45,6 +50,16 @@
         <file>_infern_guardian.png</file>
         <file>i_doomer.png</file>
         <file>treasure.jpg</file>
+        <file>bg.png</file>
+        <file>bg1.png</file>
+        <file>inventory.png</file>
+        <file>attack-icon-3.jpg.png</file>
+        <file>attack-icon-13.jpg.png</file>
+        <file>ch3_copy.png</file>
+        <file>ch1.png</file>
+        <file>ch2.png</file>
+        <file>ch3.png</file>
+        <file>stm.mp3</file>
     </qresource>
     <qresource prefix="/Sounds">
         <file>infernoDommer.wav</file>
@@ -62,5 +77,6 @@
         <file>sw_ouch.wav</file>
         <file>destroyed.wav</file>
         <file>blocked.wav</file>
+        <file>st.wav</file>
     </qresource>
 </RCC>

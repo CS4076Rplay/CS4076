@@ -6,473 +6,682 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>525</width>
-    <height>369</height>
+    <width>545</width>
+    <height>394</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="4">
-    <widget class="Line" name="line">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="5">
-    <layout class="QVBoxLayout" name="potion_slot3">
-     <item>
-      <widget class="QPushButton" name="drink3">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Drink</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="5">
-    <layout class="QVBoxLayout" name="potion_slot1">
-     <item>
-      <widget class="QPushButton" name="drink1">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Drink</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="0">
-    <layout class="QVBoxLayout" name="slot4">
-     <item>
-      <widget class="QPushButton" name="use_s4">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>USE</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="3" column="0" colspan="3">
-    <layout class="QHBoxLayout" name="aboutWeapon">
-     <property name="spacing">
-      <number>15</number>
-     </property>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="currentItemImg">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="currentItemDesc">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QLabel" name="currentWeaponLabel">
-         <property name="text">
-          <string>WeaponName</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="weaponPower">
-           <property name="text">
-            <string>POWER</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QProgressBar" name="progressBar">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="value">
-            <number>80</number>
-           </property>
-           <property name="textVisible">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="weaponSpeed">
-           <property name="text">
-            <string>SPEED</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QProgressBar" name="progressBar_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="value">
-            <number>24</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="1">
-    <layout class="QVBoxLayout" name="slot5">
-     <item>
-      <widget class="QPushButton" name="use_s5">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>USE</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="1">
-    <layout class="QVBoxLayout" name="slot2">
-     <item>
-      <widget class="QPushButton" name="use_s2">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>USE</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="0">
-    <layout class="QVBoxLayout" name="slot1">
-     <property name="leftMargin">
-      <number>0</number>
-     </property>
-     <property name="topMargin">
-      <number>0</number>
-     </property>
-     <property name="rightMargin">
-      <number>0</number>
-     </property>
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-     <item>
-      <widget class="QPushButton" name="use_s1">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>USE</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="2">
-    <layout class="QVBoxLayout" name="slot6">
-     <item>
-      <widget class="QPushButton" name="use_s6">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>USE</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="1">
-    <layout class="QVBoxLayout" name="slot8">
-     <item>
-      <widget class="QPushButton" name="use_s8">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>USE</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="2">
-    <layout class="QVBoxLayout" name="slot9">
-     <item>
-      <widget class="QPushButton" name="use_s9">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>USE</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="0">
-    <layout class="QVBoxLayout" name="slot7">
-     <item>
-      <widget class="QPushButton" name="use_s7">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>USE</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="2">
-    <layout class="QVBoxLayout" name="slot3">
-     <item>
-      <widget class="QPushButton" name="use_s3">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>USE</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="4">
-    <widget class="Line" name="line_3">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="4">
-    <widget class="Line" name="line_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="5">
-    <layout class="QVBoxLayout" name="potion_slot5">
-     <item>
-      <widget class="QPushButton" name="drink5">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Drink</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="6">
-    <layout class="QVBoxLayout" name="potion_slot6">
-     <item>
-      <widget class="QPushButton" name="drink6">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Drink</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="6">
-    <layout class="QVBoxLayout" name="potion_slot2">
-     <item>
-      <widget class="QPushButton" name="drink2">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Drink</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="6">
-    <layout class="QVBoxLayout" name="potion_slot4">
-     <item>
-      <widget class="QPushButton" name="drink4">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Drink</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="3" column="6">
-    <layout class="QVBoxLayout" name="verticalLayout_5">
-     <item>
-      <widget class="QLabel" name="potionImage">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="potionName">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="potionDesc">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="wordWrap">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="3" column="4">
-    <widget class="Line" name="line_4">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>511</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:transparent;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(80, 41, 0, 255), stop:1 rgba(117, 92, 8, 255));
+gridline-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(49, 16, 0, 255), stop:1 rgba(107, 73, 0, 255));</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="2" column="4">
+     <layout class="QVBoxLayout" name="potion_slot5">
+      <item>
+       <widget class="QPushButton" name="drink5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(49, 89, 1, 255), stop:1 rgba(46, 181, 0, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>Drink</string>
+        </property>
+        <property name="shortcut">
+         <string>5</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="5">
+     <layout class="QVBoxLayout" name="potion_slot6">
+      <item>
+       <widget class="QPushButton" name="drink6">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(49, 89, 1, 255), stop:1 rgba(46, 181, 0, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>Drink</string>
+        </property>
+        <property name="shortcut">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="4">
+     <layout class="QVBoxLayout" name="potion_slot1">
+      <item>
+       <widget class="QPushButton" name="drink1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(49, 89, 1, 255), stop:1 rgba(46, 181, 0, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>Drink</string>
+        </property>
+        <property name="shortcut">
+         <string>1</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="5">
+     <layout class="QVBoxLayout" name="potion_slot2">
+      <item>
+       <widget class="QPushButton" name="drink2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(49, 89, 1, 255), stop:1 rgba(46, 181, 0, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>Drink</string>
+        </property>
+        <property name="shortcut">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="3">
+     <widget class="Line" name="line">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="Line" name="line_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="Line" name="line_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="slot2">
+      <item>
+       <widget class="QPushButton" name="use_s2">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)
+</string>
+        </property>
+        <property name="text">
+         <string>USE</string>
+        </property>
+        <property name="shortcut">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1">
+     <layout class="QVBoxLayout" name="slot4">
+      <item>
+       <widget class="QPushButton" name="use_s4">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>USE</string>
+        </property>
+        <property name="shortcut">
+         <string>5</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="2">
+     <layout class="QVBoxLayout" name="slot5">
+      <item>
+       <widget class="QPushButton" name="use_s5">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>USE</string>
+        </property>
+        <property name="shortcut">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="2">
+     <layout class="QVBoxLayout" name="slot3">
+      <item>
+       <widget class="QPushButton" name="use_s3">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>USE</string>
+        </property>
+        <property name="shortcut">
+         <string>3</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="1">
+     <layout class="QVBoxLayout" name="slot8">
+      <item>
+       <widget class="QPushButton" name="use_s8">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)
+</string>
+        </property>
+        <property name="text">
+         <string>USE</string>
+        </property>
+        <property name="shortcut">
+         <string>8</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QVBoxLayout" name="slot6">
+      <item>
+       <widget class="QPushButton" name="use_s6">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>USE</string>
+        </property>
+        <property name="shortcut">
+         <string>4</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <layout class="QVBoxLayout" name="slot7">
+      <item>
+       <widget class="QPushButton" name="use_s7">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)
+</string>
+        </property>
+        <property name="text">
+         <string>USE</string>
+        </property>
+        <property name="shortcut">
+         <string>7</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="2">
+     <layout class="QVBoxLayout" name="slot9">
+      <item>
+       <widget class="QPushButton" name="use_s9">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)
+</string>
+        </property>
+        <property name="text">
+         <string>USE</string>
+        </property>
+        <property name="shortcut">
+         <string>9</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="5">
+     <layout class="QVBoxLayout" name="potion_slot4">
+      <item>
+       <widget class="QPushButton" name="drink4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(49, 89, 1, 255), stop:1 rgba(46, 181, 0, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>Drink</string>
+        </property>
+        <property name="shortcut">
+         <string>4</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="slot1">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="use_s1">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>USE</string>
+        </property>
+        <property name="shortcut">
+         <string>1</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="4">
+     <layout class="QVBoxLayout" name="potion_slot3">
+      <item>
+       <widget class="QPushButton" name="drink3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(49, 89, 1, 255), stop:1 rgba(46, 181, 0, 255));
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string>Drink</string>
+        </property>
+        <property name="shortcut">
+         <string>3</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0" colspan="3">
+     <layout class="QHBoxLayout" name="aboutWeapon">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="currentItemImg">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;
+</string>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="currentItemDesc">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;
+font: 7pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="currentWeaponLabel">
+          <property name="styleSheet">
+           <string notr="true">background:transparent;
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+          </property>
+          <property name="text">
+           <string>WeaponName</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="weaponPower">
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+color:rgb(255, 247, 234)</string>
+            </property>
+            <property name="text">
+             <string>POWER</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QProgressBar" name="progressBar">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+
+color:rgb(255, 247, 234)</string>
+            </property>
+            <property name="value">
+             <number>80</number>
+            </property>
+            <property name="textVisible">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="weaponSpeed">
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+color:rgb(255, 247, 234)</string>
+            </property>
+            <property name="text">
+             <string>SPEED</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QProgressBar" name="progressBar_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+
+color:rgb(255, 247, 234)</string>
+            </property>
+            <property name="value">
+             <number>24</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="3">
+     <widget class="Line" name="line_4">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="5">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="potionImage">
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="potionName">
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="potionDesc">
+        <property name="styleSheet">
+         <string notr="true">background:transparent;
+font: 8pt &quot;Papyrus&quot;;
+color:rgb(255, 247, 234)</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <resources/>
  <connections/>

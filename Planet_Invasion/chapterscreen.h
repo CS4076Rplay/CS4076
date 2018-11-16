@@ -25,10 +25,12 @@ signals:
 private slots:
     void handlebutton1();
     void handlebutton2();
+    void on_ch1_clicked();
+
+    void on_ch2_clicked();
+
 private:
     Ui::ChapterScreen *ui;
-    QGridLayout *layout;
-    QPushButton *option1, *option2, *option3, *option4;
     InventoryUI *inventoryUI;
     GameScreen *game;
     Inventory *inventory;

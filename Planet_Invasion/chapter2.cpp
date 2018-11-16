@@ -95,10 +95,71 @@ void Chapter2::createRooms(){
 
 
     Enemy *morgana=new Enemy(100,9,10,300,SHADOW,true);
-    morgana->setName("The Great INFERN");
+    morgana->setName("Morgana");
     morgana->setDescription("Strongest of all doomers");
     morgana->setId("Enemy");
     morgana->setUrl("morgana.png");
+
+
+    Weapon *nunchucks=new Weapon(60,60);
+    nunchucks->setName("Nunchucks of Pain");
+    nunchucks->setDescription("");
+    nunchucks->setId("WEAPON");
+    nunchucks->setUrl("Nunchuks.png");
+
+
+
+    Weapon *m_gun=new Weapon(60,200);
+    m_gun->setName("Mx380");
+    m_gun->setDescription("");
+    m_gun->setId("WEAPON");
+    m_gun->setUrl("MachineGun.png");
+
+
+    Weapon *ninstar=new Weapon(40,500);
+    ninstar->setName("Mx380");
+    ninstar->setDescription("");
+    ninstar->setId("WEAPON");
+    ninstar->setUrl("NinjaStar.png");
+
+
+
+    Weapon *BattleAxe=new Weapon(100,50);
+    BattleAxe->setName("AXe of Helion");
+    BattleAxe->setDescription("Forged from the sun");
+    BattleAxe->setId("WEAPON");
+    BattleAxe->setUrl("BattleAxe.png");
+
+    Weapon *Revolver=new Weapon(70,30);
+    Revolver->setName("Revolver");
+    Revolver->setDescription("");
+    Revolver->setId("WEAPON");
+    Revolver->setUrl("Revolver.png");
+
+    Weapon *Flail=new Weapon(40,60);
+    Flail->setName("Flail");
+    Flail->setDescription("");
+    Flail->setId("WEAPON");
+    Flail->setUrl("Flail.png");
+
+    Hp *fifty=new Hp(50);
+    fifty->setName("50 Hp");
+    fifty->setDescription("Adds 50 Hp");
+    fifty->setId("HP");
+    fifty->setUrl("50h.png");
+
+    Hp *twentyfive=new Hp(25);
+    twentyfive->setName("25 Hp");
+    twentyfive->setDescription("Adds 25 Hp");
+    twentyfive->setId("HP");
+    twentyfive->setUrl("25h.png");
+
+
+    Hp *hun=new Hp(100);
+    hun->setName("100 Hp");
+    hun->setDescription("Adds 100 Hp");
+    hun->setId("HP");
+    hun->setUrl("100h.png");
 
     a = new Room(storyMap[0],"");
     b = new Room(storyMap[1],"");
@@ -106,13 +167,18 @@ void Chapter2::createRooms(){
 
     d = new Room(storyMap[2],doomerLvl1->getUrl());
     d->addEnemy(doomerLvl1);
+    d->addHp(twentyfive);
     e = new Room(storyMap[4],"");
+
 
     f = new Room(storyMap[3],doomerLvl4->getUrl());
     f->addEnemy(doomerLvl4);
+    f->addWeapon(ninstar);
     g = new Room(storyMap[6],"");
+  //  h->addWeapon(Flail);
     h = new Room(storyMap[7],doomerLvl3->getUrl());
     h->addEnemy(doomerLvl3);
+    h->addHp(hun);
     i = new Room(storyMap[8],doomerLvl5->getUrl());
     i->addEnemy(doomerLvl5);
     j = new Room(storyMap[9],morgana->getUrl());

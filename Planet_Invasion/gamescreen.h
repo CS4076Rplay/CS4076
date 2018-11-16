@@ -19,9 +19,9 @@ class GameScreen : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit GameScreen(const string& chap, QWidget *parent = nullptr,Story *storyline=nullptr,Player *player=nullptr, Inventory *inventory=nullptr, Weapon* weapon=nullptr);
+    explicit GameScreen(const string chap, QWidget *parent = nullptr,Story *storyline=nullptr,Player *player=nullptr, Inventory *inventory=nullptr, Weapon* weapon=nullptr);
     ~GameScreen();
-    void setCurrentWeapon(Weapon*);
+     void setCurrentWeapon(Weapon*);
     void closeEvent(QCloseEvent *event);
     Weapon* getCurrentWeapon();
     void showDialogBox(string,string);
@@ -85,6 +85,8 @@ public slots:
 private:
     Ui::GameScreen *ui;
     void updateLabel();
+    void initUI(string);
+
     Chapter *chapter;
     Story *storyline;
     Player *player;

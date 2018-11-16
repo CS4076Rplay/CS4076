@@ -26,6 +26,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *introPic;
     QLabel *introimg2;
+    QLabel *label;
     QLabel *label_2;
     QLabel *introlbl;
     QPushButton *pushButton;
@@ -34,7 +35,7 @@ public:
     {
         if (Intro->objectName().isEmpty())
             Intro->setObjectName(QStringLiteral("Intro"));
-        Intro->resize(400, 300);
+        Intro->resize(693, 300);
         verticalLayout = new QVBoxLayout(Intro);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
@@ -52,8 +53,15 @@ public:
 
         horizontalLayout->addWidget(introimg2);
 
+        label = new QLabel(Intro);
+        label->setObjectName(QStringLiteral("label"));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/ch3.png")));
+
+        horizontalLayout->addWidget(label);
+
         label_2 = new QLabel(Intro);
         label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setPixmap(QPixmap(QString::fromUtf8(":/ch2.png")));
 
         horizontalLayout->addWidget(label_2);
 
@@ -67,6 +75,8 @@ public:
 
         pushButton = new QPushButton(Intro);
         pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setStyleSheet(QLatin1String("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.03, y2:1, stop:0 rgba(81, 178, 25, 255), stop:1 rgba(255, 243, 23, 255));\n"
+""));
 
         verticalLayout->addWidget(pushButton);
 
@@ -81,7 +91,8 @@ public:
         Intro->setWindowTitle(QApplication::translate("Intro", "Dialog", nullptr));
         introPic->setText(QString());
         introimg2->setText(QString());
-        label_2->setText(QApplication::translate("Intro", "TextLabel", nullptr));
+        label->setText(QString());
+        label_2->setText(QString());
         introlbl->setText(QApplication::translate("Intro", "intro", nullptr));
         pushButton->setText(QApplication::translate("Intro", "Continue", nullptr));
     } // retranslateUi

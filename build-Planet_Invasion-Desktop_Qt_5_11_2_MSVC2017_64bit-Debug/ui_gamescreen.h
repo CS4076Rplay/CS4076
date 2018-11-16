@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -31,6 +32,8 @@ class Ui_GameScreen
 public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
+    QGroupBox *groupBox;
+    QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
     QHBoxLayout *horizontalLayout_3;
     QLabel *currentWeaponImg;
@@ -46,6 +49,7 @@ public:
     QPushButton *pushButton;
     QFrame *line_3;
     QHBoxLayout *horizontalLayout_10;
+    QFrame *line;
     QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout_6;
     QLabel *enemyName;
@@ -53,7 +57,6 @@ public:
     QPushButton *treasure;
     QPushButton *chest;
     QLabel *description;
-    QFrame *line;
     QLabel *label;
     QFrame *line_2;
     QHBoxLayout *horizontalLayout_6;
@@ -84,41 +87,58 @@ public:
     {
         if (GameScreen->objectName().isEmpty())
             GameScreen->setObjectName(QStringLiteral("GameScreen"));
-        GameScreen->resize(585, 458);
+        GameScreen->resize(800, 626);
         centralwidget = new QWidget(GameScreen);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        groupBox = new QGroupBox(centralwidget);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setStyleSheet(QLatin1String("background:transparent;\n"
+"background-color:qradialgradient(spread:pad, cx:0.495, cy:0.335, radius:1.287, fx:0.519876, fy:0.54, stop:0 rgba(62, 24, 8, 255), stop:1 rgba(212, 168, 106, 212))"));
+        verticalLayout_2 = new QVBoxLayout(groupBox);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        currentWeaponImg = new QLabel(centralwidget);
+        currentWeaponImg = new QLabel(groupBox);
         currentWeaponImg->setObjectName(QStringLiteral("currentWeaponImg"));
+        currentWeaponImg->setStyleSheet(QLatin1String("background:transparent;\n"
+"background-color:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(191, 128, 255, 64), stop:1 rgba(0, 0, 0, 0))"));
 
         horizontalLayout_3->addWidget(currentWeaponImg);
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        currentWeaponName = new QLabel(centralwidget);
+        currentWeaponName = new QLabel(groupBox);
         currentWeaponName->setObjectName(QStringLiteral("currentWeaponName"));
+        currentWeaponName->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 14pt \"Modern No. 20\";\n"
+"color:rgb(255, 250, 194)"));
 
         verticalLayout_3->addWidget(currentWeaponName);
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        label_2 = new QLabel(centralwidget);
+        label_2 = new QLabel(groupBox);
         label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setStyleSheet(QLatin1String("background:transparent;\n"
+"color:rgb(255, 255, 255)\n"
+""));
 
         horizontalLayout_5->addWidget(label_2);
 
-        currentWeaponPower = new QProgressBar(centralwidget);
+        currentWeaponPower = new QProgressBar(groupBox);
         currentWeaponPower->setObjectName(QStringLiteral("currentWeaponPower"));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(currentWeaponPower->sizePolicy().hasHeightForWidth());
         currentWeaponPower->setSizePolicy(sizePolicy);
+        currentWeaponPower->setStyleSheet(QLatin1String("background:transparent;\n"
+"color:rgb(255, 255, 255)\n"
+""));
         currentWeaponPower->setMaximum(10);
         currentWeaponPower->setValue(2);
 
@@ -129,15 +149,19 @@ public:
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        label_3 = new QLabel(centralwidget);
+        label_3 = new QLabel(groupBox);
         label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setStyleSheet(QLatin1String("background:transparent;\n"
+"color:rgb(255, 255, 255)"));
 
         horizontalLayout_7->addWidget(label_3);
 
-        currentWeaponSpeed = new QProgressBar(centralwidget);
+        currentWeaponSpeed = new QProgressBar(groupBox);
         currentWeaponSpeed->setObjectName(QStringLiteral("currentWeaponSpeed"));
         sizePolicy.setHeightForWidth(currentWeaponSpeed->sizePolicy().hasHeightForWidth());
         currentWeaponSpeed->setSizePolicy(sizePolicy);
+        currentWeaponSpeed->setStyleSheet(QLatin1String("background:transparent;\n"
+"color:rgb(255, 255, 255)"));
         currentWeaponSpeed->setMaximum(10);
         currentWeaponSpeed->setValue(4);
 
@@ -152,50 +176,77 @@ public:
 
         horizontalLayout->addLayout(horizontalLayout_3);
 
-        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2 = new QPushButton(groupBox);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setStyleSheet(QLatin1String("background:transparent;\n"
+"background-color:qlineargradient(spread:pad, x1:0.0597015, y1:0.051, x2:0, y2:1, stop:0 rgba(232, 255, 0, 255), stop:1 rgba(159, 255, 226, 255));\n"
+"font: 10pt \"Lucida Sans Unicode\";"));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/inventory.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon);
+        pushButton_2->setIconSize(QSize(30, 30));
 
         horizontalLayout->addWidget(pushButton_2);
 
-        pushButton = new QPushButton(centralwidget);
+        pushButton = new QPushButton(groupBox);
         pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setStyleSheet(QLatin1String("background:transparent;\n"
+"background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(110, 0, 0, 255));\n"
+"font: 10pt \"Lucida Sans Unicode\";\n"
+"color:rgb(255, 255, 255)"));
 
         horizontalLayout->addWidget(pushButton);
 
 
-        verticalLayout->addLayout(horizontalLayout);
+        verticalLayout_2->addLayout(horizontalLayout);
 
-        line_3 = new QFrame(centralwidget);
+        line_3 = new QFrame(groupBox);
         line_3->setObjectName(QStringLiteral("line_3"));
+        line_3->setStyleSheet(QStringLiteral("background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(49, 16, 0, 255), stop:1 rgba(107, 73, 0, 255))"));
         line_3->setFrameShape(QFrame::HLine);
         line_3->setFrameShadow(QFrame::Sunken);
 
-        verticalLayout->addWidget(line_3);
+        verticalLayout_2->addWidget(line_3);
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
+        line = new QFrame(groupBox);
+        line->setObjectName(QStringLiteral("line"));
+        line->setFrameShape(QFrame::VLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        horizontalLayout_10->addWidget(line);
+
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
-        enemyName = new QLabel(centralwidget);
+        enemyName = new QLabel(groupBox);
         enemyName->setObjectName(QStringLiteral("enemyName"));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(enemyName->sizePolicy().hasHeightForWidth());
+        enemyName->setSizePolicy(sizePolicy1);
+        enemyName->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 9pt \"Impact\";\n"
+"color:rgb(255, 0, 0)"));
         enemyName->setAlignment(Qt::AlignCenter);
 
         verticalLayout_6->addWidget(enemyName);
 
-        enemyHealth = new QProgressBar(centralwidget);
+        enemyHealth = new QProgressBar(groupBox);
         enemyHealth->setObjectName(QStringLiteral("enemyHealth"));
-        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(enemyHealth->sizePolicy().hasHeightForWidth());
-        enemyHealth->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(enemyHealth->sizePolicy().hasHeightForWidth());
+        enemyHealth->setSizePolicy(sizePolicy2);
         QPalette palette;
-        QBrush brush(QColor(0, 0, 0, 255));
+        QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
-        QBrush brush1(QColor(0, 170, 255, 255));
+        QBrush brush1(QColor(186, 0, 72, 255));
         brush1.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::Button, brush1);
         QBrush brush2(QColor(127, 213, 255, 255));
@@ -211,20 +262,20 @@ public:
         brush5.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::Mid, brush5);
         palette.setBrush(QPalette::Active, QPalette::Text, brush);
-        QBrush brush6(QColor(255, 255, 255, 255));
-        brush6.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::BrightText, brush6);
+        palette.setBrush(QPalette::Active, QPalette::BrightText, brush);
         palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
-        palette.setBrush(QPalette::Active, QPalette::Base, brush6);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush1);
         palette.setBrush(QPalette::Active, QPalette::Window, brush1);
-        palette.setBrush(QPalette::Active, QPalette::Shadow, brush);
+        QBrush brush6(QColor(0, 0, 0, 255));
+        brush6.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Shadow, brush6);
         QBrush brush7(QColor(127, 212, 255, 255));
         brush7.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush7);
         QBrush brush8(QColor(255, 255, 220, 255));
         brush8.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::ToolTipBase, brush8);
-        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush6);
         palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
         palette.setBrush(QPalette::Inactive, QPalette::Button, brush1);
         palette.setBrush(QPalette::Inactive, QPalette::Light, brush2);
@@ -232,30 +283,37 @@ public:
         palette.setBrush(QPalette::Inactive, QPalette::Dark, brush4);
         palette.setBrush(QPalette::Inactive, QPalette::Mid, brush5);
         palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush6);
+        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
         palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::Base, brush6);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush1);
         palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
-        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush6);
         palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush7);
         palette.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush8);
-        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush);
-        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush4);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush6);
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush);
         palette.setBrush(QPalette::Disabled, QPalette::Button, brush1);
         palette.setBrush(QPalette::Disabled, QPalette::Light, brush2);
         palette.setBrush(QPalette::Disabled, QPalette::Midlight, brush3);
         palette.setBrush(QPalette::Disabled, QPalette::Dark, brush4);
         palette.setBrush(QPalette::Disabled, QPalette::Mid, brush5);
-        palette.setBrush(QPalette::Disabled, QPalette::Text, brush4);
-        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush6);
-        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush);
         palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
         palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush);
-        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush6);
+        QBrush brush9(QColor(0, 170, 255, 255));
+        brush9.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush9);
         palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush8);
-        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush6);
         enemyHealth->setPalette(palette);
+        enemyHealth->setStyleSheet(QLatin1String("\n"
+"background:transparent;\n"
+"background-color:rgb(186, 0, 72);\n"
+"font: 9pt \"Impact\";\n"
+"color:rgb(255, 255, 255)"));
         enemyHealth->setValue(10);
 
         verticalLayout_6->addWidget(enemyHealth);
@@ -263,37 +321,44 @@ public:
 
         verticalLayout_4->addLayout(verticalLayout_6);
 
-        treasure = new QPushButton(centralwidget);
+        treasure = new QPushButton(groupBox);
         treasure->setObjectName(QStringLiteral("treasure"));
         sizePolicy.setHeightForWidth(treasure->sizePolicy().hasHeightForWidth());
         treasure->setSizePolicy(sizePolicy);
-        QIcon icon;
-        icon.addFile(QStringLiteral(":/Images/Characters/Ji.png"), QSize(), QIcon::Normal, QIcon::Off);
-        treasure->setIcon(icon);
+        treasure->setStyleSheet(QLatin1String("background:transparent;\n"
+""));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/Images/Characters/Ji.png"), QSize(), QIcon::Normal, QIcon::Off);
+        treasure->setIcon(icon1);
         treasure->setFlat(true);
 
         verticalLayout_4->addWidget(treasure);
 
-        chest = new QPushButton(centralwidget);
+        chest = new QPushButton(groupBox);
         chest->setObjectName(QStringLiteral("chest"));
         chest->setEnabled(true);
         sizePolicy.setHeightForWidth(chest->sizePolicy().hasHeightForWidth());
         chest->setSizePolicy(sizePolicy);
         chest->setLayoutDirection(Qt::LeftToRight);
-        QIcon icon1;
-        icon1.addFile(QStringLiteral(":/Images/Characters/treasure.jpg"), QSize(), QIcon::Normal, QIcon::Off);
-        chest->setIcon(icon1);
+        chest->setStyleSheet(QLatin1String("background:transparent;\n"
+""));
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/Images/Characters/treasure.png"), QSize(), QIcon::Normal, QIcon::Off);
+        chest->setIcon(icon2);
         chest->setFlat(true);
 
         verticalLayout_4->addWidget(chest);
 
-        description = new QLabel(centralwidget);
+        description = new QLabel(groupBox);
         description->setObjectName(QStringLiteral("description"));
-        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(description->sizePolicy().hasHeightForWidth());
-        description->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(description->sizePolicy().hasHeightForWidth());
+        description->setSizePolicy(sizePolicy3);
+        description->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: italic 8pt \"MS Serif\";\n"
+"color: rgb(255, 255, 255);"));
         description->setWordWrap(false);
 
         verticalLayout_4->addWidget(description);
@@ -301,65 +366,79 @@ public:
 
         horizontalLayout_10->addLayout(verticalLayout_4);
 
-        line = new QFrame(centralwidget);
-        line->setObjectName(QStringLiteral("line"));
-        line->setFrameShape(QFrame::VLine);
-        line->setFrameShadow(QFrame::Sunken);
-
-        horizontalLayout_10->addWidget(line);
-
-        label = new QLabel(centralwidget);
+        label = new QLabel(groupBox);
         label->setObjectName(QStringLiteral("label"));
         sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy);
+        label->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 14pt \"Papyrus\";\n"
+"color:rgb(255, 247, 233)"));
         label->setScaledContents(true);
         label->setWordWrap(true);
 
         horizontalLayout_10->addWidget(label);
 
 
-        verticalLayout->addLayout(horizontalLayout_10);
+        verticalLayout_2->addLayout(horizontalLayout_10);
 
-        line_2 = new QFrame(centralwidget);
+        line_2 = new QFrame(groupBox);
         line_2->setObjectName(QStringLiteral("line_2"));
         line_2->setFrameShape(QFrame::HLine);
         line_2->setFrameShadow(QFrame::Sunken);
 
-        verticalLayout->addWidget(line_2);
+        verticalLayout_2->addWidget(line_2);
 
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        pushButton_3 = new QPushButton(centralwidget);
+        pushButton_3 = new QPushButton(groupBox);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setEnabled(false);
-        QSizePolicy sizePolicy3(QSizePolicy::Ignored, QSizePolicy::Fixed);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
-        pushButton_3->setSizePolicy(sizePolicy3);
+        QSizePolicy sizePolicy4(QSizePolicy::Ignored, QSizePolicy::Fixed);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
+        pushButton_3->setSizePolicy(sizePolicy4);
+        pushButton_3->setStyleSheet(QLatin1String("background:transparent;\n"
+"background-color: rgb(168, 168, 168);"));
         pushButton_3->setFlat(false);
 
         gridLayout->addWidget(pushButton_3, 2, 4, 1, 1);
 
-        north = new QPushButton(centralwidget);
+        north = new QPushButton(groupBox);
         north->setObjectName(QStringLiteral("north"));
+        north->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 9pt \"Impact\";\n"
+"color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(110, 0, 0, 255));\n"
+"background-color: rgb(255, 255, 255);"));
 
         gridLayout->addWidget(north, 0, 4, 1, 1);
 
-        south = new QPushButton(centralwidget);
+        south = new QPushButton(groupBox);
         south->setObjectName(QStringLiteral("south"));
+        south->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 9pt \"Impact\";\n"
+"color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));\n"
+"background-color: rgb(255, 255, 255);"));
 
         gridLayout->addWidget(south, 3, 4, 1, 1);
 
-        east = new QPushButton(centralwidget);
+        east = new QPushButton(groupBox);
         east->setObjectName(QStringLiteral("east"));
+        east->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 9pt \"Impact\";\n"
+"color:qlineargradient(spread:pad, x1:0, y1:0, x2:0.03, y2:1, stop:0 rgba(81, 178, 25, 255), stop:1 rgba(255, 243, 23, 255));\n"
+"background-color: rgb(255, 255, 255);"));
 
         gridLayout->addWidget(east, 2, 5, 1, 1);
 
-        west = new QPushButton(centralwidget);
+        west = new QPushButton(groupBox);
         west->setObjectName(QStringLiteral("west"));
+        west->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 9pt \"Impact\";\n"
+"color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 0, 74, 255), stop:1 rgba(255, 167, 0, 255));\n"
+"background-color: rgb(255, 255, 255);"));
 
         gridLayout->addWidget(west, 2, 3, 1, 1);
 
@@ -368,7 +447,7 @@ public:
 
         verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
-        line_4 = new QFrame(centralwidget);
+        line_4 = new QFrame(groupBox);
         line_4->setObjectName(QStringLiteral("line_4"));
         line_4->setFrameShape(QFrame::VLine);
         line_4->setFrameShadow(QFrame::Sunken);
@@ -377,20 +456,39 @@ public:
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        attackBtn = new QPushButton(centralwidget);
+        attackBtn = new QPushButton(groupBox);
         attackBtn->setObjectName(QStringLiteral("attackBtn"));
+        attackBtn->setEnabled(true);
+        attackBtn->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 9pt \"Impact\";\n"
+"background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 0, 74, 255), stop:1 rgba(255, 167, 0, 255));\n"
+"color:rgb(255, 255, 255)\n"
+""));
+        QIcon icon3;
+        icon3.addFile(QStringLiteral(":/attack-icon-3.jpg.png"), QSize(), QIcon::Normal, QIcon::Off);
+        attackBtn->setIcon(icon3);
+        attackBtn->setIconSize(QSize(30, 30));
 
         horizontalLayout_8->addWidget(attackBtn);
 
-        defendBtn = new QPushButton(centralwidget);
+        defendBtn = new QPushButton(groupBox);
         defendBtn->setObjectName(QStringLiteral("defendBtn"));
+        defendBtn->setEnabled(true);
+        defendBtn->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 9pt \"Impact\";\n"
+"background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));\n"
+"color:rgb(255, 255, 255)"));
+        QIcon icon4;
+        icon4.addFile(QStringLiteral(":/attack-icon-13.jpg.png"), QSize(), QIcon::Normal, QIcon::Off);
+        defendBtn->setIcon(icon4);
+        defendBtn->setIconSize(QSize(30, 30));
 
         horizontalLayout_8->addWidget(defendBtn);
 
 
         verticalLayout_7->addLayout(horizontalLayout_8);
 
-        specialTime = new QProgressBar(centralwidget);
+        specialTime = new QProgressBar(groupBox);
         specialTime->setObjectName(QStringLiteral("specialTime"));
         sizePolicy.setHeightForWidth(specialTime->sizePolicy().hasHeightForWidth());
         specialTime->setSizePolicy(sizePolicy);
@@ -399,15 +497,25 @@ public:
 
         verticalLayout_7->addWidget(specialTime);
 
-        special = new QPushButton(centralwidget);
+        special = new QPushButton(groupBox);
         special->setObjectName(QStringLiteral("special"));
-        sizePolicy1.setHeightForWidth(special->sizePolicy().hasHeightForWidth());
-        special->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(special->sizePolicy().hasHeightForWidth());
+        special->setSizePolicy(sizePolicy2);
+        special->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 9pt \"Impact\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0.238806 rgba(193, 155, 29, 255), stop:1 rgba(255, 229, 49, 255));"));
+        QIcon icon5;
+        icon5.addFile(QStringLiteral(":/Images/Characters/sw_ic.png"), QSize(), QIcon::Normal, QIcon::Off);
+        special->setIcon(icon5);
 
         verticalLayout_7->addWidget(special);
 
-        timeLeft = new QLabel(centralwidget);
+        timeLeft = new QLabel(groupBox);
         timeLeft->setObjectName(QStringLiteral("timeLeft"));
+        timeLeft->setStyleSheet(QLatin1String("background:transparent;\n"
+"color:rgb(255, 255, 255);\n"
+"font: 8pt \"MS Shell Dlg 2\";"));
 
         verticalLayout_7->addWidget(timeLeft);
 
@@ -415,38 +523,43 @@ public:
         horizontalLayout_6->addLayout(verticalLayout_7);
 
 
-        verticalLayout->addLayout(horizontalLayout_6);
+        verticalLayout_2->addLayout(horizontalLayout_6);
 
-        line_5 = new QFrame(centralwidget);
+        line_5 = new QFrame(groupBox);
         line_5->setObjectName(QStringLiteral("line_5"));
         line_5->setFrameShape(QFrame::HLine);
         line_5->setFrameShadow(QFrame::Sunken);
 
-        verticalLayout->addWidget(line_5);
+        verticalLayout_2->addWidget(line_5);
 
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        myName = new QLabel(centralwidget);
+        myName = new QLabel(groupBox);
         myName->setObjectName(QStringLiteral("myName"));
         sizePolicy.setHeightForWidth(myName->sizePolicy().hasHeightForWidth());
         myName->setSizePolicy(sizePolicy);
+        myName->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 9pt \"Impact\";\n"
+"color:rgb(0, 255, 0)"));
 
         verticalLayout_5->addWidget(myName);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        myImg = new QLabel(centralwidget);
+        myImg = new QLabel(groupBox);
         myImg->setObjectName(QStringLiteral("myImg"));
-        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(myImg->sizePolicy().hasHeightForWidth());
-        myImg->setSizePolicy(sizePolicy4);
+        sizePolicy1.setHeightForWidth(myImg->sizePolicy().hasHeightForWidth());
+        myImg->setSizePolicy(sizePolicy1);
+        myImg->setStyleSheet(QLatin1String("background:transparent;\n"
+""));
 
         horizontalLayout_2->addWidget(myImg);
 
-        healthBar = new QProgressBar(centralwidget);
+        healthBar = new QProgressBar(groupBox);
         healthBar->setObjectName(QStringLiteral("healthBar"));
+        healthBar->setStyleSheet(QLatin1String("background:transparent;\n"
+"font: 9pt \"Impact\";\n"
+"color:rgb(255, 255, 255)"));
         healthBar->setValue(100);
 
         horizontalLayout_2->addWidget(healthBar);
@@ -455,12 +568,15 @@ public:
         verticalLayout_5->addLayout(horizontalLayout_2);
 
 
-        verticalLayout->addLayout(verticalLayout_5);
+        verticalLayout_2->addLayout(verticalLayout_5);
+
+
+        verticalLayout->addWidget(groupBox);
 
         GameScreen->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GameScreen);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 585, 26));
+        menubar->setGeometry(QRect(0, 0, 800, 26));
         GameScreen->setMenuBar(menubar);
         toolBar = new QToolBar(GameScreen);
         toolBar->setObjectName(QStringLiteral("toolBar"));
@@ -474,6 +590,7 @@ public:
     void retranslateUi(QMainWindow *GameScreen)
     {
         GameScreen->setWindowTitle(QApplication::translate("GameScreen", "MainWindow", nullptr));
+        groupBox->setTitle(QString());
         currentWeaponImg->setText(QApplication::translate("GameScreen", "WeaponImg", nullptr));
         currentWeaponName->setText(QApplication::translate("GameScreen", "name", nullptr));
         label_2->setText(QApplication::translate("GameScreen", "Power", nullptr));
@@ -484,7 +601,7 @@ public:
 #ifndef QT_NO_SHORTCUT
         pushButton_2->setShortcut(QApplication::translate("GameScreen", "I", nullptr));
 #endif // QT_NO_SHORTCUT
-        pushButton->setText(QApplication::translate("GameScreen", "Options", nullptr));
+        pushButton->setText(QApplication::translate("GameScreen", "Quit", nullptr));
 #ifndef QT_NO_SHORTCUT
         pushButton->setShortcut(QApplication::translate("GameScreen", "O", nullptr));
 #endif // QT_NO_SHORTCUT
@@ -521,7 +638,7 @@ public:
 #endif // QT_NO_SHORTCUT
         special->setText(QApplication::translate("GameScreen", "Special", nullptr));
 #ifndef QT_NO_SHORTCUT
-        special->setShortcut(QApplication::translate("GameScreen", "S", nullptr));
+        special->setShortcut(QApplication::translate("GameScreen", "S, Return", nullptr));
 #endif // QT_NO_SHORTCUT
         timeLeft->setText(QString());
         myName->setText(QApplication::translate("GameScreen", "username", nullptr));

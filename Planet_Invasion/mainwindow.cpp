@@ -3,6 +3,7 @@
 #include "inventoryui.h"
 #include "fileparser.h"
 #include "charactercreator.h"
+#include <QMediaPlaylist>
 #include <iostream>
 #include "s_chapter.h"
 MainWindow::MainWindow(QWidget *parent) :
@@ -11,6 +12,14 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setupFiles();
+    soundtrack=new QMediaPlaylist();
+    splay=new QMediaPlayer();
+    splay->setVolume(100);
+    soundtrack->addMedia(QUrl("qrc:/Sounds/st.wav"));
+    soundtrack->addMedia(QUrl("qrc:/stm.mp3"));
+    soundtrack->setPlaybackMode(QMediaPlaylist::Loop);
+    splay->setPlaylist(soundtrack);
+    splay->play();
 }
 
 void MainWindow::setupFiles()
@@ -141,7 +150,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_playButton_clicked()
 {
-    ui->Title->setText("Loading Game..");
+
     hide();
     CharacterCreator *newGame=new CharacterCreator(this);
    newGame->intro=this->intro;

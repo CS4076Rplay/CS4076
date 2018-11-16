@@ -1,7 +1,7 @@
-Eilean
-SHADOWALKER
+yo
+KNIGHT
 100
+90
+75
 55
-80
-85
-65
+55

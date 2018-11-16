@@ -18,6 +18,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
    void setupFiles();
+   QMediaPlaylist *soundtrack;
+   QMediaPlayer *splay;
 
 private slots:
     void on_playButton_clicked();

@@ -8,21 +8,7 @@ ChapterScreen::ChapterScreen(QWidget *parent) :
     ui(new Ui::ChapterScreen)
 {
     ui->setupUi(this);
-    layout = new QGridLayout();
-    setLayout(layout);
 
-    option1 = new QPushButton("Chapter1", this);
-    option2 = new QPushButton("chapter2", this);
-    option3 = new QPushButton("chapter3", this);
-    option4 = new QPushButton("chapter4", this);
-
-    layout->addWidget(option1,0,0);
-    layout->addWidget(option2,0,1);
-    layout->addWidget(option3,1,0);
-    layout->addWidget(option4,1,1);
-
-    connect(option1,SIGNAL(clicked()), this, SLOT(handlebutton1()));
-    connect(option2,SIGNAL(clicked()), this, SLOT(handlebutton2()));
 }
 
 void ChapterScreen::handlebutton1(){
@@ -64,4 +50,14 @@ void ChapterScreen::handlebutton2(){
 ChapterScreen::~ChapterScreen()
 {
     delete ui;
+}
+
+void ChapterScreen::on_ch1_clicked()
+{
+    handlebutton1();
+}
+
+void ChapterScreen::on_ch2_clicked()
+{
+    handlebutton2();
 }

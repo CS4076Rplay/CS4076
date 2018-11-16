@@ -15,403 +15,534 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="label_3">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>CHOOSE A RACE</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="characterImg">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="assets.qrc">:/Images/Characters/Shadowalker.png</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="raceSelector">
-       <item>
-        <property name="text">
-         <string>SHADOWALKER</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>MOONMAGE</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>KNIGHT</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>AI</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="charDesc">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Shadowalker are A Race of Amazonian Warriors Trained in The Art Of Stealth, They Use Thier Speed And Intelligence to capture or Kill their Target, It is said that Shadowalker have a unique skill of Invisibilty when they hold their breath</string>
-       </property>
-       <property name="wordWrap">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="Line" name="line">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="styleSheet">
+      <string notr="true">background:rgb(255, 255, 255);
+background-color:qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(255, 255, 0, 69), stop:0.375 rgba(255, 255, 0, 69), stop:0.423533 rgba(251, 255, 0, 145), stop:0.45 rgba(247, 255, 0, 208), stop:0.477581 rgba(255, 244, 71, 130), stop:0.518717 rgba(255, 218, 71, 130), stop:0.55 rgba(255, 255, 0, 255), stop:0.57754 rgba(255, 203, 0, 130), stop:0.625 rgba(255, 255, 0, 69), stop:1 rgba(255, 255, 0, 69))</string>
      </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>599</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:transparent;
+font: 28pt &quot;Franklin Gothic Demi&quot;;
+</string>
+         </property>
+         <property name="text">
+          <string>CHOOSE A RACE</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="characterImg">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:transparent;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="assets.qrc">:/Images/Characters/Shadowalker.png</pixmap>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="raceSelector">
+         <item>
+          <property name="text">
+           <string>SHADOWALKER</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>MOONMAGE</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>KNIGHT</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>AI</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="charDesc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:transparent;
+font: italic 10pt &quot;Lucida Sans&quot;;
+padding: 20px;
+color:rgb(0, 0, 0)</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <property name="text">
+          <string>Shadowalker are A Race of Amazonian Warriors Trained in The Art Of Stealth, They Use Thier Speed And Intelligence to capture or Kill their Target, It is said that Shadowalker have a unique skill of Invisibilty when they hold their breath</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <property name="topMargin">
-      <number>15</number>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="styleSheet">
+      <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(121, 73, 37, 255), stop:1 rgba(69, 40, 0, 255))</string>
      </property>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_9">
-       <property name="sizeConstraint">
-        <enum>QLayout::SetMinimumSize</enum>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>361</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="topMargin">
+        <number>15</number>
        </property>
        <item>
-        <widget class="QLabel" name="label">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMinimumSize</enum>
          </property>
-         <property name="text">
-          <string>Name:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="unameSpace">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="inputMask">
-          <string/>
-         </property>
-         <property name="placeholderText">
-          <string>Enter A Name</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="Line" name="line_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_10">
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Antributes:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>SAVE</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="AntributePointLabel">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_6">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>HEALTH</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QProgressBar" name="healthBar">
+          <widget class="QLabel" name="label">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="value">
-            <number>100</number>
+           <property name="styleSheet">
+            <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color: rgb(255, 249, 217)</string>
            </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="Line" name="line_3">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <item>
-          <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>STRENGTH</string>
+            <string>Name:</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QProgressBar" name="strBar">
+          <widget class="QLineEdit" name="unameSpace">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="value">
-            <number>30</number>
+           <property name="styleSheet">
+            <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color:rgb(255, 255, 255)</string>
+           </property>
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Enter A Name</string>
            </property>
           </widget>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QSlider" name="strSlide">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>30</number>
-         </property>
-         <property name="value">
-          <number>30</number>
-         </property>
+        <widget class="Line" name="line_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
          <item>
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>DEFENSE</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QProgressBar" name="defBar">
+          <widget class="QLabel" name="label_2">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="value">
-            <number>30</number>
+           <property name="styleSheet">
+            <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color: rgb(255, 249, 217)</string>
+           </property>
+           <property name="text">
+            <string>Antributes:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(49, 89, 1, 255), stop:1 rgba(46, 181, 0, 255));
+color:rgb(255, 255, 255)</string>
+           </property>
+           <property name="text">
+            <string>SAVE</string>
            </property>
           </widget>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QSlider" name="defSlide">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>30</number>
-         </property>
+        <widget class="Line" name="line_4">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>SPEED</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="styleSheet">
+              <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color: rgb(255, 249, 217)</string>
+             </property>
+             <property name="text">
+              <string>HEALTH</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="healthBar">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color:rgb(255, 255, 255)</string>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="styleSheet">
+              <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color: rgb(255, 249, 217)</string>
+             </property>
+             <property name="text">
+              <string>STRENGTH</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="strBar">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color:rgb(255, 255, 255)</string>
+             </property>
+             <property name="value">
+              <number>30</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QProgressBar" name="spdBar">
+          <widget class="QSlider" name="strSlide">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="minimum">
+            <number>30</number>
+           </property>
            <property name="value">
             <number>30</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QSlider" name="spdSlide">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>30</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>INTELLIGENT</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="styleSheet">
+              <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color: rgb(255, 249, 217)</string>
+             </property>
+             <property name="text">
+              <string>DEFENSE</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="defBar">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color:rgb(255, 255, 255)</string>
+             </property>
+             <property name="value">
+              <number>30</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QProgressBar" name="intelBar">
+          <widget class="QSlider" name="defSlide">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="value">
+           <property name="minimum">
             <number>30</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QSlider" name="intelSlide">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>30</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="styleSheet">
+              <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color: rgb(255, 249, 217)</string>
+             </property>
+             <property name="text">
+              <string>SPEED</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="spdBar">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color:rgb(255, 255, 255)</string>
+             </property>
+             <property name="value">
+              <number>30</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QSlider" name="spdSlide">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimum">
+            <number>30</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="styleSheet">
+              <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color: rgb(255, 249, 217)</string>
+             </property>
+             <property name="text">
+              <string>INTELLIGENT</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="intelBar">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background:transparent;
+font: 10pt &quot;Modern No. 20&quot;;
+color:rgb(255, 255, 255)</string>
+             </property>
+             <property name="value">
+              <number>30</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QSlider" name="intelSlide">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimum">
+            <number>30</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
-     </item>
-    </layout>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-20</y>
+        <width>3</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </widget>
    </item>
   </layout>
  </widget>

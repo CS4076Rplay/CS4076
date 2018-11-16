@@ -203,27 +203,33 @@ InventoryUI::InventoryUI(QWidget *parent,Inventory* inventory,GameScreen* curren
                 ui->potion_slot1->addWidget(potion_label[i]);
 
                 ui->drink1->setEnabled(true);
+                ui->drink1->setText("USE");
 
             }break;
             case 1: {
                 ui->potion_slot2->addWidget(potion_label[i]);
                 ui->drink2->setEnabled(true);
+                  ui->drink2->setText("USE");
             }break;
             case 2: {
                 ui->potion_slot3->addWidget(potion_label[i]);
                 ui->drink3->setEnabled(true);
+                  ui->drink3->setText("USE");
             }break;
             case 3: {
                 ui->potion_slot4->addWidget(potion_label[i]);
                 ui->drink4->setEnabled(true);
+                  ui->drink4->setText("USE");
             }break;
             case 4: {
                 ui->potion_slot5->addWidget(potion_label[i]);
                 ui->drink5->setEnabled(true);
+                  ui->drink5->setText("USE");
             }break;
             case 5: {
                 ui->potion_slot6->addWidget(potion_label[i]);
                 ui->drink6->setEnabled(true);
+                  ui->drink6->setText("USE");
             }break;
 
         default:break;
