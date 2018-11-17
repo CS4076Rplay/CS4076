@@ -23,11 +23,13 @@ public:
 signals:
     void mainwindow();
 private slots:
-    void handlebutton1();
-    void handlebutton2();
+    void handlebutton(string);
+
     void on_ch1_clicked();
 
     void on_ch2_clicked();
+
+    void on_ch3_clicked();
 
 private:
     Ui::ChapterScreen *ui;

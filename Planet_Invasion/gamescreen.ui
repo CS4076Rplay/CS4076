@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>626</height>
+    <width>766</width>
+    <height>630</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,6 +31,12 @@ background-color:qradialgradient(spread:pad, cx:0.495, cy:0.335, radius:1.287, f
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
             <widget class="QLabel" name="currentWeaponImg">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="styleSheet">
               <string notr="true">background:transparent;
 background-color:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(191, 128, 255, 64), stop:1 rgba(0, 0, 0, 0))</string>
@@ -42,8 +48,17 @@ background-color:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5,
            </item>
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="sizeConstraint">
+              <enum>QLayout::SetFixedSize</enum>
+             </property>
              <item>
               <widget class="QLabel" name="currentWeaponName">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="styleSheet">
                 <string notr="true">background:transparent;
 font: 14pt &quot;Modern No. 20&quot;;
@@ -56,8 +71,17 @@ color:rgb(255, 250, 194)</string>
              </item>
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_5">
-               <item>
+               <property name="sizeConstraint">
+                <enum>QLayout::SetFixedSize</enum>
+               </property>
+               <item alignment="Qt::AlignRight">
                 <widget class="QLabel" name="label_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">background:transparent;
 color:rgb(255, 255, 255)
@@ -96,8 +120,17 @@ color:rgb(255, 255, 255)
              </item>
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <property name="sizeConstraint">
+                <enum>QLayout::SetFixedSize</enum>
+               </property>
                <item>
                 <widget class="QLabel" name="label_3">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">background:transparent;
 color:rgb(255, 255, 255)</string>
@@ -138,6 +171,12 @@ color:rgb(255, 255, 255)</string>
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="styleSheet">
             <string notr="true">background:transparent;
 background-color:qlineargradient(spread:pad, x1:0.0597015, y1:0.051, x2:0, y2:1, stop:0 rgba(232, 255, 0, 255), stop:1 rgba(159, 255, 226, 255));
@@ -163,6 +202,12 @@ font: 10pt &quot;Lucida Sans Unicode&quot;;</string>
          </item>
          <item>
           <widget class="QPushButton" name="pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="styleSheet">
             <string notr="true">background:transparent;
 background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(110, 0, 0, 255));
@@ -202,10 +247,10 @@ color:rgb(255, 255, 255)</string>
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_6">
-             <item>
+             <item alignment="Qt::AlignHCenter">
               <widget class="QLabel" name="enemyName">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -777,13 +822,16 @@ color:rgb(255, 247, 233)</string>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
           <layout class="QGridLayout" name="gridLayout">
-           <item row="2" column="4">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetFixedSize</enum>
+           </property>
+           <item row="2" column="4" alignment="Qt::AlignHCenter">
             <widget class="QPushButton" name="pushButton_3">
              <property name="enabled">
               <bool>false</bool>
              </property>
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -800,8 +848,14 @@ background-color: rgb(168, 168, 168);</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="4">
+           <item row="0" column="4" alignment="Qt::AlignHCenter">
             <widget class="QPushButton" name="north">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="styleSheet">
               <string notr="true">background:transparent;
 font: 9pt &quot;Impact&quot;;
@@ -812,12 +866,18 @@ background-color: rgb(255, 255, 255);</string>
               <string>North</string>
              </property>
              <property name="shortcut">
-              <string>Up</string>
+              <string>W</string>
              </property>
             </widget>
            </item>
-           <item row="3" column="4">
+           <item row="3" column="4" alignment="Qt::AlignHCenter">
             <widget class="QPushButton" name="south">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="styleSheet">
               <string notr="true">background:transparent;
 font: 9pt &quot;Impact&quot;;
@@ -828,12 +888,18 @@ background-color: rgb(255, 255, 255);</string>
               <string>South</string>
              </property>
              <property name="shortcut">
-              <string>Down</string>
+              <string>S</string>
              </property>
             </widget>
            </item>
-           <item row="2" column="5">
+           <item row="2" column="5" alignment="Qt::AlignLeft">
             <widget class="QPushButton" name="east">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="styleSheet">
               <string notr="true">background:transparent;
 font: 9pt &quot;Impact&quot;;
@@ -844,12 +910,18 @@ background-color: rgb(255, 255, 255);</string>
               <string>East</string>
              </property>
              <property name="shortcut">
-              <string>Right</string>
+              <string>D</string>
              </property>
             </widget>
            </item>
-           <item row="2" column="3">
+           <item row="2" column="3" alignment="Qt::AlignRight">
             <widget class="QPushButton" name="west">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="styleSheet">
               <string notr="true">background:transparent;
 font: 9pt &quot;Impact&quot;;
@@ -860,14 +932,24 @@ background-color: rgb(255, 255, 255);</string>
               <string>West</string>
              </property>
              <property name="shortcut">
-              <string>Left</string>
+              <string>A</string>
              </property>
             </widget>
            </item>
           </layout>
          </item>
          <item>
+          <widget class="Line" name="line_6">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
           <layout class="QVBoxLayout" name="verticalLayout_7">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetFixedSize</enum>
+           </property>
            <item>
             <widget class="Line" name="line_4">
              <property name="orientation">
@@ -881,6 +963,12 @@ background-color: rgb(255, 255, 255);</string>
               <widget class="QPushButton" name="attackBtn">
                <property name="enabled">
                 <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
                </property>
                <property name="styleSheet">
                 <string notr="true">background:transparent;
@@ -903,7 +991,7 @@ color:rgb(255, 255, 255)
                 </size>
                </property>
                <property name="shortcut">
-                <string>A</string>
+                <string>J</string>
                </property>
               </widget>
              </item>
@@ -911,6 +999,12 @@ color:rgb(255, 255, 255)
               <widget class="QPushButton" name="defendBtn">
                <property name="enabled">
                 <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
                </property>
                <property name="styleSheet">
                 <string notr="true">background:transparent;
@@ -932,13 +1026,13 @@ color:rgb(255, 255, 255)</string>
                 </size>
                </property>
                <property name="shortcut">
-                <string>D</string>
+                <string>L</string>
                </property>
               </widget>
              </item>
             </layout>
            </item>
-           <item>
+           <item alignment="Qt::AlignHCenter">
             <widget class="QProgressBar" name="specialTime">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -954,10 +1048,10 @@ color:rgb(255, 255, 255)</string>
              </property>
             </widget>
            </item>
-           <item>
+           <item alignment="Qt::AlignHCenter">
             <widget class="QPushButton" name="special">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -975,8 +1069,14 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0.238
               <iconset resource="assets.qrc">
                <normaloff>:/Images/Characters/sw_ic.png</normaloff>:/Images/Characters/sw_ic.png</iconset>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>35</width>
+               <height>35</height>
+              </size>
+             </property>
              <property name="shortcut">
-              <string>S, Return</string>
+              <string>K</string>
              </property>
             </widget>
            </item>
@@ -1071,7 +1171,7 @@ color:rgb(255, 255, 255)</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>766</width>
      <height>26</height>
     </rect>
    </property>

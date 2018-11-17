@@ -11,7 +11,7 @@ ChapterScreen::ChapterScreen(QWidget *parent) :
 
 }
 
-void ChapterScreen::handlebutton1(){
+void ChapterScreen::handlebutton(string chapter){
    Weapon cW;
     Weapon *tempWeapon=new Weapon(50,50);
     tempWeapon->setName("Hammer of Sorrow");
@@ -22,29 +22,12 @@ void ChapterScreen::handlebutton1(){
 
    inventory->getWeapons().size()>0?cW=inventory->getWeapons()[0]:cW=*tempWeapon;
 
-   game  = new GameScreen("chapter1", this,storyline,player,inventory,&cW);
+   game  = new GameScreen(chapter, this,storyline,player,inventory,&cW);
    game->show();
     hide();
     /**InventoryUI inventory;
     inventory.setModal(true);
     inventory.exec();**/
-}
-
-void ChapterScreen::handlebutton2(){
-    Weapon cW;
-     Weapon *tempWeapon=new Weapon(50,50);
-     tempWeapon->setName("Hammer of Sorrow");
-     tempWeapon->setDescription("weapon once held by Zeldon before he lost his entire family");
-     tempWeapon->setId("WEAPON");
-     tempWeapon->setUrl("Hammer.png");
-
-
-    inventory->getWeapons().size()>0?cW=inventory->getWeapons()[0]:cW=*tempWeapon;
-
-    game  = new GameScreen("chapter2", this,storyline,player,inventory,&cW);
-    game->show();
-
-   hide();
 }
 
 ChapterScreen::~ChapterScreen()
@@ -54,10 +37,15 @@ ChapterScreen::~ChapterScreen()
 
 void ChapterScreen::on_ch1_clicked()
 {
-    handlebutton1();
+    handlebutton("chapter1");
 }
 
 void ChapterScreen::on_ch2_clicked()
 {
-    handlebutton2();
+    handlebutton("chapter2");
+}
+
+void ChapterScreen::on_ch3_clicked()
+{
+   handlebutton("chapter3");
 }

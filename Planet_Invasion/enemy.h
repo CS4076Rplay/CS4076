@@ -1,7 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 #include "item.h"
-enum DOOMER{INFERNO,SHADOW};
+enum DOOMER{INFERNO,SHADOW,HYBRID};
 class Enemy:public Item
 {
 private:

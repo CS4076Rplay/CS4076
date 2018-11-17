@@ -42,7 +42,7 @@ void Chapter1::createRooms(){
     }
 
 //create chapter Enemies here
-    Enemy *i_doomerLvl1=new Enemy(100,4,5,30,INFERNO,false);
+    Enemy *i_doomerLvl1=new Enemy(100,2,5,30,INFERNO,false);
     i_doomerLvl1->setName("lvl1 Inferno Doomer");
     i_doomerLvl1->setDescription("Weak inferno Doomer");
     i_doomerLvl1->setId("Enemy");
@@ -59,7 +59,7 @@ void Chapter1::createRooms(){
     doomerLvl2->setSoundUrl("iD1.wav");
 
 
-    Enemy *doomerLvl3=new Enemy(100,6,4,50,INFERNO,false);
+    Enemy *doomerLvl3=new Enemy(100,5,4,50,INFERNO,false);
     doomerLvl3->setName("lvl3 Inferno Doomer");
     doomerLvl3->setDescription("strong inferno Doomer");
     doomerLvl3->setId("Enemy");
@@ -68,7 +68,7 @@ void Chapter1::createRooms(){
 
 
 
-    Enemy *doomerLvl4=new Enemy(100,7,4,60,INFERNO,false);
+    Enemy *doomerLvl4=new Enemy(100,6,4,60,INFERNO,false);
     doomerLvl4->setName("lvl4 Inferno Doomer");
     doomerLvl4->setDescription("powerfull inferno Doomer");
     doomerLvl4->setId("Enemy");
@@ -76,7 +76,7 @@ void Chapter1::createRooms(){
     doomerLvl4->setSoundUrl("iD1.wav");
 
 
-    Enemy *doomerLvl5=new Enemy(100,8,5,60,INFERNO,false);
+    Enemy *doomerLvl5=new Enemy(100,7,5,60,INFERNO,false);
     doomerLvl5->setName("lvl5 Inferno Doomer(The Gaurdian)");
     doomerLvl5->setDescription("BodyGuard to the BOSS INFERN");
     doomerLvl5->setId("Enemy");
@@ -84,41 +84,53 @@ void Chapter1::createRooms(){
     doomerLvl5->setSoundUrl("iD1.wav");
 
 
-    Enemy *infern=new Enemy(100,10,10,88,SHADOW,true);
+    Enemy *infern=new Enemy(100,8,10,88,SHADOW,true);
     infern->setName("The Great INFERN");
     infern->setDescription("Strongest of all doomers");
     infern->setId("Enemy");
     infern->setUrl("_infern.png");
 
-    Weapon *nunchucks=new Weapon(60,60);
+    Weapon *nunchucks=new Weapon(4,60);
     nunchucks->setName("Nunchucks of Pain");
     nunchucks->setDescription("");
     nunchucks->setId("WEAPON");
     nunchucks->setUrl("Nunchuks.png");
+    nunchucks->setSoundUrl("nchucks.wav");
 
-    Weapon *m_gun=new Weapon(60,90);
+
+    Weapon *m_gun=new Weapon(5,90);
     m_gun->setName("Mx380");
     m_gun->setDescription("");
     m_gun->setId("WEAPON");
     m_gun->setUrl("MachineGun.png");
+    m_gun->setSoundUrl("mgun.wav");
 
-    Weapon *BattleAxe=new Weapon(100,50);
+    Weapon *sol=new Weapon(12,50);
+    sol->setName("Sword of light");
+    sol->setDescription("");
+    sol->setId("WEAPON");
+    sol->setUrl("Sword.png");
+    sol->setSoundUrl("Sword.mp3");
+
+    Weapon *BattleAxe=new Weapon(7,5);
     BattleAxe->setName("AXe of Helion");
     BattleAxe->setDescription("Forged from the sun");
     BattleAxe->setId("WEAPON");
     BattleAxe->setUrl("BattleAxe.png");
 
-    Weapon *Revolver=new Weapon(70,30);
+    Weapon *Revolver=new Weapon(6,20);
     Revolver->setName("Revolver");
     Revolver->setDescription("");
     Revolver->setId("WEAPON");
     Revolver->setUrl("Revolver.png");
+    Revolver->setSoundUrl("sgun.wav");
 
-    Weapon *Flail=new Weapon(40,60);
+    Weapon *Flail=new Weapon(4,60);
     Flail->setName("Flail");
     Flail->setDescription("");
     Flail->setId("WEAPON");
     Flail->setUrl("Flail.png");
+    Flail->setSoundUrl("nchucks.wav");
 
     Hp *fifty=new Hp(50);
     fifty->setName("50 Hp");
@@ -148,39 +160,50 @@ void Chapter1::createRooms(){
 
     b = new Room(storyMap[2],i_doomerLvl1->getUrl());
     b->addEnemy(i_doomerLvl1);
+    b->defaultImg="room12.png";
 
-    c = new Room(storyMap[3],"");
+    c = new Room(storyMap[3],"room12.png");
 
-    c->addWeapon(nunchucks);
+    c->addWeapon(m_gun);
+     c->defaultImg="room12.png";
 
 
     d = new Room(storyMap[4],doomerLvl2->getUrl());
     d->addEnemy(doomerLvl2);
+    d->addHp(fifty);
+    d->defaultImg="room12.png";
 
 
-    e = new Room(storyMap[5],"");
-    e->addWeapon(m_gun);
+    e = new Room(storyMap[5],"room12.png");
+    e->addWeapon(Flail);
+     e->defaultImg="room12.png";
 
     f = new Room(storyMap[6],doomerLvl3->getUrl());
     f->addEnemy(doomerLvl3);
-    f->addHp(hun);
+    f->defaultImg="room12.png";
+   // f->addHp(hun);
 
-    g = new Room(storyMap[7],"");
-    g->addHp(twentyfive);
+    g = new Room(storyMap[7],"room12.png");
+    g->defaultImg="room12.png";
+
 
     h = new Room(storyMap[8],doomerLvl4->getUrl());
     h->addEnemy(doomerLvl4);
-    h->addWeapon(Revolver);
+    h->addHp(hun);
+    h->defaultImg="room12.png";
 
-    i = new Room(storyMap[9],"");
-    i->addHp(fifty);
+    i = new Room(storyMap[9],"room12.png");
+   i->addWeapon(nunchucks);
+   i->defaultImg="room12.png";
 
     j = new Room(storyMap[10],doomerLvl5->getUrl());
     j->addEnemy(doomerLvl5);
+    j->defaultImg="room12.png";
 
     k = new Room(storyMap[11],infern->getUrl());
     k->addEnemy(infern);
-    k->addWeapon(BattleAxe);
+    k->addWeapon(sol);
+    k->defaultImg="room2.png";
 
 
     a->setExits(f, e, b, g);

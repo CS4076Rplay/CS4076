@@ -34,7 +34,9 @@ public:
     QWidget *widget;
     QVBoxLayout *verticalLayout;
     QLabel *label_3;
+    QGroupBox *groupBox_3;
     QLabel *characterImg;
+    QLabel *char_type;
     QComboBox *raceSelector;
     QLabel *charDesc;
     QGroupBox *groupBox_2;
@@ -105,14 +107,27 @@ public:
 
         verticalLayout->addWidget(label_3);
 
-        characterImg = new QLabel(widget);
+        groupBox_3 = new QGroupBox(widget);
+        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
+        groupBox_3->setStyleSheet(QLatin1String("background:transparent\n"
+""));
+        characterImg = new QLabel(groupBox_3);
         characterImg->setObjectName(QStringLiteral("characterImg"));
+        characterImg->setGeometry(QRect(100, 30, 191, 191));
         sizePolicy.setHeightForWidth(characterImg->sizePolicy().hasHeightForWidth());
         characterImg->setSizePolicy(sizePolicy);
         characterImg->setStyleSheet(QStringLiteral("background:transparent;"));
         characterImg->setPixmap(QPixmap(QString::fromUtf8(":/Images/Characters/Shadowalker.png")));
+        char_type = new QLabel(groupBox_3);
+        char_type->setObjectName(QStringLiteral("char_type"));
+        char_type->setGeometry(QRect(-40, -30, 511, 281));
+        char_type->setStyleSheet(QLatin1String("filter:blur(100px);\n"
+""));
+        char_type->setPixmap(QPixmap(QString::fromUtf8(":/Images/Characters/sw_ic.png")));
+        char_type->raise();
+        characterImg->raise();
 
-        verticalLayout->addWidget(characterImg);
+        verticalLayout->addWidget(groupBox_3);
 
         raceSelector = new QComboBox(widget);
         raceSelector->addItem(QString());
@@ -438,7 +453,9 @@ public:
         CharacterCreator->setWindowTitle(QApplication::translate("CharacterCreator", "Dialog", nullptr));
         groupBox->setTitle(QString());
         label_3->setText(QApplication::translate("CharacterCreator", "CHOOSE A RACE", nullptr));
+        groupBox_3->setTitle(QString());
         characterImg->setText(QString());
+        char_type->setText(QString());
         raceSelector->setItemText(0, QApplication::translate("CharacterCreator", "SHADOWALKER", nullptr));
         raceSelector->setItemText(1, QApplication::translate("CharacterCreator", "MOONMAGE", nullptr));
         raceSelector->setItemText(2, QApplication::translate("CharacterCreator", "KNIGHT", nullptr));

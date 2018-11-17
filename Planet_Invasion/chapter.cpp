@@ -10,6 +10,7 @@ void Chapter::goRoom(const string& direction) {
 string Chapter::getDescription(){
     return currentRoom->getDescription();
 }
+
 string Chapter::getImage()
 {
     return currentRoom->getImg();

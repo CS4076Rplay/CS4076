@@ -29,6 +29,7 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
     int intel=45;
     int defense=45;
 
+
     cout<<arg1.toStdString()<<endl;
     if(arg1=="SHADOWALKER")
        {
@@ -38,6 +39,7 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
         speed+=40;
         intel+=20;
         defense+=35;
+        ui->char_type->setPixmap(QPixmap(":/Images/Characters/sw_ic.png").scaled(200,200,Qt::KeepAspectRatio));
     }
     else if(arg1=="KNIGHT")
     {
@@ -47,7 +49,9 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
         speed+=10;
         intel+=10;
         defense+=30;
+        ui->char_type->setPixmap(QPixmap(":/Images/Characters/k_ic.png").scaled(200,200,Qt::KeepAspectRatio));
     }
+
     else if(arg1=="MOONMAGE")
     {
         *img="Mage1.png";
@@ -56,6 +60,7 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
         speed+=26;
         intel+=40;
         defense+=15;
+        ui->char_type->setPixmap(QPixmap(":/Images/Characters/mage_ic.png").scaled(200,200,Qt::KeepAspectRatio));
     }
     else if(arg1=="AI")
     {
@@ -65,6 +70,7 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
         speed+=30;
         intel+=30;
         defense+=20;
+        ui->char_type->setPixmap(QPixmap(":/Images/Characters/ai_ic.png").scaled(200,200,Qt::KeepAspectRatio));
     }
     else {
         *img="AI.png";

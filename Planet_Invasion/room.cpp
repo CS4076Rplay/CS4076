@@ -76,6 +76,14 @@ void  Room::removeHp()
 string Room::getDescription(){
     return description;
 }
+void Room::setDescription(string description)
+{
+    this->description=description;
+}
+void Room::setImg(string img)
+{
+    this->roomImg=img;
+}
 string Room::getImg()
 {
     return roomImg;

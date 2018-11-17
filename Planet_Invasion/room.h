@@ -26,6 +26,8 @@ public:
     Room(string description,string img);
     void setExits(Room *north, Room *east, Room *south, Room *west);
     string getDescription();
+    void setDescription(string);
+    void setImg(string);
     string getImg();
     Room* nextRoom(string description);
     Enemy* getEnemy();
@@ -37,6 +39,7 @@ public:
     Hp *getHp();
     void addHp(Hp*);
     void removeHp();
+    string defaultImg;
 
 };
 

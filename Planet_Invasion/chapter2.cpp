@@ -52,7 +52,7 @@ void Chapter2::createRooms(){
         Story().replace(storyParts[i],"~","");
         storyMap[(int)i]=storyParts[i];
     }
-    Enemy *doomerLvl1=new Enemy(100,4,5,50,SHADOW,false);
+    Enemy *doomerLvl1=new Enemy(100,2,5,50,SHADOW,false);
     doomerLvl1->setName("lvl1 Shadow Doomer");
     doomerLvl1->setDescription("Weak Shadow Doomer");
     doomerLvl1->setId("Enemy");
@@ -69,7 +69,7 @@ void Chapter2::createRooms(){
     doomerLvl2->setSoundUrl("iD1.wav");
 
 
-    Enemy *doomerLvl3=new Enemy(100,6,4,60,SHADOW,false);
+    Enemy *doomerLvl3=new Enemy(100,4,4,60,SHADOW,false);
     doomerLvl3->setName("lvl3 Shadow Doomer");
     doomerLvl3->setDescription("strong Shadow Doomer");
     doomerLvl3->setId("Enemy");
@@ -86,7 +86,7 @@ void Chapter2::createRooms(){
     doomerLvl4->setSoundUrl("iD1.wav");
 
 
-    Enemy *doomerLvl5=new Enemy(100,7,8,120,SHADOW,false);
+    Enemy *doomerLvl5=new Enemy(100,8,8,120,SHADOW,false);
     doomerLvl5->setName("Morgan's Pet");
     doomerLvl5->setDescription("Morgan's Pet");
     doomerLvl5->setId("Enemy");
@@ -101,46 +101,27 @@ void Chapter2::createRooms(){
     morgana->setUrl("morgana.png");
 
 
-    Weapon *nunchucks=new Weapon(60,60);
-    nunchucks->setName("Nunchucks of Pain");
-    nunchucks->setDescription("");
-    nunchucks->setId("WEAPON");
-    nunchucks->setUrl("Nunchuks.png");
+    Weapon *ji=new Weapon(15,100);
+    ji->setName("Death Whisperer");
+    ji->setDescription("");
+    ji->setId("WEAPON");
+    ji->setUrl("Ji.png");
 
 
 
-    Weapon *m_gun=new Weapon(60,200);
-    m_gun->setName("Mx380");
-    m_gun->setDescription("");
-    m_gun->setId("WEAPON");
-    m_gun->setUrl("MachineGun.png");
-
-
-    Weapon *ninstar=new Weapon(40,500);
-    ninstar->setName("Mx380");
-    ninstar->setDescription("");
-    ninstar->setId("WEAPON");
-    ninstar->setUrl("NinjaStar.png");
-
-
-
-    Weapon *BattleAxe=new Weapon(100,50);
+    Weapon *BattleAxe=new Weapon(7,6);
     BattleAxe->setName("AXe of Helion");
     BattleAxe->setDescription("Forged from the sun");
     BattleAxe->setId("WEAPON");
     BattleAxe->setUrl("BattleAxe.png");
 
-    Weapon *Revolver=new Weapon(70,30);
+    Weapon *Revolver=new Weapon(6,20);
     Revolver->setName("Revolver");
     Revolver->setDescription("");
     Revolver->setId("WEAPON");
     Revolver->setUrl("Revolver.png");
 
-    Weapon *Flail=new Weapon(40,60);
-    Flail->setName("Flail");
-    Flail->setDescription("");
-    Flail->setId("WEAPON");
-    Flail->setUrl("Flail.png");
+
 
     Hp *fifty=new Hp(50);
     fifty->setName("50 Hp");
@@ -161,28 +142,39 @@ void Chapter2::createRooms(){
     hun->setId("HP");
     hun->setUrl("100h.png");
 
-    a = new Room(storyMap[0],"");
+    a = new Room(storyMap[0],"room0.png");
+
     b = new Room(storyMap[1],"");
+    b->defaultImg="room1.png";
     c = new Room(storyMap[5],"");
+    c->defaultImg="room1.png";
 
     d = new Room(storyMap[2],doomerLvl1->getUrl());
     d->addEnemy(doomerLvl1);
     d->addHp(twentyfive);
-    e = new Room(storyMap[4],"");
-
+    d->defaultImg="room1.png";
+    e = new Room(storyMap[4],"room1.png");
+    e->addHp(fifty);
+    e->defaultImg="room1.png";
 
     f = new Room(storyMap[3],doomerLvl4->getUrl());
     f->addEnemy(doomerLvl4);
-    f->addWeapon(ninstar);
-    g = new Room(storyMap[6],"");
-  //  h->addWeapon(Flail);
+    f->addWeapon(Revolver);
+    f->defaultImg="room1.png";
+    g = new Room(storyMap[6],"room1.png");
+   g->addWeapon(BattleAxe);
+   g->defaultImg="room1.png";
     h = new Room(storyMap[7],doomerLvl3->getUrl());
     h->addEnemy(doomerLvl3);
     h->addHp(hun);
+    h->defaultImg="room1.png";
     i = new Room(storyMap[8],doomerLvl5->getUrl());
     i->addEnemy(doomerLvl5);
+    i->defaultImg="room1.png";
     j = new Room(storyMap[9],morgana->getUrl());
     j->addEnemy(morgana);
+    j->addWeapon(ji);
+    j->defaultImg="room2.png";
     //NESW
     a->setExits(b, nullptr, nullptr, nullptr);
     b->setExits(d, c, a, nullptr);

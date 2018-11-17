@@ -27,6 +27,7 @@ void Battle::run()
        cout<<"fighting"<<endl;
     if(player!=nullptr){
        // cout<<"Die!!!"<<endl;
+
         if(!isdefend)
         {
             int defencePower=0;
@@ -79,9 +80,29 @@ void Battle::setInventory(Inventory* inventory)
 void Battle::setEnemy(Enemy* enemy)
 {
     this->enemy=enemy;
-    if(enemy!=nullptr)
-    soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(enemy->getSoundUrl())));
-    defSoundFx->setMedia(QUrl("qrc:/Sounds/blocked.wav"));
+    if(enemy!=nullptr){
+
+        QRandomGenerator *r=new QRandomGenerator(1);
+
+        if(enemy->getDoomer()==INFERNO)
+            switch(r->bounded(1,4))
+            {
+                case 1:soundFx->setMedia(QUrl("qrc:/Sounds/iD1.wav"));break;
+                case 2:soundFx->setMedia(QUrl("qrc:/Sounds/iD2.wav"));break;
+                case 3:soundFx->setMedia(QUrl("qrc:/Sounds/iD3.wav"));break;
+            default:soundFx->setMedia(QUrl("qrc:/Sounds/iD4.wav"));break;
+
+            }
+        else{
+            switch(r->bounded(1,2))
+            {
+                case 1:soundFx->setMedia(QUrl("qrc:/Sounds/sD.wav"));break;
+                default:soundFx->setMedia(QUrl("qrc:/Sounds/sD3.wav"));break;
+
+
+            }
+        }
+    }defSoundFx->setMedia(QUrl("qrc:/Sounds/blocked.wav"));
     if(player!=nullptr)
     switch(player->getRaceType())
     {
@@ -112,8 +133,8 @@ bool Battle::isBattleOver()
     return false;
 }
 void Battle::attack()
-{ //cout<<"Power: "<<player->getAttack()<<endl;
-    int attackPower=(player->getAttack()/10)+((player->getintelligence()/10)/3)+((player->getSpeed()/10)/2);
+{ cout<<"Power: "<<player->getAttack()<<endl;
+    int attackPower=(player->getAttack()/10)+((player->getintelligence()/10)/3);
     cout<<"Attack: "<<attackPower<<endl;
 
     int defencePower=enemy->getHealth()+enemy->getDefence();

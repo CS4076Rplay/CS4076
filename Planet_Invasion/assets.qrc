@@ -32,6 +32,12 @@
         <file>k_ic.png</file>
         <file>mage_ic.png</file>
         <file>sw_ic.png</file>
+        <file>doomage.png</file>
+        <file>m1.png</file>
+        <file>salamander.png</file>
+        <file>room1.png</file>
+        <file>room2.png</file>
+        <file>room12.png</file>
     </qresource>
     <qresource prefix="/Story">
         <file>chapter1.txt</file>
@@ -78,5 +84,18 @@
         <file>destroyed.wav</file>
         <file>blocked.wav</file>
         <file>st.wav</file>
+        <file>iD3.wav</file>
+        <file>iD4.wav</file>
+        <file>mgun.wav</file>
+        <file>nchucks.wav</file>
+        <file>sD.wav</file>
+        <file>sD2.wav</file>
+        <file>sD3.wav</file>
+        <file>sgun.wav</file>
+        <file>loot.wav</file>
+        <file>aiSFX.mp3</file>
+        <file>kSFX.wav</file>
+        <file>mSFX.mp3</file>
+        <file>swSFX.wav</file>
     </qresource>
 </RCC>

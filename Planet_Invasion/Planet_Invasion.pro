@@ -49,7 +49,8 @@ SOURCES += \
     enemy.cpp \
     battle.cpp \
     hp.cpp \
-    gamesscreenthread.cpp
+    gamesscreenthread.cpp \
+    chapter3.cpp
 
 
 
@@ -77,7 +78,8 @@ HEADERS += \
     enemy.h \
     battle.h \
     hp.h \
-    gamesscreenthread.h
+    gamesscreenthread.h \
+    chapter3.h
 
 
 FORMS += \

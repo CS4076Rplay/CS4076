@@ -64,9 +64,13 @@ void MainWindow::setupFiles()
     chapter1->setChapterStory(chap1->loadFile(true));
     FileParser *chap2=new FileParser(":/Story/chapter2.txt");
     S_Chapter *chapter2=new S_Chapter();
+    FileParser *chap3=new FileParser(":/Story/chapter3.txt");
+    S_Chapter *chapter3=new S_Chapter();
     chapter2->setChapterStory(chap2->loadFile(true));
+    chapter3->setChapterStory(chap3->loadFile(true));
     storyline->addChapter(*chapter1);
     storyline->addChapter(*chapter2);
+    storyline->addChapter(*chapter3);
     //loadInventory
     inventory=new Inventory();
    // FileParser *inventoryFile=new FileParser(":Story/inventory.txt",',');//problem loading from file

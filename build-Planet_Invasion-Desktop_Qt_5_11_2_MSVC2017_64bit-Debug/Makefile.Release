@@ -69,7 +69,8 @@ SOURCES       = ..\Planet_Invasion\main.cpp \
 		..\Planet_Invasion\enemy.cpp \
 		..\Planet_Invasion\battle.cpp \
 		..\Planet_Invasion\hp.cpp \
-		..\Planet_Invasion\gamesscreenthread.cpp release\moc_mainwindow.cpp \
+		..\Planet_Invasion\gamesscreenthread.cpp \
+		..\Planet_Invasion\chapter3.cpp release\moc_mainwindow.cpp \
 		release\moc_inventoryui.cpp \
 		release\moc_clickableqlabel.cpp \
 		release\moc_charactercreator.cpp \
@@ -104,6 +105,7 @@ OBJECTS       = release\qrc_assets.obj \
 		release\battle.obj \
 		release\hp.obj \
 		release\gamesscreenthread.obj \
+		release\chapter3.obj \
 		release\moc_mainwindow.obj \
 		release\moc_inventoryui.obj \
 		release\moc_clickableqlabel.obj \
@@ -137,7 +139,8 @@ DIST          =  ..\Planet_Invasion\mainwindow.h \
 		..\Planet_Invasion\enemy.h \
 		..\Planet_Invasion\battle.h \
 		..\Planet_Invasion\hp.h \
-		..\Planet_Invasion\gamesscreenthread.h ..\Planet_Invasion\main.cpp \
+		..\Planet_Invasion\gamesscreenthread.h \
+		..\Planet_Invasion\chapter3.h ..\Planet_Invasion\main.cpp \
 		..\Planet_Invasion\mainwindow.cpp \
 		..\Planet_Invasion\inventoryui.cpp \
 		..\Planet_Invasion\inventory.cpp \
@@ -161,7 +164,8 @@ DIST          =  ..\Planet_Invasion\mainwindow.h \
 		..\Planet_Invasion\enemy.cpp \
 		..\Planet_Invasion\battle.cpp \
 		..\Planet_Invasion\hp.cpp \
-		..\Planet_Invasion\gamesscreenthread.cpp
+		..\Planet_Invasion\gamesscreenthread.cpp \
+		..\Planet_Invasion\chapter3.cpp
 QMAKE_TARGET  = Planet_Invasion
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = Planet_Invasion.exe
@@ -238,7 +242,7 @@ all: Makefile.Release  $(DESTDIR_TARGET)
 
 $(DESTDIR_TARGET): ui_mainwindow.h ui_inventoryui.h ui_charactercreator.h ui_chapterscreen.h ui_gamescreen.h ui_intro.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-release\qrc_assets.obj release\main.obj release\mainwindow.obj release\inventoryui.obj release\inventory.obj release\item.obj release\weapon.obj release\keyitem.obj release\fileparser.obj release\clickableqlabel.obj release\charactercreator.obj release\chapterscreen.obj release\player.obj release\race.obj release\gamescreen.obj release\intro.obj release\chapter.obj release\chapter1.obj release\chapter2.obj release\room.obj release\story.obj release\s_chapter.obj release\enemy.obj release\battle.obj release\hp.obj release\gamesscreenthread.obj release\moc_mainwindow.obj release\moc_inventoryui.obj release\moc_clickableqlabel.obj release\moc_charactercreator.obj release\moc_chapterscreen.obj release\moc_gamescreen.obj release\moc_intro.obj release\moc_battle.obj release\moc_gamesscreenthread.obj
+release\qrc_assets.obj release\main.obj release\mainwindow.obj release\inventoryui.obj release\inventory.obj release\item.obj release\weapon.obj release\keyitem.obj release\fileparser.obj release\clickableqlabel.obj release\charactercreator.obj release\chapterscreen.obj release\player.obj release\race.obj release\gamescreen.obj release\intro.obj release\chapter.obj release\chapter1.obj release\chapter2.obj release\room.obj release\story.obj release\s_chapter.obj release\enemy.obj release\battle.obj release\hp.obj release\gamesscreenthread.obj release\chapter3.obj release\moc_mainwindow.obj release\moc_inventoryui.obj release\moc_clickableqlabel.obj release\moc_charactercreator.obj release\moc_chapterscreen.obj release\moc_gamescreen.obj release\moc_intro.obj release\moc_battle.obj release\moc_gamesscreenthread.obj
 $(LIBS)
 <<
 
@@ -248,10 +252,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Planet_Invasion.zip $(SOURCES) $(DIST) ..\Planet_Invasion\Planet_Invasion.pro ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\spec_pre.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\common\angle.conf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\common\windows-vulkan.conf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\common\msvc-desktop.conf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\qconfig.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dstudioruntime2.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dstudioruntime2_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_edid_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_purchasing.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_purchasing_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_repparser.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_repparser_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_script.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_script_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scripttools.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_vulkan_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webengine.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webengine_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\qt_functions.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\qt_config.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\common\msvc-version.conf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\toolchain.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\default_pre.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\win32\default_pre.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\resolve_config.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds_post.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\default_post.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\build_pass.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\qml_debug.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\precompile_header.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\warn_on.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\qt.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\resources.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\moc.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\win32\opengl.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\uic.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\qmake_use.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\file_copies.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\win32\windows.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\testcase_targets.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\exceptions.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\yacc.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\lex.prf ..\Planet_Invasion\Planet_Invasion.pro ..\Planet_Invasion\assets.qrc ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\qtmain.prl ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Multimedia.prl ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Widgets.prl ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Gui.prl ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Network.prl ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Core.prl   ..\Planet_Invasion\assets.qrc ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\data\dummy.cpp ..\Planet_Invasion\mainwindow.h ..\Planet_Invasion\inventoryui.h ..\Planet_Invasion\inventory.h ..\Planet_Invasion\item.h ..\Planet_Invasion\weapon.h ..\Planet_Invasion\keyitem.h ..\Planet_Invasion\fileparser.h ..\Planet_Invasion\clickableqlabel.h ..\Planet_Invasion\charactercreator.h ..\Planet_Invasion\chapterscreen.h ..\Planet_Invasion\player.h ..\Planet_Invasion\race.h ..\Planet_Invasion\gamescreen.h ..\Planet_Invasion\intro.h ..\Planet_Invasion\chapter.h ..\Planet_Invasion\chapter1.h ..\Planet_Invasion\chapter2.h ..\Planet_Invasion\room.h ..\Planet_Invasion\story.h ..\Planet_Invasion\s_chapter.h ..\Planet_Invasion\enemy.h ..\Planet_Invasion\battle.h ..\Planet_Invasion\hp.h ..\Planet_Invasion\gamesscreenthread.h  ..\Planet_Invasion\main.cpp ..\Planet_Invasion\mainwindow.cpp ..\Planet_Invasion\inventoryui.cpp ..\Planet_Invasion\inventory.cpp ..\Planet_Invasion\item.cpp ..\Planet_Invasion\weapon.cpp ..\Planet_Invasion\keyitem.cpp ..\Planet_Invasion\fileparser.cpp ..\Planet_Invasion\clickableqlabel.cpp ..\Planet_Invasion\charactercreator.cpp ..\Planet_Invasion\chapterscreen.cpp ..\Planet_Invasion\player.cpp ..\Planet_Invasion\race.cpp ..\Planet_Invasion\gamescreen.cpp ..\Planet_Invasion\intro.cpp ..\Planet_Invasion\chapter.cpp ..\Planet_Invasion\chapter1.cpp ..\Planet_Invasion\chapter2.cpp ..\Planet_Invasion\room.cpp ..\Planet_Invasion\story.cpp ..\Planet_Invasion\s_chapter.cpp ..\Planet_Invasion\enemy.cpp ..\Planet_Invasion\battle.cpp ..\Planet_Invasion\hp.cpp ..\Planet_Invasion\gamesscreenthread.cpp ..\Planet_Invasion\mainwindow.ui ..\Planet_Invasion\inventoryui.ui ..\Planet_Invasion\charactercreator.ui ..\Planet_Invasion\chapterscreen.ui ..\Planet_Invasion\gamescreen.ui ..\Planet_Invasion\intro.ui    
+	$(ZIP) Planet_Invasion.zip $(SOURCES) $(DIST) ..\Planet_Invasion\Planet_Invasion.pro ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\spec_pre.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\common\angle.conf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\common\windows-vulkan.conf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\common\msvc-desktop.conf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\qconfig.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dstudioruntime2.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_3dstudioruntime2_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_charts_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_core_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_datavisualization_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_edid_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_help_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_location_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_network_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_networkauth_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_positioningquick_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_purchasing.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_purchasing_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_repparser.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_repparser_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_script.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_script_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scripttools.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_vulkan_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webengine.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webengine_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecore_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_webview_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\modules\qt_lib_zlib_private.pri ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\qt_functions.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\qt_config.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\win32-msvc\qmake.conf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\common\msvc-version.conf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\toolchain.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\default_pre.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\win32\default_pre.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\resolve_config.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\exclusive_builds_post.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\default_post.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\build_pass.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\qml_debug.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\precompile_header.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\warn_on.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\qt.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\resources.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\moc.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\win32\opengl.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\uic.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\qmake_use.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\file_copies.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\win32\windows.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\testcase_targets.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\exceptions.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\yacc.prf ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\lex.prf ..\Planet_Invasion\Planet_Invasion.pro ..\Planet_Invasion\assets.qrc ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\qtmain.prl ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Multimedia.prl ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Widgets.prl ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Gui.prl ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Network.prl ..\..\..\..\Qt\5.11.2\msvc2017_64\lib\Qt5Core.prl   ..\Planet_Invasion\assets.qrc ..\..\..\..\Qt\5.11.2\msvc2017_64\mkspecs\features\data\dummy.cpp ..\Planet_Invasion\mainwindow.h ..\Planet_Invasion\inventoryui.h ..\Planet_Invasion\inventory.h ..\Planet_Invasion\item.h ..\Planet_Invasion\weapon.h ..\Planet_Invasion\keyitem.h ..\Planet_Invasion\fileparser.h ..\Planet_Invasion\clickableqlabel.h ..\Planet_Invasion\charactercreator.h ..\Planet_Invasion\chapterscreen.h ..\Planet_Invasion\player.h ..\Planet_Invasion\race.h ..\Planet_Invasion\gamescreen.h ..\Planet_Invasion\intro.h ..\Planet_Invasion\chapter.h ..\Planet_Invasion\chapter1.h ..\Planet_Invasion\chapter2.h ..\Planet_Invasion\room.h ..\Planet_Invasion\story.h ..\Planet_Invasion\s_chapter.h ..\Planet_Invasion\enemy.h ..\Planet_Invasion\battle.h ..\Planet_Invasion\hp.h ..\Planet_Invasion\gamesscreenthread.h ..\Planet_Invasion\chapter3.h  ..\Planet_Invasion\main.cpp ..\Planet_Invasion\mainwindow.cpp ..\Planet_Invasion\inventoryui.cpp ..\Planet_Invasion\inventory.cpp ..\Planet_Invasion\item.cpp ..\Planet_Invasion\weapon.cpp ..\Planet_Invasion\keyitem.cpp ..\Planet_Invasion\fileparser.cpp ..\Planet_Invasion\clickableqlabel.cpp ..\Planet_Invasion\charactercreator.cpp ..\Planet_Invasion\chapterscreen.cpp ..\Planet_Invasion\player.cpp ..\Planet_Invasion\race.cpp ..\Planet_Invasion\gamescreen.cpp ..\Planet_Invasion\intro.cpp ..\Planet_Invasion\chapter.cpp ..\Planet_Invasion\chapter1.cpp ..\Planet_Invasion\chapter2.cpp ..\Planet_Invasion\room.cpp ..\Planet_Invasion\story.cpp ..\Planet_Invasion\s_chapter.cpp ..\Planet_Invasion\enemy.cpp ..\Planet_Invasion\battle.cpp ..\Planet_Invasion\hp.cpp ..\Planet_Invasion\gamesscreenthread.cpp ..\Planet_Invasion\chapter3.cpp ..\Planet_Invasion\mainwindow.ui ..\Planet_Invasion\inventoryui.ui ..\Planet_Invasion\charactercreator.ui ..\Planet_Invasion\chapterscreen.ui ..\Planet_Invasion\gamescreen.ui ..\Planet_Invasion\intro.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\qrc_assets.obj release\main.obj release\mainwindow.obj release\inventoryui.obj release\inventory.obj release\item.obj release\weapon.obj release\keyitem.obj release\fileparser.obj release\clickableqlabel.obj release\charactercreator.obj release\chapterscreen.obj release\player.obj release\race.obj release\gamescreen.obj release\intro.obj release\chapter.obj release\chapter1.obj release\chapter2.obj release\room.obj release\story.obj release\s_chapter.obj release\enemy.obj release\battle.obj release\hp.obj release\gamesscreenthread.obj release\moc_mainwindow.obj release\moc_inventoryui.obj release\moc_clickableqlabel.obj release\moc_charactercreator.obj release\moc_chapterscreen.obj release\moc_gamescreen.obj release\moc_intro.obj release\moc_battle.obj release\moc_gamesscreenthread.obj
+	-$(DEL_FILE) release\qrc_assets.obj release\main.obj release\mainwindow.obj release\inventoryui.obj release\inventory.obj release\item.obj release\weapon.obj release\keyitem.obj release\fileparser.obj release\clickableqlabel.obj release\charactercreator.obj release\chapterscreen.obj release\player.obj release\race.obj release\gamescreen.obj release\intro.obj release\chapter.obj release\chapter1.obj release\chapter2.obj release\room.obj release\story.obj release\s_chapter.obj release\enemy.obj release\battle.obj release\hp.obj release\gamesscreenthread.obj release\chapter3.obj release\moc_mainwindow.obj release\moc_inventoryui.obj release\moc_clickableqlabel.obj release\moc_charactercreator.obj release\moc_chapterscreen.obj release\moc_gamescreen.obj release\moc_intro.obj release\moc_battle.obj release\moc_gamesscreenthread.obj
 	-$(DEL_FILE) release\Planet_Invasion.exp
 
 distclean: clean 
@@ -275,45 +279,83 @@ compiler_rcc_clean:
 release\qrc_assets.obj: ..\Planet_Invasion\assets.qrc \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\bin\rcc.exe \
 		..\Planet_Invasion\_infern.png \
+		..\Planet_Invasion\attack-icon-3.jpg.png \
+		..\Planet_Invasion\stm.mp3 \
+		..\Planet_Invasion\attack-icon-13.jpg.png \
+		..\Planet_Invasion\ch3_copy.png \
+		..\Planet_Invasion\bg1.png \
+		..\Planet_Invasion\treasure.jpg \
+		..\Planet_Invasion\ch3.png \
+		..\Planet_Invasion\inventory.png \
+		..\Planet_Invasion\ch2.png \
 		..\Planet_Invasion\_infern_guardian.png \
+		..\Planet_Invasion\bg.png \
 		..\Planet_Invasion\i_doomer.png \
+		..\Planet_Invasion\ch1.png \
 		..\Planet_Invasion\Mage1.png \
 		..\Planet_Invasion\Nunchuks.png \
 		..\Planet_Invasion\Shadowalker.png \
 		..\Planet_Invasion\Revolver.png \
+		..\Planet_Invasion\m1.png \
 		..\Planet_Invasion\Hammer.png \
 		..\Planet_Invasion\i_doomer.png \
 		..\Planet_Invasion\planetx.jpg \
 		..\Planet_Invasion\Sword.png \
 		..\Planet_Invasion\Ji.png \
+		..\Planet_Invasion\salamander.png \
 		..\Planet_Invasion\25h.png \
 		..\Planet_Invasion\room0.png \
+		..\Planet_Invasion\morgana.png \
+		..\Planet_Invasion\sw_ic.png \
 		..\Planet_Invasion\Flail.png \
+		..\Planet_Invasion\k_ic.png \
 		..\Planet_Invasion\Knife.png \
 		..\Planet_Invasion\MachineGun.png \
 		..\Planet_Invasion\BattleAxe.png \
 		..\Planet_Invasion\NinjaStar.png \
+		..\Planet_Invasion\shadwDoomer.png \
+		..\Planet_Invasion\doomage.png \
+		..\Planet_Invasion\treasure.jpg \
+		..\Planet_Invasion\mage_ic.png \
 		..\Planet_Invasion\earth1.jpg \
+		..\Planet_Invasion\morgana_Guardian.png \
 		..\Planet_Invasion\100h.png \
 		..\Planet_Invasion\AI.png \
 		..\Planet_Invasion\_infern.png \
+		..\Planet_Invasion\treasure.png \
+		..\Planet_Invasion\ai_ic.png \
 		..\Planet_Invasion\Knight.png \
 		..\Planet_Invasion\50h.png \
 		..\Planet_Invasion\_infern_guardian.png \
-		..\Planet_Invasion\smallGulp.wav \
-		..\Planet_Invasion\destroyed.wav \
-		..\Planet_Invasion\sw_death.wav \
-		..\Planet_Invasion\iD2.wav \
-		..\Planet_Invasion\infernoDommer.wav \
-		..\Planet_Invasion\sword.mp3 \
-		..\Planet_Invasion\ai_ouch.wav \
-		..\Planet_Invasion\knife.wav \
-		..\Planet_Invasion\bash.wav \
 		..\Planet_Invasion\iD1.wav \
-		..\Planet_Invasion\m_hurt.wav \
-		..\Planet_Invasion\sw_ouch.wav \
+		..\Planet_Invasion\swSFX.wav \
+		..\Planet_Invasion\iD2.wav \
+		..\Planet_Invasion\iD3.wav \
 		..\Planet_Invasion\meele.flac \
+		..\Planet_Invasion\iD4.wav \
+		..\Planet_Invasion\loot.wav \
+		..\Planet_Invasion\sgun.wav \
+		..\Planet_Invasion\smallGulp.wav \
+		..\Planet_Invasion\st.wav \
+		..\Planet_Invasion\blocked.wav \
+		..\Planet_Invasion\destroyed.wav \
+		..\Planet_Invasion\sword.mp3 \
+		..\Planet_Invasion\knife.wav \
+		..\Planet_Invasion\ai_ouch.wav \
+		..\Planet_Invasion\mgun.wav \
+		..\Planet_Invasion\sD2.wav \
+		..\Planet_Invasion\m_hurt.wav \
+		..\Planet_Invasion\sD3.wav \
+		..\Planet_Invasion\sw_death.wav \
+		..\Planet_Invasion\aiSFX.mp3 \
+		..\Planet_Invasion\sw_ouch.wav \
+		..\Planet_Invasion\infernoDommer.wav \
+		..\Planet_Invasion\bash.wav \
 		..\Planet_Invasion\largeGulp.wav \
+		..\Planet_Invasion\kSFX.wav \
+		..\Planet_Invasion\nchucks.wav \
+		..\Planet_Invasion\sD.wav \
+		..\Planet_Invasion\mSFX.mp3 \
 		..\Planet_Invasion\main.txt \
 		..\Planet_Invasion\chapter4.txt \
 		..\Planet_Invasion\chapters.txt \
@@ -496,6 +538,8 @@ release\moc_mainwindow.cpp: ..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\gamesscreenthread.h \
@@ -653,6 +697,8 @@ release\moc_inventoryui.cpp: ..\Planet_Invasion\keyitem.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\gamesscreenthread.h \
@@ -1051,6 +1097,8 @@ release\moc_chapterscreen.cpp: ..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidge
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\gamesscreenthread.h \
@@ -1169,12 +1217,12 @@ release\moc_gamescreen.cpp: ..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\
 		..\Planet_Invasion\room.h \
 		..\Planet_Invasion\item.h \
 		..\Planet_Invasion\enemy.h \
+		..\Planet_Invasion\weapon.h \
+		..\Planet_Invasion\hp.h \
 		..\Planet_Invasion\chapter.h \
 		..\Planet_Invasion\player.h \
 		..\Planet_Invasion\race.h \
 		..\Planet_Invasion\inventory.h \
-		..\Planet_Invasion\hp.h \
-		..\Planet_Invasion\weapon.h \
 		..\Planet_Invasion\story.h \
 		..\Planet_Invasion\s_chapter.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtGui\QCloseEvent \
@@ -1198,6 +1246,8 @@ release\moc_gamescreen.cpp: ..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\gamesscreenthread.h \
@@ -1416,6 +1466,8 @@ release\moc_battle.cpp: ..\Planet_Invasion\player.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\battle.h \
@@ -1688,6 +1740,8 @@ release\main.obj: ..\Planet_Invasion\main.cpp ..\Planet_Invasion\mainwindow.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\gamesscreenthread.h \
@@ -1859,6 +1913,8 @@ release\mainwindow.obj: ..\Planet_Invasion\mainwindow.cpp ..\Planet_Invasion\mai
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\gamesscreenthread.h \
@@ -1870,17 +1926,14 @@ release\mainwindow.obj: ..\Planet_Invasion\mainwindow.cpp ..\Planet_Invasion\mai
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtGui\qguiapplication.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtGui\qinputmethod.h \
-		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QMenuBar \
-		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qmenubar.h \
-		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qmenu.h \
-		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qaction.h \
-		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QStatusBar \
-		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QToolBar \
-		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qtoolbar.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QGroupBox \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qgroupbox.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
 		..\Planet_Invasion\fileparser.h \
-		..\Planet_Invasion\charactercreator.h
+		..\Planet_Invasion\charactercreator.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\QMediaPlaylist \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qmediaplaylist.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qmediabindableinterface.h
 
 release\inventoryui.obj: ..\Planet_Invasion\inventoryui.cpp ..\Planet_Invasion\inventoryui.h \
 		..\Planet_Invasion\keyitem.h \
@@ -2032,6 +2085,8 @@ release\inventoryui.obj: ..\Planet_Invasion\inventoryui.cpp ..\Planet_Invasion\i
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\gamesscreenthread.h \
@@ -2049,6 +2104,8 @@ release\inventoryui.obj: ..\Planet_Invasion\inventoryui.cpp ..\Planet_Invasion\i
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qlayout.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QGroupBox \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qgroupbox.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QHBoxLayout \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QProgressBar \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qprogressbar.h \
@@ -2393,6 +2450,8 @@ release\charactercreator.obj: ..\Planet_Invasion\charactercreator.cpp ..\Planet_
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qframe.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QFrame \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QGroupBox \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qgroupbox.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QHBoxLayout \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qlayout.h \
@@ -2413,6 +2472,7 @@ release\charactercreator.obj: ..\Planet_Invasion\charactercreator.cpp ..\Planet_
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qabstractbutton.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QSlider \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QVBoxLayout \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QWidget \
 		..\Planet_Invasion\fileparser.h \
 		..\Planet_Invasion\intro.h
 
@@ -2575,6 +2635,8 @@ release\chapterscreen.obj: ..\Planet_Invasion\chapterscreen.cpp ..\Planet_Invasi
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\gamesscreenthread.h \
@@ -2585,7 +2647,10 @@ release\chapterscreen.obj: ..\Planet_Invasion\chapterscreen.cpp ..\Planet_Invasi
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qeventloop.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtGui\qguiapplication.h \
-		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtGui\qinputmethod.h
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtGui\qinputmethod.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QGroupBox \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qgroupbox.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QVBoxLayout
 
 release\player.obj: ..\Planet_Invasion\player.cpp ..\Planet_Invasion\player.h \
 		..\Planet_Invasion\race.h \
@@ -2707,12 +2772,12 @@ release\gamescreen.obj: ..\Planet_Invasion\gamescreen.cpp ..\Planet_Invasion\gam
 		..\Planet_Invasion\room.h \
 		..\Planet_Invasion\item.h \
 		..\Planet_Invasion\enemy.h \
+		..\Planet_Invasion\weapon.h \
+		..\Planet_Invasion\hp.h \
 		..\Planet_Invasion\chapter.h \
 		..\Planet_Invasion\player.h \
 		..\Planet_Invasion\race.h \
 		..\Planet_Invasion\inventory.h \
-		..\Planet_Invasion\hp.h \
-		..\Planet_Invasion\weapon.h \
 		..\Planet_Invasion\story.h \
 		..\Planet_Invasion\s_chapter.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtGui\QCloseEvent \
@@ -2736,10 +2801,13 @@ release\gamescreen.obj: ..\Planet_Invasion\gamescreen.cpp ..\Planet_Invasion\gam
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\gamesscreenthread.h \
 		ui_gamescreen.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtGui\QIcon \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QApplication \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qapplication.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qcoreapplication.h \
@@ -2754,6 +2822,8 @@ release\gamescreen.obj: ..\Planet_Invasion\gamescreen.cpp ..\Planet_Invasion\gam
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qlayout.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qlayoutitem.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qboxlayout.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QGroupBox \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qgroupbox.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QHBoxLayout \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\QLabel \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtWidgets\qlabel.h \
@@ -2950,6 +3020,8 @@ release\intro.obj: ..\Planet_Invasion\intro.cpp ..\Planet_Invasion\intro.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h \
 		..\Planet_Invasion\gamesscreenthread.h
@@ -2957,18 +3029,20 @@ release\intro.obj: ..\Planet_Invasion\intro.cpp ..\Planet_Invasion\intro.h \
 release\chapter.obj: ..\Planet_Invasion\chapter.cpp ..\Planet_Invasion\chapter.h \
 		..\Planet_Invasion\room.h \
 		..\Planet_Invasion\item.h \
-		..\Planet_Invasion\enemy.h
+		..\Planet_Invasion\enemy.h \
+		..\Planet_Invasion\weapon.h \
+		..\Planet_Invasion\hp.h
 
 release\chapter1.obj: ..\Planet_Invasion\chapter1.cpp ..\Planet_Invasion\chapter1.h \
 		..\Planet_Invasion\room.h \
 		..\Planet_Invasion\item.h \
 		..\Planet_Invasion\enemy.h \
+		..\Planet_Invasion\weapon.h \
+		..\Planet_Invasion\hp.h \
 		..\Planet_Invasion\chapter.h \
 		..\Planet_Invasion\player.h \
 		..\Planet_Invasion\race.h \
 		..\Planet_Invasion\inventory.h \
-		..\Planet_Invasion\hp.h \
-		..\Planet_Invasion\weapon.h \
 		..\Planet_Invasion\story.h \
 		..\Planet_Invasion\s_chapter.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QDebug \
@@ -3041,18 +3115,53 @@ release\chapter2.obj: ..\Planet_Invasion\chapter2.cpp ..\Planet_Invasion\chapter
 		..\Planet_Invasion\room.h \
 		..\Planet_Invasion\item.h \
 		..\Planet_Invasion\enemy.h \
+		..\Planet_Invasion\weapon.h \
+		..\Planet_Invasion\hp.h \
 		..\Planet_Invasion\chapter.h \
 		..\Planet_Invasion\player.h \
 		..\Planet_Invasion\race.h \
 		..\Planet_Invasion\inventory.h \
-		..\Planet_Invasion\hp.h \
-		..\Planet_Invasion\weapon.h \
 		..\Planet_Invasion\story.h \
-		..\Planet_Invasion\s_chapter.h
+		..\Planet_Invasion\s_chapter.h \
+		..\Planet_Invasion\fileparser.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QString \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qstring.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qchar.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qglobal.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qconfig.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qtcore-config.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qsystemdetection.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qprocessordetection.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qcompilerdetection.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qtypeinfo.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qsysinfo.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qlogging.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qflags.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qatomic.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qbasicatomic.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qgenericatomic.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qatomic_cxx11.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qatomic_msvc.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qglobalstatic.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmutex.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qnumeric.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qversiontagging.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qbytearray.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrefcount.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qnamespace.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qarraydata.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qstringliteral.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qstringview.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qstringbuilder.h
 
 release\room.obj: ..\Planet_Invasion\room.cpp ..\Planet_Invasion\room.h \
 		..\Planet_Invasion\item.h \
-		..\Planet_Invasion\enemy.h
+		..\Planet_Invasion\enemy.h \
+		..\Planet_Invasion\weapon.h \
+		..\Planet_Invasion\hp.h
 
 release\story.obj: ..\Planet_Invasion\story.cpp ..\Planet_Invasion\story.h \
 		..\Planet_Invasion\s_chapter.h \
@@ -3221,6 +3330,8 @@ release\battle.obj: ..\Planet_Invasion\battle.cpp ..\Planet_Invasion\battle.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmetaobject.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtMultimedia\qaudio.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtNetwork\qnetworkconfiguration.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QRandomGenerator \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrandom.h \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QThread \
 		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qthread.h
 
@@ -3285,6 +3396,52 @@ release\gamesscreenthread.obj: ..\Planet_Invasion\gamesscreenthread.cpp ..\Plane
 		..\Planet_Invasion\weapon.h \
 		..\Planet_Invasion\player.h \
 		..\Planet_Invasion\race.h
+
+release\chapter3.obj: ..\Planet_Invasion\chapter3.cpp ..\Planet_Invasion\chapter3.h \
+		..\Planet_Invasion\chapter.h \
+		..\Planet_Invasion\room.h \
+		..\Planet_Invasion\item.h \
+		..\Planet_Invasion\enemy.h \
+		..\Planet_Invasion\weapon.h \
+		..\Planet_Invasion\hp.h \
+		..\Planet_Invasion\player.h \
+		..\Planet_Invasion\race.h \
+		..\Planet_Invasion\inventory.h \
+		..\Planet_Invasion\story.h \
+		..\Planet_Invasion\s_chapter.h \
+		..\Planet_Invasion\fileparser.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\QString \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qstring.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qchar.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qglobal.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qconfig-bootstrapped.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qconfig.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qtcore-config.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qsystemdetection.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qprocessordetection.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qcompilerdetection.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qtypeinfo.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qsysinfo.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qlogging.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qflags.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qatomic.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qbasicatomic.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qatomic_bootstrap.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qgenericatomic.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qatomic_cxx11.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qatomic_msvc.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qglobalstatic.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qmutex.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qnumeric.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qversiontagging.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qbytearray.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qrefcount.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qnamespace.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qarraydata.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qstringliteral.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qstringalgorithms.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qstringview.h \
+		..\..\..\..\Qt\5.11.2\msvc2017_64\include\QtCore\qstringbuilder.h
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
 

@@ -52,22 +52,61 @@ font: 28pt &quot;Franklin Gothic Demi&quot;;
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="characterImg">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
+        <widget class="QGroupBox" name="groupBox_3">
          <property name="styleSheet">
-          <string notr="true">background:transparent;</string>
+          <string notr="true">background:transparent
+</string>
          </property>
-         <property name="text">
+         <property name="title">
           <string/>
          </property>
-         <property name="pixmap">
-          <pixmap resource="assets.qrc">:/Images/Characters/Shadowalker.png</pixmap>
-         </property>
+         <widget class="QLabel" name="characterImg">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>30</y>
+            <width>191</width>
+            <height>191</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background:transparent;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="assets.qrc">:/Images/Characters/Shadowalker.png</pixmap>
+          </property>
+         </widget>
+         <widget class="QLabel" name="char_type">
+          <property name="geometry">
+           <rect>
+            <x>-40</x>
+            <y>-30</y>
+            <width>511</width>
+            <height>281</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">filter:blur(100px);
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="assets.qrc">:/Images/Characters/sw_ic.png</pixmap>
+          </property>
+         </widget>
+         <zorder>char_type</zorder>
+         <zorder>characterImg</zorder>
         </widget>
        </item>
        <item>

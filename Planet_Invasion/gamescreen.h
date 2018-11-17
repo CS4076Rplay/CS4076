@@ -96,8 +96,8 @@ private:
     Inventory *inventory;
     Weapon *currentWeapon=nullptr;
     bool safeArea;
-    bool isInfernDeated=false,isMorganaDeafeated=false;
-    QMediaPlayer *soundPlayer;
+    bool isBossDead=false;
+    QMediaPlayer *soundPlayer,*lootFx,*sceneFx,*defenceFx,*specialFx;
      Player *o_player;
      int power;
      void movePlayer(string direction);
