@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChapterScreen</class>
+ <widget class="QDialog" name="ChapterScreen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:transparent;
+background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(48, 0, 88, 255), stop:1 rgba(68, 31, 2, 255))</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>331</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: transparent;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(12, 4, 37, 255), stop:1 rgba(26, 31, 94, 221));</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="assets.qrc">:/ch1.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ch1">
+        <property name="styleSheet">
+         <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0.03, y2:1, stop:0 rgba(81, 178, 25, 255), stop:1 rgba(255, 243, 23, 255));
+color: rgb(255, 255, 255);
+font: 9pt &quot;Impact&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Play Chapter 1</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="assets.qrc">:/ch2.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ch2">
+        <property name="styleSheet">
+         <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0.03, y2:1, stop:0 rgba(81, 178, 25, 255), stop:1 rgba(255, 243, 23, 255));
+color: rgb(255, 255, 255);
+font: 9pt &quot;Impact&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Play Chapter 2</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="assets.qrc">:/ch3.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ch3">
+        <property name="styleSheet">
+         <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0.03, y2:1, stop:0 rgba(81, 178, 25, 255), stop:1 rgba(255, 243, 23, 255));
+color: rgb(255, 255, 255);
+font: 9pt &quot;Impact&quot;;
+</string>
+        </property>
+        <property name="text">
+         <string>Play Chapter 3</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="assets.qrc"/>
+ </resources>
+ <connections/>
+</ui>

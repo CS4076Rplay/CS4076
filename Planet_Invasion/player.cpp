@@ -77,3 +77,4 @@ void Player::setIntelligence(const int& intelligence)
 {
     this->intelligence=intelligence;
 }
+

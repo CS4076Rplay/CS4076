@@ -12,11 +12,12 @@ Chapter2::Chapter2()
 Chapter2::Chapter2( Player *player, Inventory *inventory, Story *storyline)
 
 {
-      this->player=player;
-        this->inventory=inventory;
+    this->player=player;
+    this->inventory=inventory;
     this->storyline=storyline;
     createRooms();
 }
+
 void Chapter2::createRooms(){
 
     S_Chapter story=storyline->getChapter(1);
@@ -35,13 +36,13 @@ void Chapter2::createRooms(){
         Story().replace_all(chapterStory,"Dad","Mom");
         Story().replace_all(chapterStory,"she's","he's");
         Story().replace_all(chapterStory,"mother","father");
-         Story().replace_all(chapterStory,"DAD!!!","MOM!!!");
-         Story().replace_all(chapterStory," her","him");
+        Story().replace_all(chapterStory,"DAD!!!","MOM!!!");
+        Story().replace_all(chapterStory," her","him");
 
-         Story().replace_all(chapterStory,"wife","husband");
+        Story().replace_all(chapterStory,"wife","husband");
 
     }
-     Story().replace_all(chapterStory,"$race",races[player->getRaceType()]);
+    Story().replace_all(chapterStory,"$race",races[player->getRaceType()]);
 
     vector<string> storyParts=FileParser().split(chapterStory,'~');
 
@@ -162,8 +163,8 @@ void Chapter2::createRooms(){
     f->addWeapon(Revolver);
     f->defaultImg="room1.png";
     g = new Room(storyMap[6],"room1.png");
-   g->addWeapon(BattleAxe);
-   g->defaultImg="room1.png";
+    g->addWeapon(BattleAxe);
+    g->defaultImg="room1.png";
     h = new Room(storyMap[7],doomerLvl3->getUrl());
     h->addEnemy(doomerLvl3);
     h->addHp(hun);
@@ -189,6 +190,6 @@ void Chapter2::createRooms(){
     currentRoom = a;
 }
 Room* Chapter2::resetRoom(){
-   return a;
+    return a;
 }
 

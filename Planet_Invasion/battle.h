@@ -27,8 +27,10 @@ signals:
 
 public:
     bool fighting;
+    string damage;
     bool isdefend=false;
     unsigned long attackSpeed;
+    int generateRandomNum(const int&,const int&);
     Battle();
     void run();
     Battle(Player*,Enemy*,Item*,Inventory*);

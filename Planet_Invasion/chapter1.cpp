@@ -11,8 +11,8 @@ Chapter1::Chapter1()
 Chapter1::Chapter1( Player *player, Inventory *inventory, Story *storyline)
 
 {
-      this->player=player;
-        this->inventory=inventory;
+    this->player=player;
+    this->inventory=inventory;
     this->storyline=storyline;
     createRooms();
 }
@@ -29,7 +29,7 @@ void Chapter1::createRooms(){
     races[KNIGHT]="KNIGHT";
     races[AI]="AI";
 
-     Story().replace_all(chapterStory,"$race",races[player->getRaceType()]);
+    Story().replace_all(chapterStory,"$race",races[player->getRaceType()]);
 
     vector<string> storyParts=FileParser().split(chapterStory,'~');
 
@@ -41,7 +41,7 @@ void Chapter1::createRooms(){
         storyMap[(int)i]=storyParts[i];
     }
 
-//create chapter Enemies here
+    //create chapter Enemies here
     Enemy *i_doomerLvl1=new Enemy(100,2,5,30,INFERNO,false);
     i_doomerLvl1->setName("lvl1 Inferno Doomer");
     i_doomerLvl1->setDescription("Weak inferno Doomer");
@@ -165,7 +165,7 @@ void Chapter1::createRooms(){
     c = new Room(storyMap[3],"room12.png");
 
     c->addWeapon(m_gun);
-     c->defaultImg="room12.png";
+    c->defaultImg="room12.png";
 
 
     d = new Room(storyMap[4],doomerLvl2->getUrl());
@@ -176,12 +176,12 @@ void Chapter1::createRooms(){
 
     e = new Room(storyMap[5],"room12.png");
     e->addWeapon(Flail);
-     e->defaultImg="room12.png";
+    e->defaultImg="room12.png";
 
     f = new Room(storyMap[6],doomerLvl3->getUrl());
     f->addEnemy(doomerLvl3);
     f->defaultImg="room12.png";
-   // f->addHp(hun);
+    // f->addHp(hun);
 
     g = new Room(storyMap[7],"room12.png");
     g->defaultImg="room12.png";
@@ -193,8 +193,8 @@ void Chapter1::createRooms(){
     h->defaultImg="room12.png";
 
     i = new Room(storyMap[9],"room12.png");
-   i->addWeapon(nunchucks);
-   i->defaultImg="room12.png";
+    i->addWeapon(nunchucks);
+    i->defaultImg="room12.png";
 
     j = new Room(storyMap[10],doomerLvl5->getUrl());
     j->addEnemy(doomerLvl5);

@@ -6,7 +6,9 @@ class Story
 {
 public:
     Story();
+
     vector<S_Chapter>getChapters();
+
     S_Chapter getChapter(const unsigned long&);
     void setChapters(vector<S_Chapter>&);
     void addChapter(const S_Chapter&);
@@ -15,9 +17,9 @@ public:
     bool contains(std::string& ,const std::string& );
 
     void replace_all(std::string& , const std::string& , const std::string& );
-
-private:
+  private:
     vector<S_Chapter>chapters;
+
 };
 
 #endif // STORY_H

@@ -1,0 +1,7 @@
+ narator: Something drops to the Ground, You pick it up, it's a Map, to The Ancient City of Anagog.
+ $name : Dammit my Arm, All this for Nothing!!!?
+ Aiden: Dad! what happened to your Arm?
+ narator: You're missing an arm and blood is gushing everywhere, But you've Deafeted the Doomage, unfortunately you couldn't find Dr ATSUKO, You still feel a heavy burden of Avenging Your clan and finding a cure for this disaster. but for now You've found your son.
+ Aiden: What now? i want to go home.
+ $name : Son There's no Home For Us, We need to find Dr ATSUKO...
+ narator: And so You and Your Son venture towards the City of Anagog to find Dr ATSUKO...

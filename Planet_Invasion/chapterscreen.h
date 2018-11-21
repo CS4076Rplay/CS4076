@@ -15,6 +15,8 @@ class ChapterScreen;
 class ChapterScreen : public QDialog
 {
     friend class MainWindow;
+    friend class FinalChapter;
+    friend class GameScreen;
     Q_OBJECT
 
 public:

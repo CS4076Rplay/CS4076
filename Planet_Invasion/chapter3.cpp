@@ -12,8 +12,8 @@ Chapter3::Chapter3()
 Chapter3::Chapter3( Player *player, Inventory *inventory, Story *storyline)
 
 {
-      this->player=player;
-        this->inventory=inventory;
+    this->player=player;
+    this->inventory=inventory;
     this->storyline=storyline;
     createRooms();
 }
@@ -35,13 +35,13 @@ void Chapter3::createRooms(){
         Story().replace_all(chapterStory,"Dad","Mom");
         Story().replace_all(chapterStory,"she's","he's");
         Story().replace_all(chapterStory,"mother","father");
-         Story().replace_all(chapterStory,"DAD!!!","MOM!!!");
-         Story().replace_all(chapterStory," her","him");
+        Story().replace_all(chapterStory,"DAD!!!","MOM!!!");
+        Story().replace_all(chapterStory," her","him");
 
-         Story().replace_all(chapterStory,"wife","husband");
+        Story().replace_all(chapterStory,"wife","husband");
 
     }
-     Story().replace_all(chapterStory,"$race",races[player->getRaceType()]);
+    Story().replace_all(chapterStory,"$race",races[player->getRaceType()]);
 
     vector<string> storyParts=FileParser().split(chapterStory,'~');
 
@@ -138,7 +138,7 @@ void Chapter3::createRooms(){
     f = new Room(storyMap[5],doomage->getUrl());
     f->addEnemy(doomage);
     f->defaultImg="room2.png";
-   // f->addWeapon(Revolver);
+    // f->addWeapon(Revolver);
 
     //NESW
     a->setExits(b, nullptr, nullptr, nullptr);
@@ -152,6 +152,6 @@ void Chapter3::createRooms(){
     currentRoom = a;
 }
 Room* Chapter3::resetRoom(){
-   return a;
+    return a;
 }
 

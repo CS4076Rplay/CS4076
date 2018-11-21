@@ -1,0 +1,19 @@
+                 Special thanks to...
+
+                Sound           FreeSound.org
+ Images retrived from           Google Images,openGamesArt.org
+  Images Modified by            Ollie
+                Story           Ollie
+               GameUI           Tushar
+       Chapter Screen           Tushar
+Enemy,Player and Battle         Ollie
+   Chapters, map, Rooms         Tushar, Ollie
+      Items, Inventory          ollie
+      Design and Sound          Tushar, ollie
+     charcter creation          Tushar
+          Game Director         Ollie
+       Game SuperVision         Tushar
+        Version control         github
+
+
+©Planet Invasion is owned by (TUSOLA)RPlays and cannot be copied and Distributed without written consent from the president olamide [ollie] ogunlade

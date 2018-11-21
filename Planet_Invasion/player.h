@@ -37,6 +37,9 @@ public:
     void setSpeed(const int&);
     void setIntelligence(const int&);
 
+    //friend
+    friend ostream& operator<<(ostream& os, const Player& pl);
+
 
 
 };

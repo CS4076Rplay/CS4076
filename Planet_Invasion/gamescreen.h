@@ -25,6 +25,8 @@ public:
     void closeEvent(QCloseEvent *event);
     Weapon* getCurrentWeapon();
     void showDialogBox(string,string);
+    int generateRandomNum(const int&,const int&);
+    inline void finalChapterCheck();
 
     GamesScreenThread *weapon_thread;
     GamesScreenThread *ui_thread;
@@ -44,6 +46,7 @@ public:
     int countA;
    int countB;
    int period;
+
 
 private slots:
 
@@ -68,6 +71,10 @@ private slots:
 
     void on_chest_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_pushButton_4_clicked();
+
 public slots:
     void onItemSelected(Weapon*);
     void refreshHealth(Player* health);
@@ -87,6 +94,7 @@ private:
     void updateLabel();
     void initUI(string);
 
+
     Chapter *chapter;
     Story *storyline;
     Player *player;
@@ -96,11 +104,14 @@ private:
     Inventory *inventory;
     Weapon *currentWeapon=nullptr;
     bool safeArea;
-    bool isBossDead=false;
+    bool isInfernDeated=false,isMorganaDeafeated=false,isDoomageDefeated=false;
     QMediaPlayer *soundPlayer,*lootFx,*sceneFx,*defenceFx,*specialFx;
      Player *o_player;
      int power;
      void movePlayer(string direction);
+     int c;
+
+
 
 };
 

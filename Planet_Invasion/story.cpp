@@ -19,6 +19,7 @@ bool Story::contains(std::string& str,const std::string& find)
     }
     return false;
 }
+
 void Story::replace_all( std::string& str, const std::string& from, const std::string& to)
 {
 
@@ -45,6 +46,7 @@ S_Chapter Story::getChapter(const unsigned long& chapter)
     else
     return chapters[chapter];
 }
+
 void Story::setChapters(vector<S_Chapter>& chapters)
 {
     this->chapters=chapters;

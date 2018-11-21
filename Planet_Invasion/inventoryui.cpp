@@ -101,7 +101,7 @@ InventoryUI::InventoryUI(QWidget *parent,Inventory* inventory,GameScreen* curren
     this->inventory=inventory;
     soundFx=new QMediaPlayer(this);
     soundFx->setVolume(100);
-
+    setWindowTitle("INVENTORY");
     this->currentGame=currentGame;
     currentGame->weapon_thread->setStop(false);
     currentGame->weapon_thread->setItem(nullptr);

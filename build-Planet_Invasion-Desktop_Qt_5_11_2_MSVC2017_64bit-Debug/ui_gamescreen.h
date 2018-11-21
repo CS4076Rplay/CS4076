@@ -46,6 +46,7 @@ public:
     QLabel *label_3;
     QProgressBar *currentWeaponSpeed;
     QPushButton *pushButton_2;
+    QPushButton *pushButton_4;
     QPushButton *pushButton;
     QFrame *line_3;
     QHBoxLayout *horizontalLayout_10;
@@ -54,6 +55,7 @@ public:
     QVBoxLayout *verticalLayout_6;
     QLabel *enemyName;
     QProgressBar *enemyHealth;
+    QLabel *damage;
     QPushButton *treasure;
     QPushButton *chest;
     QLabel *description;
@@ -202,6 +204,20 @@ public:
 
         horizontalLayout->addWidget(pushButton_2);
 
+        pushButton_4 = new QPushButton(groupBox);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
+        pushButton_4->setSizePolicy(sizePolicy);
+        pushButton_4->setStyleSheet(QLatin1String("background:transparent;\n"
+"background-color:qlineargradient(spread:pad, x1:0.09, y1:0.193182, x2:1, y2:0, stop:0 rgba(228, 216, 17, 255), stop:1 rgba(255, 183, 20, 255));\n"
+"font: 10pt \"Lucida Sans Unicode\";"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/mapIc.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_4->setIcon(icon1);
+        pushButton_4->setIconSize(QSize(30, 30));
+
+        horizontalLayout->addWidget(pushButton_4);
+
         pushButton = new QPushButton(groupBox);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
@@ -334,15 +350,23 @@ public:
 
         verticalLayout_4->addLayout(verticalLayout_6);
 
+        damage = new QLabel(groupBox);
+        damage->setObjectName(QStringLiteral("damage"));
+        damage->setStyleSheet(QLatin1String("background:transparent;\n"
+"color:rgb(255, 170, 0);\n"
+"font: italic 8pt \"MS Sans Serif\";"));
+
+        verticalLayout_4->addWidget(damage);
+
         treasure = new QPushButton(groupBox);
         treasure->setObjectName(QStringLiteral("treasure"));
         sizePolicy.setHeightForWidth(treasure->sizePolicy().hasHeightForWidth());
         treasure->setSizePolicy(sizePolicy);
         treasure->setStyleSheet(QLatin1String("background:transparent;\n"
 ""));
-        QIcon icon1;
-        icon1.addFile(QStringLiteral(":/Images/Characters/Ji.png"), QSize(), QIcon::Normal, QIcon::Off);
-        treasure->setIcon(icon1);
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/Images/Characters/Ji.png"), QSize(), QIcon::Normal, QIcon::Off);
+        treasure->setIcon(icon2);
         treasure->setFlat(true);
 
         verticalLayout_4->addWidget(treasure);
@@ -355,9 +379,9 @@ public:
         chest->setLayoutDirection(Qt::LeftToRight);
         chest->setStyleSheet(QLatin1String("background:transparent;\n"
 ""));
-        QIcon icon2;
-        icon2.addFile(QStringLiteral(":/Images/Characters/treasure.png"), QSize(), QIcon::Normal, QIcon::Off);
-        chest->setIcon(icon2);
+        QIcon icon3;
+        icon3.addFile(QStringLiteral(":/Images/Characters/treasure.png"), QSize(), QIcon::Normal, QIcon::Off);
+        chest->setIcon(icon3);
         chest->setFlat(true);
 
         verticalLayout_4->addWidget(chest);
@@ -493,9 +517,9 @@ public:
 "background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 0, 74, 255), stop:1 rgba(255, 167, 0, 255));\n"
 "color:rgb(255, 255, 255)\n"
 ""));
-        QIcon icon3;
-        icon3.addFile(QStringLiteral(":/attack-icon-3.jpg.png"), QSize(), QIcon::Normal, QIcon::Off);
-        attackBtn->setIcon(icon3);
+        QIcon icon4;
+        icon4.addFile(QStringLiteral(":/attack-icon-3.jpg.png"), QSize(), QIcon::Normal, QIcon::Off);
+        attackBtn->setIcon(icon4);
         attackBtn->setIconSize(QSize(30, 30));
 
         horizontalLayout_8->addWidget(attackBtn);
@@ -509,9 +533,9 @@ public:
 "font: 9pt \"Impact\";\n"
 "background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(140, 1, 255, 255), stop:1 rgba(0, 255, 242, 255));\n"
 "color:rgb(255, 255, 255)"));
-        QIcon icon4;
-        icon4.addFile(QStringLiteral(":/attack-icon-13.jpg.png"), QSize(), QIcon::Normal, QIcon::Off);
-        defendBtn->setIcon(icon4);
+        QIcon icon5;
+        icon5.addFile(QStringLiteral(":/attack-icon-13.jpg.png"), QSize(), QIcon::Normal, QIcon::Off);
+        defendBtn->setIcon(icon5);
         defendBtn->setIconSize(QSize(30, 30));
 
         horizontalLayout_8->addWidget(defendBtn);
@@ -536,9 +560,9 @@ public:
 "font: 9pt \"Impact\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0.238806 rgba(193, 155, 29, 255), stop:1 rgba(255, 229, 49, 255));"));
-        QIcon icon5;
-        icon5.addFile(QStringLiteral(":/Images/Characters/sw_ic.png"), QSize(), QIcon::Normal, QIcon::Off);
-        special->setIcon(icon5);
+        QIcon icon6;
+        icon6.addFile(QStringLiteral(":/Images/Characters/sw_ic.png"), QSize(), QIcon::Normal, QIcon::Off);
+        special->setIcon(icon6);
         special->setIconSize(QSize(35, 35));
 
         verticalLayout_7->addWidget(special, 0, Qt::AlignHCenter);
@@ -636,12 +660,14 @@ public:
 #ifndef QT_NO_SHORTCUT
         pushButton_2->setShortcut(QApplication::translate("GameScreen", "I", nullptr));
 #endif // QT_NO_SHORTCUT
-        pushButton->setText(QApplication::translate("GameScreen", "Quit", nullptr));
+        pushButton_4->setText(QApplication::translate("GameScreen", "Map", nullptr));
+        pushButton->setText(QApplication::translate("GameScreen", "Back", nullptr));
 #ifndef QT_NO_SHORTCUT
         pushButton->setShortcut(QApplication::translate("GameScreen", "O", nullptr));
 #endif // QT_NO_SHORTCUT
         enemyName->setText(QApplication::translate("GameScreen", "enemyName", nullptr));
         enemyHealth->setFormat(QApplication::translate("GameScreen", "%p Hp", nullptr));
+        damage->setText(QApplication::translate("GameScreen", "No damage done!", nullptr));
         treasure->setText(QString());
         chest->setText(QString());
         description->setText(QString());

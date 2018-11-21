@@ -50,7 +50,10 @@ SOURCES += \
     battle.cpp \
     hp.cpp \
     gamesscreenthread.cpp \
-    chapter3.cpp
+    chapter3.cpp \
+    finalchapter.cpp \
+    map.cpp \
+    credits.cpp
 
 
 
@@ -79,7 +82,10 @@ HEADERS += \
     battle.h \
     hp.h \
     gamesscreenthread.h \
-    chapter3.h
+    chapter3.h \
+    finalchapter.h \
+    map.h \
+    credits.h
 
 
 FORMS += \
@@ -88,7 +94,10 @@ FORMS += \
     charactercreator.ui \
     chapterscreen.ui \
     gamescreen.ui \
-    intro.ui
+    intro.ui \
+    finalchapter.ui \
+    map.ui \
+    credits.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

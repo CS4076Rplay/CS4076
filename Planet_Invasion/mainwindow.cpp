@@ -5,6 +5,7 @@
 #include "charactercreator.h"
 #include <QMediaPlaylist>
 #include <iostream>
+#include "credits.h"
 #include "s_chapter.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -66,11 +67,15 @@ void MainWindow::setupFiles()
     S_Chapter *chapter2=new S_Chapter();
     FileParser *chap3=new FileParser(":/Story/chapter3.txt");
     S_Chapter *chapter3=new S_Chapter();
+    FileParser *chap4=new FileParser(":/Story/chapter4.txt");
+    S_Chapter *chapter4=new S_Chapter();
     chapter2->setChapterStory(chap2->loadFile(true));
     chapter3->setChapterStory(chap3->loadFile(true));
+     chapter4->setChapterStory(chap4->loadFile(true));
     storyline->addChapter(*chapter1);
     storyline->addChapter(*chapter2);
     storyline->addChapter(*chapter3);
+    storyline->addChapter(*chapter4);
     //loadInventory
     inventory=new Inventory();
    // FileParser *inventoryFile=new FileParser(":Story/inventory.txt",',');//problem loading from file
@@ -175,4 +180,12 @@ void MainWindow::on_playButton_clicked()
         chapter->player=this->player;
         chapter -> show();
     }
+}
+
+void MainWindow::on_creditsBtn_clicked()
+{
+    Credits *credit=new Credits(this);
+    credit->setModal(true);
+    credit->show();
+
 }

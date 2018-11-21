@@ -40,6 +40,8 @@ public:
         if (ChapterScreen->objectName().isEmpty())
             ChapterScreen->setObjectName(QStringLiteral("ChapterScreen"));
         ChapterScreen->resize(400, 300);
+        ChapterScreen->setStyleSheet(QLatin1String("background:transparent;\n"
+"background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0.03, y2:1, stop:0 rgba(81, 178, 25, 255), stop:1 rgba(255, 243, 23, 255))"));
         groupBox = new QGroupBox(ChapterScreen);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(30, 30, 331, 241));

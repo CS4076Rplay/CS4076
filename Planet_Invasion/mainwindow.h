@@ -24,6 +24,8 @@ public:
 private slots:
     void on_playButton_clicked();
 
+    void on_creditsBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     ChapterScreen *chapter;

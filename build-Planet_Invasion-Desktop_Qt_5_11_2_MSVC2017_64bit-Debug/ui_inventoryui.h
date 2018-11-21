@@ -434,7 +434,8 @@ public:
         progressBar->setStyleSheet(QLatin1String("\n"
 "\n"
 "color:rgb(255, 247, 234)"));
-        progressBar->setValue(80);
+        progressBar->setMaximum(10);
+        progressBar->setValue(8);
         progressBar->setTextVisible(true);
 
         horizontalLayout_3->addWidget(progressBar);
@@ -459,7 +460,8 @@ public:
         progressBar_2->setStyleSheet(QLatin1String("\n"
 "\n"
 "color:rgb(255, 247, 234)"));
-        progressBar_2->setValue(24);
+        progressBar_2->setMaximum(10);
+        progressBar_2->setValue(2);
 
         horizontalLayout_2->addWidget(progressBar_2);
 

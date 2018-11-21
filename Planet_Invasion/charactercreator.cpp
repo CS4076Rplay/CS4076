@@ -32,7 +32,7 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
 
     cout<<arg1.toStdString()<<endl;
     if(arg1=="SHADOWALKER")
-       {
+    {
         *img="Shadowalker.png";
         *desc="Shadowalker are A Race of Amazonian Warriors Trained in The Art Of Stealth, They Use Thier Speed And Intelligence to capture or Kill their Target, It is said that Shadowalker have a unique skill of Invisibilty when they hold their breath";
         strength+=10;
@@ -75,13 +75,13 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
     else {
         *img="AI.png";
     }
-     QPixmap pix(":/Images/Characters/"+(*img));
-     ui->characterImg->setPixmap(pix.scaled(150,150,Qt::KeepAspectRatio));
-     ui->charDesc->setText(*desc);
-     ui->spdBar->setValue(speed);
-     ui->strBar->setValue(strength);
-     ui->defBar->setValue(defense);
-     ui->intelBar->setValue(intel);
+    QPixmap pix(":/Images/Characters/"+(*img));
+    ui->characterImg->setPixmap(pix.scaled(150,150,Qt::KeepAspectRatio));
+    ui->charDesc->setText(*desc);
+    ui->spdBar->setValue(speed);
+    ui->strBar->setValue(strength);
+    ui->defBar->setValue(defense);
+    ui->intelBar->setValue(intel);
 
 }
 
@@ -105,7 +105,7 @@ void CharacterCreator::on_pushButton_clicked()
     string save;
 
     uname=(ui->unameSpace->text().toStdString());
-   
+
     if(ui->raceSelector->currentText()=="SHADOWALKER")
     {
         r="SHADOWALKER";
@@ -129,14 +129,14 @@ void CharacterCreator::on_pushButton_clicked()
     }
     if(uname.empty())uname="Miaximilian";
 
-   
+
     health=ui->healthBar->value();
     speed=ui->spdBar->value();
-     strength=ui->strBar->value();
-     intel=ui->intelBar->value();
-     defense=ui->defBar->value();
+    strength=ui->strBar->value();
+    intel=ui->intelBar->value();
+    defense=ui->defBar->value();
 
-     save=uname+"\n"+r+"\n"+to_string(health)+"\n"+to_string(strength)+"\n"+to_string(defense)+"\n"+to_string(speed)+"\n"+to_string(intel);
+    save=uname+"\n"+r+"\n"+to_string(health)+"\n"+to_string(strength)+"\n"+to_string(defense)+"\n"+to_string(speed)+"\n"+to_string(intel);
 
     Player *player=new Player(uname,race,health,speed,strength,intel,defense);
     FileParser *playerFile=new FileParser("E:/qProjects/AlienInvasion/CS4076/Planet_Invasion/player.txt");
@@ -149,6 +149,6 @@ void CharacterCreator::on_pushButton_clicked()
     Intro *intro=new Intro(this,this->intro,player);
     intro->setInventory(inventory);
     intro->setStoryLine(storyline);
-   intro->setIntro(this->intro);
+    intro->setIntro(this->intro);
     intro->show();
 }

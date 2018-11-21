@@ -38,6 +38,9 @@
         <file>room1.png</file>
         <file>room2.png</file>
         <file>room12.png</file>
+        <file>chapter1.png</file>
+        <file>chapter2.png</file>
+        <file>chapter3.png</file>
     </qresource>
     <qresource prefix="/Story">
         <file>chapter1.txt</file>
@@ -50,6 +53,7 @@
         <file>player.txt</file>
         <file>story.txt</file>
         <file>inventory.txt</file>
+        <file>credits.txt</file>
     </qresource>
     <qresource prefix="/">
         <file>_infern.png</file>
@@ -66,6 +70,8 @@
         <file>ch2.png</file>
         <file>ch3.png</file>
         <file>stm.mp3</file>
+        <file>finalPic.jpg</file>
+        <file>mapIc.png</file>
     </qresource>
     <qresource prefix="/Sounds">
         <file>infernoDommer.wav</file>
@@ -97,5 +103,10 @@
         <file>kSFX.wav</file>
         <file>mSFX.mp3</file>
         <file>swSFX.wav</file>
+    </qresource>
+    <qresource prefix="/Map">
+        <file>chapter1.png</file>
+        <file>chapter2.png</file>
+        <file>chapter3.png</file>
     </qresource>
 </RCC>
