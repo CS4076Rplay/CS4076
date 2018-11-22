@@ -8,15 +8,17 @@ Chapter1::Chapter1()
 
     createRooms();
 }
-Chapter1::Chapter1( Player *player, Inventory *inventory, Story *storyline)
 
+Chapter1::Chapter1( Player *player, Inventory *inventory, Story *storyline)
 {
     this->player=player;
     this->inventory=inventory;
     this->storyline=storyline;
     createRooms();
 }
-void Chapter1::createRooms(){
+
+void Chapter1::createRooms()
+{
 
     S_Chapter story=storyline->getChapter(0);
     QString text=QString::fromStdString(story.getChapterStory());
@@ -181,7 +183,6 @@ void Chapter1::createRooms(){
     f = new Room(storyMap[6],doomerLvl3->getUrl());
     f->addEnemy(doomerLvl3);
     f->defaultImg="room12.png";
-    // f->addHp(hun);
 
     g = new Room(storyMap[7],"room12.png");
     g->defaultImg="room12.png";
@@ -219,7 +220,8 @@ void Chapter1::createRooms(){
     currentRoom = a;
 }
 
-Room* Chapter1::resetRoom(){
+Room* Chapter1::resetRoom()
+{
     return a;
 }
 

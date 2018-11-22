@@ -14,8 +14,6 @@ Credits::Credits(QWidget *parent) :
     for(string s:credits)
         cr+=s+"\n";
     ui->label->setText(QString::fromStdString(cr));
-
-
 }
 
 Credits::~Credits()

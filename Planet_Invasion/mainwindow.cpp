@@ -7,6 +7,7 @@
 #include <iostream>
 #include "credits.h"
 #include "s_chapter.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -39,7 +40,8 @@ void MainWindow::setupFiles()
     {
         player=nullptr;
         ui->playButton->setText("NEW GAME");
-    }else{
+    }
+    else{
             player=new Player(playerInfo[0],
             races[playerInfo[1]],
             stoi(playerInfo[2]),stoi(playerInfo[3]),
@@ -54,10 +56,11 @@ void MainWindow::setupFiles()
     case KNIGHT:{player->setBoost(25);player->setAbility("Last Stand");}break;
     case MOONMAGE:{player->setBoost(25);player->setAbility("Heal");}break;
     }
+
     //loadIntro
     FileParser *introFile=new FileParser(":/Story/intro.txt");
     intro=introFile->loadFile(true);
-    cout<<intro<<endl;
+    //cout<<intro<<endl;
     //loadStory
     storyline=new Story();
     FileParser *chap1=new FileParser(":/Story/chapter1.txt");
@@ -71,7 +74,7 @@ void MainWindow::setupFiles()
     S_Chapter *chapter4=new S_Chapter();
     chapter2->setChapterStory(chap2->loadFile(true));
     chapter3->setChapterStory(chap3->loadFile(true));
-     chapter4->setChapterStory(chap4->loadFile(true));
+    chapter4->setChapterStory(chap4->loadFile(true));
     storyline->addChapter(*chapter1);
     storyline->addChapter(*chapter2);
     storyline->addChapter(*chapter3);
@@ -94,31 +97,29 @@ void MainWindow::setupFiles()
     inventoryInfo[6].push_back("knife.wav");
 
     inventoryInfo[0].push_back("Hammer");
- inventoryInfo[1].push_back("WEAPON");
- inventoryInfo[2].push_back("Hammer does Damage");
- inventoryInfo[3].push_back("Hammer.png");
- inventoryInfo[4].push_back("10");
- inventoryInfo[5].push_back("2");
-   inventoryInfo[6].push_back("bash.wav");
+    inventoryInfo[1].push_back("WEAPON");
+    inventoryInfo[2].push_back("Hammer does Damage");
+    inventoryInfo[3].push_back("Hammer.png");
+    inventoryInfo[4].push_back("10");
+    inventoryInfo[5].push_back("2");
+    inventoryInfo[6].push_back("bash.wav");
 
- inventoryInfo[0].push_back("25HP");
-inventoryInfo[1].push_back("HP");
-inventoryInfo[2].push_back("Adds 25 more health to your current health");
-inventoryInfo[3].push_back("25h.png");
-inventoryInfo[4].push_back("25");
-inventoryInfo[5].push_back("0");
-  inventoryInfo[6].push_back("smallGulp.wav");
+    inventoryInfo[0].push_back("25HP");
+    inventoryInfo[1].push_back("HP");
+    inventoryInfo[2].push_back("Adds 25 more health to your current health");
+    inventoryInfo[3].push_back("25h.png");
+    inventoryInfo[4].push_back("25");
+    inventoryInfo[5].push_back("0");
+    inventoryInfo[6].push_back("smallGulp.wav");
 
-inventoryInfo[0].push_back("100HP");
-inventoryInfo[1].push_back("HP");
-inventoryInfo[2].push_back("Adds 100 more health to your current health");
-inventoryInfo[3].push_back("100h.png");
-inventoryInfo[4].push_back("100");
-inventoryInfo[5].push_back("0");
-  inventoryInfo[6].push_back("largeGulp.wav");
+    inventoryInfo[0].push_back("100HP");
+    inventoryInfo[1].push_back("HP");
+    inventoryInfo[2].push_back("Adds 100 more health to your current health");
+    inventoryInfo[3].push_back("100h.png");
+    inventoryInfo[4].push_back("100");
+    inventoryInfo[5].push_back("0");
+    inventoryInfo[6].push_back("largeGulp.wav");
 
-
-    cout<<"fdfg"<<endl;
     for(unsigned int i=0;i<inventoryInfo[0].size();i++)
     {
         Item *item=new Item(inventoryInfo[0][i],inventoryInfo[1][i],inventoryInfo[2][i],inventoryInfo[3][i]);
@@ -144,14 +145,9 @@ inventoryInfo[5].push_back("0");
             hp->setSoundUrl(inventoryInfo[6][i]);
             inventory->addHp(hp);
         }
-        for(Weapon w: inventory->getWeapons())
-        {
-            cout<<w.getName();
-        }
     }
-
-
 }
+
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -168,7 +164,6 @@ void MainWindow::on_playButton_clicked()
 
     if(player==nullptr)
     {
-        cout<<"Here"<<endl;
         newGame->show();
         //for testing
 

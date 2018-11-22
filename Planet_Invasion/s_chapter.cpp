@@ -5,6 +5,10 @@ S_Chapter::S_Chapter()
 
 }
 string S_Chapter::getChapterStory()
-{return chapterStory;}
+{
+    return chapterStory;
+}
 void S_Chapter::setChapterStory(string chapterStory)
-{this->chapterStory=chapterStory;}
+{
+    this->chapterStory=chapterStory;
+}

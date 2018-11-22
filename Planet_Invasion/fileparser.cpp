@@ -17,23 +17,19 @@ std::vector<std::string> FileParser::split(const std::string& line, const char& 
         {
             if (line[i] == delimetter)
             {
-
                 list.push_back(str);
                 str = "";
-            }
-
-            else
-            {
+            }else{
                 str += line[i];
 
-            } //cout<<"AT: "<<i<<" : "<<str<<endl;
+            }
         }
         list.push_back(str);
         str = "";
 
         return list;
-
 }
+
 vector<string> FileParser::loadFile()
 {
     QString filename=QString::fromStdString(path);
@@ -42,10 +38,8 @@ vector<string> FileParser::loadFile()
     QFile mFile(filename);
     if(mFile.open(QFile::ReadOnly|QFile::Text))
     {
-      //  qDebug()<<"could not find path: "<<filename<<endl;
-
-    QTextStream in(&mFile);
-    QString line;
+        QTextStream in(&mFile);
+        QString line;
         do
         {
             line = in.readLine();
@@ -60,6 +54,7 @@ vector<string> FileParser::loadFile()
     }
     return result;
 }
+
 string FileParser::loadFile(const bool& readAll)
 {
     QString filename=QString::fromStdString(path);
@@ -73,16 +68,15 @@ string FileParser::loadFile(const bool& readAll)
     QTextStream in(&mFile);
     QString line= in.readAll();
 
-            s=line.toStdString();
+    s=line.toStdString();
 
-        mFile.close();
+    mFile.close();
 
     return s;
 }
 
 vector<vector<string>>FileParser:: loadFile(int columns)
 {
-    cout<<columns<<endl;
       QString filename=QString::fromStdString(path);
 
       //vector<vector<QString>>result;
@@ -90,19 +84,17 @@ vector<vector<string>>FileParser:: loadFile(int columns)
     for(int i=0;i<columns;i++)
         result.push_back(vector<string>());
     vector<string>temp;
-    QFile mFile(filename); cout<<path<<endl;
+    QFile mFile(filename);
 
     if(mFile.open(QFile::ReadOnly|QFile::Text))
     {
       // qDebug()<<"could not find path: "<<filename<<endl;
 
-    QTextStream in(&mFile);
-    QString line=""; string s;
-         while(!line.isNull())
+        QTextStream in(&mFile);
+        QString line=""; string s;
+        while(!line.isNull())
         {
-
             line = in.readLine();
-
             s=line.toStdString();
             temp=split(s,delimeter);
 
@@ -114,16 +106,15 @@ vector<vector<string>>FileParser:: loadFile(int columns)
                    hello,i,am,adam
                    what,is,our,name
                 at index 0 in temp we have hello, 1 is i...*/
+
                 if((int)temp.size()>=columns){
                     //if we didnt create enough columns we add the extra ones needed in order to avoid a Segmentation fault
                     int s=(int)temp.size()-columns;
                     for(int j=0;j<s;j++)
                     {
-                        cout<<"adding one more"<<endl;
                         result.push_back(vector<string>());
                     }
                 }
-                cout<<result.size()<<endl;
                 for(string s:temp)
                 cout<<s<<endl;
                 for(unsigned int i=0;i<result.size();i++){
@@ -153,23 +144,13 @@ void FileParser::saveFile(const string& str)
 
     }
     QTextStream writer(&mFile);
-   /* ofstream writer(path,ios::app);
-    if(!writer)
-    {
-        cout<<"Problem opening file, maybe incorrect path \""<<path<<"\""<<endl;
-    }else
-    {
-        writer<<str<<endl;
-        writer.close();
-    }
-    */
+
     QString qstr=QString::fromStdString(str);
     writer<<qstr<<endl;
     mFile.flush();
     mFile.close();
-
-
 }
+
 void FileParser::saveAllToFile(vector<vector<string>> items)
 {
 
@@ -182,53 +163,55 @@ void FileParser::saveAllToFile(vector<vector<string>> items)
     }
     QTextStream writer(&mFile);
 
-    /*ofstream writer(path);
-    if(!writer)
+    for(vector<string> vec:items)
     {
-          cout<<"Problem oppeing file, maybe in correct path \""<<path<<"\""<<endl;
-    }
-    else{*/
-        for(vector<string> vec:items)
-        { unsigned int i=0;
-            for(string s: vec)
-            {
-                QString qs=QString::fromStdString(s);
-                if(i>=vec.size())
-                    writer<<qs;
-                else {writer<<qs<<delimeter;i++;}
-            }writer<<endl;
+        unsigned int i=0;
+        for(string s: vec)
+        {
+            QString qs=QString::fromStdString(s);
+            if(i>=vec.size())
+               writer<<qs;
+            else {
+                writer<<qs<<delimeter;
+                i++;
+            }
         }
-        mFile.flush();
-        mFile.close();
-   // }
+        writer<<endl;
+    }
+    mFile.flush();
+    mFile.close();
 }
+
 FileParser::FileParser(const string& path, const char& delimeter)
 {
     this -> path=path;
     this -> delimeter=delimeter;
-
 }
+
 FileParser::FileParser(const string& path)
 {
     this -> path=path;
     this -> delimeter=' ';
-
 }
+
 FileParser::FileParser()
 {
     this->path="";
     this->delimeter=' ';
 }
+
 FileParser::~FileParser()
 {
 
 }
 //Getters
-string FileParser::getPath(){
+string FileParser::getPath()
+{
     return path;
 }
 
-char FileParser::getDelimeter(){
+char FileParser::getDelimeter()
+{
     return delimeter;
 }
 //Setters
@@ -237,9 +220,11 @@ void FileParser::setPath(string& path)
     this->path=path;
 }
 
-void FileParser::setDelimeter(char& delimeter){
+void FileParser::setDelimeter(char& delimeter)
+{
     this->delimeter=delimeter;
 }
+
 void FileParser::editFile(const string&oldval, const string&newval,int width)
 {
     //get Current State
@@ -250,13 +235,13 @@ void FileParser::editFile(const string&oldval, const string&newval,int width)
     unsigned int i=0,j=0;
     for(vector<string> vec:items)
     {
-
         for(string s:vec)
         {
             if(s==oldval)
                 break;
             else  j++;
-        }i++;
+        }
+        i++;
     }
 
     //index found, e.g in the example on line 53-56
@@ -274,7 +259,5 @@ void FileParser::editFile(const string&oldval, const string&newval,int width)
         saveAllToFile(items);
         //saved..
     }
-
-
 }
 

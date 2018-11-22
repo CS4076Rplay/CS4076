@@ -11,7 +11,8 @@ ChapterScreen::ChapterScreen(QWidget *parent) :
 
 }
 
-void ChapterScreen::handlebutton(string chapter){
+void ChapterScreen::handlebutton(string chapter)
+{
     Weapon cW;
     Weapon *tempWeapon=new Weapon(50,50);
     tempWeapon->setName("Hammer of Sorrow");
@@ -19,16 +20,12 @@ void ChapterScreen::handlebutton(string chapter){
     tempWeapon->setId("WEAPON");
     tempWeapon->setUrl("Hammer.png");
 
-
     inventory->getWeapons().size()>0?cW=inventory->getWeapons()[0]:cW=*tempWeapon;
 
     game  = new GameScreen(chapter, this,storyline,player,inventory,&cW);
     game->show();
     setWindowTitle("SELECT A CHAPTER");
     hide();
-    /**InventoryUI inventory;
-    inventory.setModal(true);
-    inventory.exec();**/
 }
 
 ChapterScreen::~ChapterScreen()

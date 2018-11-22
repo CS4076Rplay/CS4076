@@ -10,7 +10,6 @@ CharacterCreator::CharacterCreator(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CharacterCreator)
 {
-
     ui->setupUi(this);
 }
 
@@ -29,8 +28,6 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
     int intel=45;
     int defense=45;
 
-
-    cout<<arg1.toStdString()<<endl;
     if(arg1=="SHADOWALKER")
     {
         *img="Shadowalker.png";
@@ -51,7 +48,6 @@ void CharacterCreator::on_raceSelector_currentTextChanged(const QString &arg1)
         defense+=30;
         ui->char_type->setPixmap(QPixmap(":/Images/Characters/k_ic.png").scaled(200,200,Qt::KeepAspectRatio));
     }
-
     else if(arg1=="MOONMAGE")
     {
         *img="Mage1.png";
@@ -139,11 +135,10 @@ void CharacterCreator::on_pushButton_clicked()
     save=uname+"\n"+r+"\n"+to_string(health)+"\n"+to_string(strength)+"\n"+to_string(defense)+"\n"+to_string(speed)+"\n"+to_string(intel);
 
     Player *player=new Player(uname,race,health,speed,strength,intel,defense);
-    FileParser *playerFile=new FileParser("E:/qProjects/AlienInvasion/CS4076/Planet_Invasion/player.txt");
+    FileParser *playerFile=new FileParser(":/Story/player.txt");
     playerFile->saveFile(save);
 
     hide();
-    cout<<"@CS\n"<<uname<<endl;
     Story().replace_all(intro,"$name",uname);
     Story().replace_all(intro,"$race",r);
     Intro *intro=new Intro(this,this->intro,player);

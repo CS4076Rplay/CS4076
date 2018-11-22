@@ -13,16 +13,17 @@
 #include <QMediaPlayer>
 #include <ctime>
 #include <cstdlib>
- ostream& operator<<(ostream& os, const Player& pl)
- {
+ostream& operator<<(ostream& os, const Player& pl)
+{
     os<<pl.attack<<" | "<<pl.defence<<" | "<<pl.intelligence<<" | "<<pl.speed<<endl;
     return os;
- }
- inline void GameScreen::finalChapterCheck(){
-             initUI("chapter4");
-             isDoomageDefeated=false;
+}
+inline void GameScreen::finalChapterCheck()
+{
+    initUI("chapter4");
+    isDoomageDefeated=false;
+}
 
- }
 GameScreen::GameScreen(const string chap,QWidget *parent,Story *storyline,Player *player,Inventory *inventory,Weapon* currentWeapon) :
     QMainWindow(parent),
     ui(new Ui::GameScreen)
@@ -37,15 +38,11 @@ GameScreen::GameScreen(const string chap,QWidget *parent,Story *storyline,Player
     else if(chap=="chapter2")c=2;
     else if(chap=="chapter3")c=3;
     else c=4;
-setWindowTitle(QString::fromStdString("CHAPTER "+to_string(c)));
+
+    setWindowTitle(QString::fromStdString("CHAPTER "+to_string(c)));
     ui->setupUi(this);
     o_player=player;
     power=player->getAttack();
-    cout<<"OP: "<<o_player->getAttack()<<endl;
-    cout<<"--------------TESTING--------------------"<<endl;
-    cout<<player;
-
-
     //
     soundPlayer=new QMediaPlayer(this);
     lootFx=new QMediaPlayer(this);
@@ -55,8 +52,6 @@ setWindowTitle(QString::fromStdString("CHAPTER "+to_string(c)));
     lootFx->setMedia(QUrl("qrc:/Sounds/loot.wav"));
     defenceFx->setMedia(QUrl("qrc:/Sounds/blocked.wav"));
     srand(time(0));
-
-
 
 
     ui->special->setText("waiting...");
@@ -91,40 +86,38 @@ setWindowTitle(QString::fromStdString("CHAPTER "+to_string(c)));
 
     weapon_thread->setStop(true);
     weapon_thread->setItem(currentWeapon);
-    //weapon_thread->start();
-    // player->setHealth(30);
     ui_thread->health=player->getHealth();
     ui_thread->setStop(false);
     ui_thread->start();
 
     QString *img=new QString();
-    cout<<"setting user up"<<endl;
-    cout<<player->getName()<<endl;
     ui->myName->setText(QString::fromStdString(player->getName()));
 
     switch(player->getRaceType())
     {
-    case SHADOWALKER: {
+    case SHADOWALKER:
+    {
         specialFx->setMedia(QUrl("qrc:/Sounds/swSFX.wav"));
-        img=new QString("Shadowalker.png");player->setSpeed(100);}
-        break;
-    case MOONMAGE: {
+        img=new QString("Shadowalker.png");player->setSpeed(100);
+    }break;
+    case MOONMAGE:
+    {
         specialFx->setMedia(QUrl("qrc:/Sounds/mSFX.wav"));
         img=new QString("Mage1.png");
     }break;
-    case KNIGHT: {
+    case KNIGHT:
+    {
         specialFx->setMedia(QUrl("qrc:/Sounds/kSFX.wav"));
         img=new QString("Knight");
     }break;
-    case AI: {
+    case AI:
+    {
         specialFx->setMedia(QUrl("qrc:/Sounds/aiSFX.mp3"));
         img=new QString("AI.png");
     }break;
-
     }
+
     QPixmap pix(":/Images/Characters/"+(*img));
-    if(currentWeapon!=nullptr)cout<<"we're good"<<endl;
-    else cout<<"error"<<endl;
 
     QPixmap pic(":/Images/Characters/"+(QString::fromStdString(currentWeapon->getUrl())));
     ui->myImg->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
@@ -133,27 +126,24 @@ setWindowTitle(QString::fromStdString("CHAPTER "+to_string(c)));
     ui->currentWeaponSpeed->setValue(currentWeapon->getSpeed());
     ui->currentWeaponName->setText(QString::fromStdString(currentWeapon->getName()));
     soundPlayer->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(currentWeapon->getSoundUrl())));
-    cout<<"User with no weapon: "<<player->getAttack()<<endl;
     power=player->getAttack()+currentWeapon->getPower();
     player->setAttack(power);
-    cout<<"User with weapon: "<<player->getAttack()<<endl;
-
 
     player->setSpeed(power+currentWeapon->getSpeed());
     initUI(chap);
-
 }
 
 void GameScreen::initUI(string chap )
 {
-
     ui_thread->setStop(true);
     if(chap=="chapter1")c=1;
     else if(chap=="chapter2")c=2;
     else if(chap=="chapter3")c=3;
     else c=4;
+
     setWindowTitle(QString::fromStdString("CHAPTER "+to_string(c)));
     battle_thread->fighting=false;
+
     if(chap == "chapter2")
         chapter = new Chapter2(player,inventory,storyline);
     else if(chap == "chapter1")
@@ -178,24 +168,23 @@ void GameScreen::initUI(string chap )
     case KNIGHT:  ui->special->setIcon(QIcon(":/Images/Characters/k_ic.png"));break;
     case AI:  ui->special->setIcon(QIcon(":/Images/Characters/ai_ic.png"));break;
     }
-ui->damage->setText(QString::fromStdString(battle_thread->damage));
-
+    ui->damage->setText(QString::fromStdString(battle_thread->damage));
 }
+
 void GameScreen::setCurrentWeapon(Weapon* currentWeapon)
 {
-    cout<<"CurrentWeapon: "<<currentWeapon->getName()<<endl;
     this->currentWeapon=currentWeapon;
     soundPlayer->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(currentWeapon->getSoundUrl())));
     power=player->getAttack()+currentWeapon->getPower();
     player->setAttack(power);
     player->setSpeed(power+currentWeapon->getSpeed());
-
-
 }
+
 Weapon* GameScreen::getCurrentWeapon()
 {
     return currentWeapon;
 }
+
 GameScreen::~GameScreen()
 {
     delete ui;
@@ -220,11 +209,6 @@ void GameScreen::on_north_clicked()
         finalChapterCheck();
 
     }
-    else{
-        cout<<"Infern dectected"<<endl;
-    }
-
-
 }
 
 void GameScreen::on_west_clicked()
@@ -250,9 +234,9 @@ void GameScreen::on_east_clicked()
         finalChapterCheck();
 
 }
+
 void GameScreen::movePlayer(string direction)
 {
-
     timer2->start(1200);
     chapter->goRoom(direction);
     updateLabel();
@@ -267,22 +251,22 @@ void GameScreen::movePlayer(string direction)
             ui->chest->setEnabled(false);
             ui->chest->show();
             weaponTreasure=weapon;
-            //  ui->chest->setIcon(QIcon(QString::fromStdString(":/Images/Characters/"+weapon->getUrl())));
             ui->chest->setIconSize(QSize(50,50));
             ui->treasure->setIcon(QIcon(QString::fromStdString(":/Images/Characters/"+weapon->getUrl())));
             ui->treasure->setIconSize(QSize(50,50));
-        }else{
-            cout<<"TREASURE!!"<<endl;
+        }
+        else
+        {
             ui->chest->setEnabled(true);
             ui->chest->show();
             weaponTreasure=weapon;
-            //  ui->chest->setIcon(QIcon(QString::fromStdString(":/Images/Characters/"+weapon->getUrl())));
             ui->chest->setIconSize(QSize(160,160));
             ui->treasure->setIcon(QIcon(QString::fromStdString(":/Images/Characters/"+weapon->getUrl())));
             ui->treasure->setIconSize(QSize(120,120));
         }
 
-    } else if(hp!=nullptr)
+    }
+    else if(hp!=nullptr)
     {
         if(doomer!=nullptr)
         {
@@ -294,25 +278,28 @@ void GameScreen::movePlayer(string direction)
             ui->chest->setEnabled(false);
             ui->chest->show();
             healthPotionTreasure=hp;
-            //  ui->chest->setIcon(QIcon(QString::fromStdString(":/Images/Characters/"+weapon->getUrl())));
+
             ui->chest->setIconSize(QSize(50,50));
             ui->treasure->setIcon(QIcon(QString::fromStdString(":/Images/Characters/"+hp->getUrl())));
             ui->treasure->setIconSize(QSize(50,50));
-        }else{
-            cout<<"TREASURE!!"<<endl;
+        }
+        else
+        {
             ui->chest->show();
             healthPotionTreasure=hp;
-            //  ui->chest->setIcon(QIcon(QString::fromStdString(":/Images/Characters/"+weapon->getUrl())));
+
             ui->chest->setIconSize(QSize(160,160));
             ui->treasure->setIcon(QIcon(QString::fromStdString(":/Images/Characters/"+hp->getUrl())));
             ui->treasure->setIconSize(QSize(120,120));
         }
 
-    } else
+    }
+    else
     {
         ui->treasure->hide();
         ui->chest->hide();
     }
+
     if(doomer!=nullptr)
     {
         safeArea=false;
@@ -326,7 +313,6 @@ void GameScreen::movePlayer(string direction)
         ui->south->setText("No Escape");
         currentEnemy=doomer;
         battle_thread->setEnemy(currentEnemy);
-        cout<<"Doomer Found: "<<doomer->getName()<<endl;
         ui->enemyName->show();
         ui->enemyHealth->show();
         ui->enemyHealth->setValue(doomer->getHealth());
@@ -338,56 +324,46 @@ void GameScreen::movePlayer(string direction)
         battle_thread->attackSpeed=2000-(unsigned long)doomer->getSpeed();
         if(doomer->getName()=="lvl3 Inferno Doomer")
             battle_thread->start();
-
-
     }
-    else {
+    else
+    {
         safeArea=true;
         ui->enemyName->hide();
         ui->enemyHealth->hide();
-        cout<<"you are safe"<<endl;
     }
 }
+
 void GameScreen::updateLabel(){
     ui->label->setText(QString::fromStdString(chapter->getDescription()));
 
     currentEnemy!=nullptr&&(currentEnemy->getName()=="Morgana"||currentEnemy->getName()=="The Great Infern") ? ui->description->setPixmap(QPixmap(":/Images/Characters/"+QString::fromStdString(chapter->getImage())).scaled(460,460,Qt::KeepAspectRatio)):ui->description->setPixmap(QPixmap(":/Images/Characters/"+QString::fromStdString(chapter->getImage())).scaled(300,300,Qt::KeepAspectRatio));
-
 }
 
 void GameScreen::on_pushButton_2_clicked()
 {
     //inventory
-    for(Weapon w: inventory->getWeapons())
-        cout<<"***"<<w.getName()<<endl;
     InventoryUI *inventoryUI=new InventoryUI(this,inventory,this);
-    //inventoryUI->inventory=inventory;
     inventoryUI->setInventory(this->inventory);
     inventoryUI->setModal(true);
     inventoryUI->show();
 
 }
+
 void GameScreen::updatePlayer(Player*player)
 {
-    cout<<"player: "<<player->getHealth()<<endl;
     if(player->getHealth()>=0)
         ui->healthBar->setValue(player->getHealth());
     else
         ui->healthBar->setValue(0);
 }
+
 void GameScreen::refreshHealth(Player* player)
 {
-    // cout<<"refreshing.."<<endl;
-
-    //player->setHealth(hp);
     ui->healthBar->setValue(player->getHealth());
-
 }
 void GameScreen::onItemSelected(Weapon *w)
 {
-    //  cout<<"cheking..."<<endl;
     if(w!=nullptr)
-        //cout<<w->getName()<<endl;
     {
         QPixmap pic(":/Images/Characters/"+(QString::fromStdString(w->getUrl())));
         ui->currentWeaponImg->setPixmap(pic.scaled(120,120,Qt::KeepAspectRatio));
@@ -395,22 +371,17 @@ void GameScreen::onItemSelected(Weapon *w)
         ui->currentWeaponSpeed->setValue(w->getSpeed());
         ui->currentWeaponName->setText(QString::fromStdString(w->getName()));
         soundPlayer->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(currentWeapon->getSoundUrl())));
-
     }
-
 }
+
 void GameScreen::useHp(Hp *hp)
 {
-    //cout<<"cheking..."<<endl;
     if(hp!=nullptr)
-        //cout<<w->getName()<<endl;
     {
         ui->healthBar->setValue(player->getHealth());
-
-
     }
-
 }
+
 int GameScreen::generateRandomNum(const int& min,const int& max)
 {
     static bool first=true;
@@ -420,16 +391,16 @@ int GameScreen::generateRandomNum(const int& min,const int& max)
         first=false;
     }
     int r=min+rand()%((max-min)+1);
-    cout<<r<<endl;
-       return r;
+    return r;
 }
+
 void GameScreen::showDialogBox(string message,string title)
 {
     QMessageBox::about(this,QString::fromStdString(message),QString::fromStdString(title));
 }
+
 void GameScreen::closeEvent(QCloseEvent *event)
 {
-    cout<<"caled"<<endl;
     ui_thread->setStop(true);
     battle_thread->fighting=false;
 
@@ -437,18 +408,18 @@ void GameScreen::closeEvent(QCloseEvent *event)
     reply = QMessageBox::question(this, "Quit", "Are you sure you want to Leave?",
                                   QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
 
-    if (reply == QMessageBox::Yes) {
-
-
+    if (reply == QMessageBox::Yes)
+    {
         event->accept();
     }
+
     if (reply == QMessageBox::No)
     {
         ui_thread->setStop(false);
         ui_thread->start();
-
         event->ignore();
     }
+
     if(reply == QMessageBox::Cancel)
     {
         ui_thread->setStop(false);
@@ -470,16 +441,18 @@ void GameScreen::reloadDef()
 void GameScreen::updatePowerTimer()
 {
     countA--;
-    if(countA>0){
-        cout<<countA<<endl;
-        ui->timeLeft->setText(QString(QString::fromStdString(to_string(countA)))+" sec(s) Left of "+ability);}
-    else {
+    if(countA>0)
+    {
+        ui->timeLeft->setText(QString(QString::fromStdString(to_string(countA)))+" sec(s) Left of "+ability);
+    }
+    else
+    {
         ui->timeLeft->setText("");
         countA=period;
         timerX->stop();
     }
-
 }
+
 void GameScreen::updateWaitBar()
 {
     countB+=10;
@@ -499,44 +472,36 @@ void GameScreen::specialReload()
     case AI:  ui->special->setIcon(QIcon(":/Images/Characters/ai_ic.png"));break;
     }
 
-
     int i=60;
-    cout<<i--<<endl;
+    i--;
     ui->special->setDisabled(false);
     ui->specialTime->hide();
 }
+
 void GameScreen::invisibility()
 {
     player=clonePlayer;
     battle_thread->fighting=true;
     ui->healthBar->setEnabled(true);
-    // ui->timeLeft->setText(QString(QString::fromStdString(to_string(countA)))+" sec(s) Left of +"+QString::fromStdString(to_string(player->getBoost()))+" Invisibility.");
     ui->myImg->show();
     ui->specialTime->hide();
 }
+
 void GameScreen::LastStand()
 {
-    cout<<"Original: "<<power<<endl;
-    // player=o_player;
-    cout<<"----------------PLS"<<endl;
     player->setAttack(power);
-    cout<<player->getAttack()<<endl;
     ui->specialTime->hide();
 }
+
 void GameScreen::on_attackBtn_clicked()
 {
-
     soundPlayer->play();
     ui->attackBtn->setDisabled(true);
     timer->start(1000-(player->getSpeed()*2));
     if(!safeArea){
         battle_thread->start();
-
-        //
-
-
         battle_thread->attack();
-        cout<<"enemy: "<<currentEnemy->getHealth()<<endl;
+
         if(currentEnemy->getHealth()>=20&&currentEnemy->getHealth()<=50)
         {
             ui->enemyHealth->setStyleSheet(ui->enemyHealth->property("defaultStyleSheet").toString()+"QProgressBar::chunk{background:orange}");
@@ -544,19 +509,16 @@ void GameScreen::on_attackBtn_clicked()
         else if(currentEnemy->getHealth()<20){
             ui->enemyHealth->setStyleSheet(ui->enemyHealth->property("defaultStyleSheet").toString()+"QProgressBar::chunk{background:red}");
         }
+
         if(player->getHealth()>=20&&player->getHealth()<=50)
         {
             ui->healthBar->setStyleSheet(ui->healthBar->property("defaultStyleSheet").toString()+"QProgressBar::chunk{background:orange}");
-        }
-        else if(player->getHealth()<20){
+        }else if(player->getHealth()<20){
             ui->healthBar->setStyleSheet(ui->healthBar->property("defaultStyleSheet").toString()+"QProgressBar::chunk{background:red}");
         }
         else{
-
             ui->healthBar->setStyleSheet(ui->healthBar->property("defaultStyleSheet").toString()+"QProgressBar::chunk{background:green}");
-
         }
-
 
         currentEnemy->getHealth()>=0?ui->enemyHealth->setValue(currentEnemy->getHealth()):ui->enemyHealth->setValue(0);
         if(battle_thread->isBattleOver())
@@ -578,27 +540,28 @@ void GameScreen::on_attackBtn_clicked()
                     player->setDefence(player->getDefence()+10);
                     player->setIntelligence(player->getintelligence()+10);
                     player->setSpeed(player->getSpeed()+10);
-
-
                 }
-
 
                 chapter->currentRoom->removeEnemy();
                 int rand=generateRandomNum(1,5);
+
                 switch(rand)
                 {
-                case 1:chapter->currentRoom->setDescription(player->getName()+": I shall Avenge my Clan.");break;
-                case 2:chapter->currentRoom->setDescription(player->getName()+": my whole clan wiped out just like that.");break;
-                case 3:chapter->currentRoom->setDescription(player->getName()+": There's nothing here!.");break;
-                case 4:chapter->currentRoom->setDescription(player->getName()+": There's not a lot of time left, i must find a cure and bring an end to all of this.");break;
-                case 5:chapter->currentRoom->setDescription(player->getName()+": Why is all this happening...");break;
-                default:chapter->currentRoom->setDescription(player->getName()+": This Area Looks oddly Familier.");
-
-
-
+                case 1:
+                    chapter->currentRoom->setDescription(player->getName()+": I shall Avenge my Clan.");break;
+                case 2:
+                    chapter->currentRoom->setDescription(player->getName()+": my whole clan wiped out just like that.");break;
+                case 3:
+                    chapter->currentRoom->setDescription(player->getName()+": There's nothing here!.");break;
+                case 4:
+                    chapter->currentRoom->setDescription(player->getName()+": There's not a lot of time left, i must find a cure and bring an end to all of this.");break;
+                case 5:
+                    chapter->currentRoom->setDescription(player->getName()+": Why is all this happening...");break;
+                default:
+                    chapter->currentRoom->setDescription(player->getName()+": This Area Looks oddly Familier.");
                 }
-                chapter->currentRoom->setImg(chapter->currentRoom->defaultImg);
 
+                chapter->currentRoom->setImg(chapter->currentRoom->defaultImg);
 
                 ui->north->setDisabled(false);
                 ui->east->setDisabled(false);
@@ -622,17 +585,14 @@ void GameScreen::on_attackBtn_clicked()
                     ui->treasure->setIconSize(QSize(130,130));
                 }
 
-
                 QMediaPlayer *player=new QMediaPlayer(this);
                 player->setVolume(100);
                 player->setMedia(QUrl("qrc:/Sounds/destroyed.wav"));
                 player->play();
                 ui->description->clear();
-
-
-
-
-            }else{
+            }
+            else
+            {
                 //dead
                 showDialogBox("You're Dead","No "+player->getName()+", You can't Die now Arise and fight for your people.");
                 chapter->currentRoom=chapter->resetRoom();
@@ -640,7 +600,6 @@ void GameScreen::on_attackBtn_clicked()
                 battle_thread->fighting=false;
 
                 ui->north->setDisabled(false);
-
                 ui->east->setDisabled(false);
                 ui->west->setDisabled(false);
                 ui->south->setDisabled(false);
@@ -676,14 +635,10 @@ void GameScreen::on_special_clicked()
             ui->east->setText("East");
             ui->west->setText("West");
             ui->south->setText("South");
-
-
-
-        }else{
-
         }
-    }else{
-
+    }
+    else
+    {
         // clonePlayer=player;
         timerX=new QTimer(this);
         timerY=new QTimer(this);
@@ -693,17 +648,24 @@ void GameScreen::on_special_clicked()
         countB=0;
         switch(player->getRaceType())
         {
-        case SHADOWALKER: {ability=new QString(" Invisibility.");connect(timerX,SIGNAL(timeout()),this,SLOT(updatePowerTimer()));
-            timerX->start(1000);countA=5;ui->timeLeft->setText(QString(QString::fromStdString(to_string(countA)))+" sec(s) Left of "+" Invisibility.");ui->myImg->hide();ui->healthBar->setDisabled(true);battle_thread->fighting=false;invisiblity_dur->start((player->getBoost()*1000)+200);}
-            break;
-        case MOONMAGE: {player->setHealth(player->getHealth()+player->getBoost());ui->healthBar->setValue(player->getHealth());}
-            break;
-        case KNIGHT: {ability=new QString(" +"+QString::fromStdString(to_string(player->getBoost()))+" Extra Damage.");connect(timerX,SIGNAL(timeout()),this,SLOT(updatePowerTimer()));
-            timerX->start(1000);countA=5;ui->timeLeft->setText(QString(QString::fromStdString(to_string(countA)))+" sec(s) Left of "+QString::fromStdString(to_string(player->getBoost()))+" Extra Damage.");player->setAttack(player->getBoost()+player->getAttack());ls->start((6*1000)+200);}
-            break;
-        case AI: {currentEnemy->setHealth(currentEnemy->getHealth()-player->getBoost());ui->enemyHealth->setValue(currentEnemy->getHealth());};
-            break;
-
+        case SHADOWALKER:
+        {
+            ability=new QString(" Invisibility.");connect(timerX,SIGNAL(timeout()),this,SLOT(updatePowerTimer()));
+            timerX->start(1000);countA=5;ui->timeLeft->setText(QString(QString::fromStdString(to_string(countA)))+" sec(s) Left of "+" Invisibility.");ui->myImg->hide();ui->healthBar->setDisabled(true);battle_thread->fighting=false;invisiblity_dur->start((player->getBoost()*1000)+200);
+        }break;
+        case MOONMAGE:
+        {
+            player->setHealth(player->getHealth()+player->getBoost());ui->healthBar->setValue(player->getHealth());
+        }break;
+        case KNIGHT:
+        {
+            ability=new QString(" +"+QString::fromStdString(to_string(player->getBoost()))+" Extra Damage.");connect(timerX,SIGNAL(timeout()),this,SLOT(updatePowerTimer()));
+            timerX->start(1000);countA=5;ui->timeLeft->setText(QString(QString::fromStdString(to_string(countA)))+" sec(s) Left of "+QString::fromStdString(to_string(player->getBoost()))+" Extra Damage.");player->setAttack(player->getBoost()+player->getAttack());ls->start((6*1000)+200);
+        }break;
+        case AI:
+        {
+            currentEnemy->setHealth(currentEnemy->getHealth()-player->getBoost());ui->enemyHealth->setValue(currentEnemy->getHealth());
+        };break;
         }
         ui->special->setText("waiting...");
         ui->special->setEnabled(false);
@@ -727,33 +689,27 @@ void GameScreen::on_treasure_clicked()
     if(weaponTreasure!=nullptr)
     for(Weapon w:inventory->getWeapons())
         if(w.getName()==weaponTreasure->getName()){exists=true;}
-   if( weaponTreasure!=nullptr&&!exists){
-       cout<<"weapon: ";
-              cout<<weaponTreasure->getName()<<endl;
+    if( weaponTreasure!=nullptr&&!exists){
        inventory->addWeapon(weaponTreasure);
-    ui->treasure->hide();
-    ui->description->setText("");
-    chapter->currentRoom->removeWeapon();
-    chapter->currentRoom->removeHp();
-    chapter->currentRoom->setImg(chapter->currentRoom->defaultImg);
+       ui->treasure->hide();
+       ui->description->setText("");
+       chapter->currentRoom->removeWeapon();
+       chapter->currentRoom->removeHp();
+       chapter->currentRoom->setImg(chapter->currentRoom->defaultImg);
     }
    else if(inventory->getHp().size()<=6&&healthPotionTreasure!=nullptr)
-   {cout<<"health: ";
-       cout<<healthPotionTreasure->getName()<<endl;
+   {
        inventory->addHp(healthPotionTreasure);
        ui->treasure->hide();
        ui->description->setText("");
        chapter->currentRoom->removeWeapon();
        chapter->currentRoom->removeHp();
        chapter->currentRoom->setImg(chapter->currentRoom->defaultImg);
-
    }
 }
 
 void GameScreen::on_chest_clicked()
 {
-
-
     lootFx->play();
     ui->treasure->show();
     ui->chest->hide();
@@ -765,12 +721,7 @@ void GameScreen::on_chest_clicked()
     case 3:chapter->currentRoom->setDescription(player->getName()+": There's nothing here!.");break;
     case 4:chapter->currentRoom->setDescription(player->getName()+": There's not a lot of time left, i must find a cure and bring an end to all of this.");break;
     case 5:chapter->currentRoom->setDescription(player->getName()+": Why is all this happening...");break;
-    default:chapter->currentRoom->setDescription(player->getName()+": This Area Looks oddly Familier.");
-
-
-
-    }
-
+    default:chapter->currentRoom->setDescription(player->getName()+": This Area Looks oddly Familier.");   }
     weaponTreasure!=nullptr?ui->description->setText("narator: It's a Weapon: "+QString::fromStdString(weaponTreasure->getName())+"\nPick it up"):ui->description->setText("narator: It's a Potion: "+QString::fromStdString(healthPotionTreasure->getName())+"\nPick it up");
 }
 
@@ -791,5 +742,4 @@ void GameScreen::on_pushButton_4_clicked()
     Map *map=new Map(this,c);
     map->show();
     map->setModal(true);
-
 }

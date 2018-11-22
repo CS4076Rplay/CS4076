@@ -9,8 +9,8 @@ FinalChapter::FinalChapter(QWidget *parent,Player *player,Inventory* inventory,S
 {
     ui->setupUi(this);
     this->player=player;
-            this->inventory=inventory;
-        this->storyline=story;
+    this->inventory=inventory;
+    this->storyline=story;
 
     S_Chapter storyline=story->getChapter(3);
     QString text=QString::fromStdString(storyline.getChapterStory());
@@ -28,25 +28,22 @@ FinalChapter::FinalChapter(QWidget *parent,Player *player,Inventory* inventory,S
         Story().replace_all(chapterStory,"Dad","Mom");
         Story().replace_all(chapterStory,"she's","he's");
         Story().replace_all(chapterStory,"mother","father");
-         Story().replace_all(chapterStory,"DAD!!!","MOM!!!");
-         Story().replace_all(chapterStory," her","him");
-
-         Story().replace_all(chapterStory,"wife","husband");
-
+        Story().replace_all(chapterStory,"DAD!!!","MOM!!!");
+        Story().replace_all(chapterStory," her","him");
+        Story().replace_all(chapterStory,"wife","husband");
     }
-     Story().replace_all(chapterStory,"$race",races[player->getRaceType()]);
+
+    Story().replace_all(chapterStory,"$race",races[player->getRaceType()]);
 
     vector<string> storyParts=FileParser().split(chapterStory,'~');
 
     map<int,string> storyMap;
     for(unsigned int i=0;i<storyParts.size();i++)
     {
-
         Story().replace(storyParts[i],"~","");
         storyMap[(int)i]=storyParts[i];
     }
     ui->finalStory->setText(QString::fromStdString(storyMap[0]));
-
 }
 
 FinalChapter::~FinalChapter()
@@ -60,6 +57,6 @@ void FinalChapter::on_mainMenuBtn_clicked()
     cs->inventory=this->inventory;
     cs->player=this->player;
     cs->storyline=this->storyline;
-   hide();
-   cs->show();
+    hide();
+    cs->show();
 }

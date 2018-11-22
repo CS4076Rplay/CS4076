@@ -30,16 +30,11 @@ void loadTemporaryInfo(vector<T> *items)
     w2->setUrl("MachineGun.png");
     w2->setId("WEAPON");
 
-
-    cout<<w->toString()<<endl;
-
-
     items->push_back(*w);
     items->push_back(*w1);
     items->push_back(*w2);
-
-
 }
+
 template<typename T>
 void InventoryUI::saveToInventory(T& item)
 {
@@ -60,44 +55,40 @@ void InventoryUI::saveToInventory(T& item)
         hps.push_back(h);
     }
 }
+
 void InventoryUI::MOUSE_CLICKED()
 {
-    cout<<"item"<<endl;
 
 }
+
 void InventoryUI::MOUSE_CLICKED(int i)
 {
-    cout<<"CLicked: "<<i<<endl;
+
 }
 
 void InventoryUI::MOUSE_CLICKED(Hp* h)
 {
 
-        cout<<"potion"<<endl;
         QPixmap pix(":/Images/Characters/"+QString::fromStdString(h->getUrl()));
         ui->potionImage->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
         ui->potionName->setText(QString::fromStdString(h->getName()));
         ui->potionDesc->setText(QString::fromStdString(h->getDescription()));
-
-
 }
+
 void InventoryUI::MOUSE_CLICKED(Weapon* w)
 {
-
-        cout<<"item"<<endl;
         QPixmap pix(":/Images/Characters/"+QString::fromStdString(w->getUrl()));
         ui->currentItemImg->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
         ui->currentWeaponLabel->setText(QString::fromStdString(w->getName()));
         ui->progressBar->setValue(w->getPower());
         ui->progressBar_2->setValue(w->getSpeed());
         ui->currentItemDesc->setText(QString::fromStdString(w->getDescription()));
-
 }
+
 InventoryUI::InventoryUI(QWidget *parent,Inventory* inventory,GameScreen* currentGame) :
     QDialog(parent),
     ui(new Ui::InventoryUI)
 {
-    cout<<"I'm openning inventory..."<<endl;
     this->inventory=inventory;
     soundFx=new QMediaPlayer(this);
     soundFx->setVolume(100);
@@ -107,20 +98,14 @@ InventoryUI::InventoryUI(QWidget *parent,Inventory* inventory,GameScreen* curren
     currentGame->weapon_thread->setItem(nullptr);
     currentGame->weapon_thread->start();
     ui->setupUi(this);
-    //loadTemporaryInfo(&weapons);
     setupInventory();
-     cout<<"HERE"<<endl;
-     ClickableQLabel *label[9];
+    ClickableQLabel *label[9];
     for(int i=0;i<9;i++)
-       {
-
+    {
             label[i]=new ClickableQLabel(this);
             if(i<6)potion_label[i]=new ClickableQLabel(this);
+    }
 
-
-       }
-
-    cout<<"DONE"<<endl;
     QPixmap pic(":/Images/Characters/"+QString::fromStdString(weapons[0].getUrl()));
     ui->currentItemImg->setPixmap(pic.scaled(100,100,Qt::KeepAspectRatio));
     ui->currentWeaponLabel->setText(QString::fromStdString(weapons[0].getName()));
@@ -139,51 +124,58 @@ InventoryUI::InventoryUI(QWidget *parent,Inventory* inventory,GameScreen* curren
          connect(label[i],SIGNAL(clicked(Weapon*)),this,SLOT(MOUSE_CLICKED(Weapon*)));
 
         string s=img.toStdString();
-        cout<<i<<":"<<s<<endl;
         switch(i)
         {
-
-            case 0: {
-                ui->slot1->addWidget(label[i]);
-
-                ui->use_s1->setEnabled(true);
-
-            }break;
-            case 1: {
-                ui->slot2->addWidget(label[i]);
-                ui->use_s2->setEnabled(true);
-            }break;
-            case 2: {
-                ui->slot3->addWidget(label[i]);
-                ui->use_s3->setEnabled(true);
-            }break;
-            case 3: {
-                ui->slot4->addWidget(label[i]);
-                ui->use_s4->setEnabled(true);
-            }break;
-            case 4: {
-                ui->slot5->addWidget(label[i]);
-                ui->use_s5->setEnabled(true);
-            }break;
-            case 5: {
-                ui->slot6->addWidget(label[i]);
-                ui->use_s6->setEnabled(true);
-            }break;
-            case 6: {
-                ui->slot7->addWidget(label[i]);
-                ui->use_s7->setEnabled(true);
-            }break;
-            case 7: {
-                ui->slot8->addWidget(label[i]);
-                ui->use_s8->setEnabled(true);
-            }break;
-            case 8: {
-                ui->slot9->addWidget(label[i]);
-                ui->use_s9->setEnabled(true);
-            }break;
+        case 0:
+        {
+            ui->slot1->addWidget(label[i]);
+            ui->use_s1->setEnabled(true);
+        }break;
+        case 1:
+        {
+           ui->slot2->addWidget(label[i]);
+           ui->use_s2->setEnabled(true);
+        }break;
+        case 2:
+        {
+           ui->slot3->addWidget(label[i]);
+           ui->use_s3->setEnabled(true);
+        }break;
+        case 3:
+        {
+           ui->slot4->addWidget(label[i]);
+           ui->use_s4->setEnabled(true);
+        }break;
+        case 4:
+        {
+           ui->slot5->addWidget(label[i]);
+           ui->use_s5->setEnabled(true);
+        }break;
+        case 5:
+        {
+           ui->slot6->addWidget(label[i]);
+           ui->use_s6->setEnabled(true);
+        }break;
+        case 6:
+        {
+           ui->slot7->addWidget(label[i]);
+           ui->use_s7->setEnabled(true);
+        }break;
+        case 7:
+        {
+           ui->slot8->addWidget(label[i]);
+           ui->use_s8->setEnabled(true);
+        }break;
+        case 8:
+        {
+           ui->slot9->addWidget(label[i]);
+           ui->use_s9->setEnabled(true);
+        }break;
         default:break;
         }
+
     }int i=0;
+
     for(unsigned int i=0;i<hps.size();i++)
     {
 
@@ -192,16 +184,15 @@ InventoryUI::InventoryUI(QWidget *parent,Inventory* inventory,GameScreen* curren
         QString img=QString::fromStdString(hps[i].getUrl());
         QPixmap pix(":/Images/Characters/"+img);
         potion_label[i]->setPixmap(pix.scaled(80,80,Qt::KeepAspectRatio));
-         connect(potion_label[i],SIGNAL(clicked(Hp*)),this,SLOT(MOUSE_CLICKED(Hp*)));
+        connect(potion_label[i],SIGNAL(clicked(Hp*)),this,SLOT(MOUSE_CLICKED(Hp*)));
 
         string s=img.toStdString();
-        cout<<i<<":"<<s<<endl;
+
         switch(i)
         {
 
             case 0: {
                 ui->potion_slot1->addWidget(potion_label[i]);
-
                 ui->drink1->setEnabled(true);
                 ui->drink1->setText("USE");
 
@@ -235,22 +226,18 @@ InventoryUI::InventoryUI(QWidget *parent,Inventory* inventory,GameScreen* curren
         default:break;
         }
     }
-    cout<<"-------------------------HEALTH POTION--------------------------"<<endl;
+
     for( int i=5;i>=(int)hps.size();i--)//8//7
     {
 
         potions.push_back("Empty");
-        cout<<i<<endl;
-
         potion_label[i]->setText("Empty Slot");
 
         switch(i)
         {
         case 0: {
             ui->potion_slot1->addWidget(potion_label[i]);
-
             ui->drink1->setEnabled(false);
-
         }break;
         case 1: {
             ui->potion_slot2->addWidget(potion_label[i]);
@@ -276,12 +263,10 @@ InventoryUI::InventoryUI(QWidget *parent,Inventory* inventory,GameScreen* curren
              default:break;
         }
     }
-cout<<"-------------------------WEAPONS--------------------------"<<endl;
+
     for(unsigned int i=8;i>=weapons.size();i--)//8//7
     {
         slotType.push_back("Empty");
-        cout<<i<<endl;
-
         label[i]->setText("Empty Slot");
 
         switch(i)
@@ -333,14 +318,13 @@ cout<<"-------------------------WEAPONS--------------------------"<<endl;
 
 void InventoryUI::setupInventory()
 {
-
     cout<<inventory->getWeapons().size()<<endl;
 
    for(Weapon w:inventory->getWeapons())
    {
-       cout<<w.getName()<<endl;
        weapons.push_back(w);
    }
+
    for(Hp h:inventory->getHp())
    {
        hps.push_back(h);
@@ -354,22 +338,18 @@ void InventoryUI::setInventory(Inventory* inventory)
 }
 InventoryUI::~InventoryUI()
 {
-    cout<<"i'm deleteing"<<endl;
-     currentGame->weapon_thread->setStop(true);
+    currentGame->weapon_thread->setStop(true);
     delete ui;
 }
-
 
 void InventoryUI::on_use_s1_clicked()
 {
     if(slotType[0]=="Weapon"&&weapons.size()>0)
     {
         currentGame->setCurrentWeapon(&weapons[0]);
-          currentGame->weapon_thread->setItem(&weapons[0]);
+        currentGame->weapon_thread->setItem(&weapons[0]);
 
     }
-
-
 }
 
 void InventoryUI::on_use_s2_clicked()
@@ -377,21 +357,17 @@ void InventoryUI::on_use_s2_clicked()
     if(slotType[1]=="Weapon"&&weapons.size()>1)
     {
         currentGame->setCurrentWeapon(&weapons[1]);
-         currentGame->weapon_thread->setItem(&weapons[1]);
-
+        currentGame->weapon_thread->setItem(&weapons[1]);
     }
-
 }
 
 void InventoryUI::on_use_s3_clicked()
-{ cout<<"attempting to remove slot 3"<<endl;
+{
     if(slotType[2]=="Weapon"&&weapons.size()>2)
     {
         currentGame->setCurrentWeapon(&weapons[2]);
-         currentGame->weapon_thread->setItem(&weapons[2]);
-
+        currentGame->weapon_thread->setItem(&weapons[2]);
     }
-
 }
 
 void InventoryUI::on_use_s4_clicked()
@@ -399,10 +375,8 @@ void InventoryUI::on_use_s4_clicked()
     if(slotType[3]=="Weapon"&&weapons.size()>3)
     {
         currentGame->setCurrentWeapon(&weapons[3]);
-         currentGame->weapon_thread->setItem(&weapons[3]);
-
+        currentGame->weapon_thread->setItem(&weapons[3]);
     }
-
 }
 
 void InventoryUI::on_use_s5_clicked()
@@ -410,8 +384,7 @@ void InventoryUI::on_use_s5_clicked()
     if(slotType[4]=="Weapon"&&weapons.size()>4)
     {
         currentGame->setCurrentWeapon(&weapons[4]);
-         currentGame->weapon_thread->setItem(&weapons[4]);
-
+        currentGame->weapon_thread->setItem(&weapons[4]);
     }
 }
 
@@ -420,10 +393,8 @@ void InventoryUI::on_use_s6_clicked()
     if(slotType[5]=="Weapon"&&weapons.size()>5)
     {
         currentGame->setCurrentWeapon(&weapons[5]);
-         currentGame->weapon_thread->setItem(&weapons[5]);
-
+        currentGame->weapon_thread->setItem(&weapons[5]);
     }
-
 }
 
 void InventoryUI::on_use_s7_clicked()
@@ -431,10 +402,8 @@ void InventoryUI::on_use_s7_clicked()
     if(slotType[6]=="Weapon"&&weapons.size()>6)
     {
         currentGame->setCurrentWeapon(&weapons[6]);
-         currentGame->weapon_thread->setItem(&weapons[6]);
-
+        currentGame->weapon_thread->setItem(&weapons[6]);
     }
-
 }
 
 void InventoryUI::on_use_s8_clicked()
@@ -442,28 +411,23 @@ void InventoryUI::on_use_s8_clicked()
     if(slotType[7]=="Weapon"&&weapons.size()>7)
     {
         currentGame->setCurrentWeapon(&weapons[7]);
-         currentGame->weapon_thread->setItem(&weapons[7]);
-
+        currentGame->weapon_thread->setItem(&weapons[7]);
     }
-
 }
 
 void InventoryUI::on_use_s9_clicked()
 {
     if(slotType[8]=="Weapon"&&weapons.size()>8)
     {
-
-
         currentGame->setCurrentWeapon(&weapons[8]);
-         currentGame->weapon_thread->setItem(&weapons[8]);
-
+        currentGame->weapon_thread->setItem(&weapons[8]);
     }
-
 }
+
 void InventoryUI::closeEvent(QCloseEvent *event)
 {
    currentGame->weapon_thread->setStop(true);
-    event->accept();
+   event->accept();
 }
 
 void InventoryUI::on_drink1_clicked()
@@ -480,11 +444,8 @@ void InventoryUI::on_drink1_clicked()
         else{
         if(currentGame->player->getHealth()+hps[0].getHp()<100)
         {
-            cout<<currentGame->player->getHealth()<<endl;
-
-
             currentGame->player->setHealth(currentGame->player->getHealth()+hps[0].getHp());
-             currentGame->ui_thread->player=currentGame->player;
+            currentGame->ui_thread->player=currentGame->player;
         }
         else{
             currentGame->ui_thread->health=100;
@@ -498,15 +459,15 @@ void InventoryUI::on_drink1_clicked()
         inventory->setHps(hps);
         currentGame->inventory=inventory;
         }
-
     }
 }
 
 void InventoryUI::on_drink2_clicked()
-{   hide();
-  soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(hps[1].getSoundUrl())));
-  soundFx->play();
-  if(potions[1]=="HP"&&hps.size()>1)
+{
+    hide();
+    soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(hps[1].getSoundUrl())));
+    soundFx->play();
+    if(potions[1]=="HP"&&hps.size()>1)
     {
         if(currentGame->player->getHealth()>=100)
         {
@@ -515,8 +476,6 @@ void InventoryUI::on_drink2_clicked()
         else{
         if(currentGame->player->getHealth()+hps[1].getHp()<100)
         {
-
-           // currentGame->player->setHealth(currentGame->player->getHealth()+hps[1].getHp());
             currentGame->ui_thread->health=currentGame->player->getHealth()+hps[1].getHp();
              currentGame->ui_thread->player=currentGame->player;
         }else{
@@ -535,10 +494,12 @@ void InventoryUI::on_drink2_clicked()
 }
 
 void InventoryUI::on_drink3_clicked()
-{   hide();
-      soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(hps[2].getSoundUrl())));
+{
+    hide();
+    soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(hps[2].getSoundUrl())));
     soundFx->play();
-      if(potions[2]=="HP"&&hps.size()>2)
+
+    if(potions[2]=="HP"&&hps.size()>2)
     {
         if(currentGame->player->getHealth()>=100)
         {
@@ -547,8 +508,6 @@ void InventoryUI::on_drink3_clicked()
         else{
         if(currentGame->player->getHealth()+hps[2].getHp()<100)
         {
-           //currentGame->ui_thread->health=currentGame->player->getHealth()+hps[2].getHp();
-
             currentGame->player->setHealth(currentGame->player->getHealth()+hps[2].getHp());
              currentGame->ui_thread->player=currentGame->player;
         }else{
@@ -557,20 +516,20 @@ void InventoryUI::on_drink3_clicked()
         }
         potions.erase(potions.begin()+2);
         hps.erase(hps.begin()+2);
-         potion_label[2]->hide();
+        potion_label[2]->hide();
         ui->potion_slot3->replaceWidget(potion_label[2],new QLabel("Empty"));
         inventory->setHps(hps);
         currentGame->inventory=inventory;
         }
-
     }
 }
 
 void InventoryUI::on_drink4_clicked()
-{   hide();
-      soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(hps[3].getSoundUrl())));
+{
+    hide();
+    soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(hps[3].getSoundUrl())));
     soundFx->play();
-      if(potions[3]=="HP"&&hps.size()>3)
+    if(potions[3]=="HP"&&hps.size()>3)
     {
         if(currentGame->player->getHealth()>=100)
         {
@@ -579,17 +538,15 @@ void InventoryUI::on_drink4_clicked()
         else{
         if(currentGame->player->getHealth()+hps[3].getHp()<100)
         {
-            //currentGame->ui_thread->health=currentGame->player->getHealth()+hps[3].getHp();
-
             currentGame->player->setHealth(currentGame->player->getHealth()+hps[3].getHp());
-             currentGame->ui_thread->player=currentGame->player;
+            currentGame->ui_thread->player=currentGame->player;
         }else{
             currentGame->ui_thread->health=100;
             currentGame->player->setHealth(100);
         }
         potions.erase(potions.begin()+3);
         hps.erase(hps.begin()+3);
-         potion_label[3]->hide();
+        potion_label[3]->hide();
         ui->potion_slot4->replaceWidget(potion_label[3],new QLabel("Empty"));
         inventory->setHps(hps);
         currentGame->inventory=inventory;
@@ -598,10 +555,11 @@ void InventoryUI::on_drink4_clicked()
 }
 
 void InventoryUI::on_drink5_clicked()
-{   hide();
-      soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(hps[4].getSoundUrl())));
+{
+    hide();
+    soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(hps[4].getSoundUrl())));
     soundFx->play();
-      if(potions[4]=="HP"&&hps.size()>4)
+    if(potions[4]=="HP"&&hps.size()>4)
     {
         if(currentGame->player->getHealth()>=100)
         {
@@ -610,17 +568,15 @@ void InventoryUI::on_drink5_clicked()
         else{
         if(currentGame->player->getHealth()+hps[4].getHp()<100)
         {
-            //currentGame->ui_thread->health=currentGame->player->getHealth()+hps[4].getHp();
-
             currentGame->player->setHealth(currentGame->player->getHealth()+hps[4].getHp());
-         currentGame->ui_thread->player=currentGame->player;
+            currentGame->ui_thread->player=currentGame->player;
         }else{
             currentGame->ui_thread->health=100;
             currentGame->player->setHealth(100);
         }
         potions.erase(potions.begin()+4);
         hps.erase(hps.begin()+4);
-         potion_label[4]->hide();
+        potion_label[4]->hide();
         ui->potion_slot5->replaceWidget(potion_label[4],new QLabel("Empty"));
         inventory->setHps(hps);
         currentGame->inventory=inventory;
@@ -629,10 +585,11 @@ void InventoryUI::on_drink5_clicked()
 }
 
 void InventoryUI::on_drink6_clicked()
-{   hide();
-      soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(hps[5].getSoundUrl())));
-   soundFx->play();
-      if(potions[5]=="HP"&&hps.size()>5)
+{
+    hide();
+    soundFx->setMedia(QUrl("qrc:/Sounds/"+QString::fromStdString(hps[5].getSoundUrl())));
+    soundFx->play();
+    if(potions[5]=="HP"&&hps.size()>5)
     {
         if(currentGame->player->getHealth()>=100)
         {
@@ -641,17 +598,15 @@ void InventoryUI::on_drink6_clicked()
         else{
         if(currentGame->player->getHealth()+hps[5].getHp()<100)
         {
-            //currentGame->ui_thread->health=currentGame->player->getHealth()+hps[5].getHp();
-
             currentGame->player->setHealth(currentGame->player->getHealth()+hps[5].getHp());
-             currentGame->ui_thread->player=currentGame->player;
+            currentGame->ui_thread->player=currentGame->player;
         }else{
             currentGame->ui_thread->health=100;
             currentGame->player->setHealth(100);
         }
         potions.erase(potions.begin()+5);
         hps.erase(hps.begin()+5);
-         potion_label[5]->hide();
+        potion_label[5]->hide();
         ui->potion_slot6->replaceWidget(potion_label[5],new QLabel("Empty"));
         inventory->setHps(hps);
         currentGame->inventory=inventory;

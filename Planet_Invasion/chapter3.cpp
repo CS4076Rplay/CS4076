@@ -9,15 +9,17 @@ Chapter3::Chapter3()
 
     createRooms();
 }
-Chapter3::Chapter3( Player *player, Inventory *inventory, Story *storyline)
 
+Chapter3::Chapter3( Player *player, Inventory *inventory, Story *storyline)
 {
     this->player=player;
     this->inventory=inventory;
     this->storyline=storyline;
     createRooms();
 }
-void Chapter3::createRooms(){
+
+void Chapter3::createRooms()
+{
 
     S_Chapter story=storyline->getChapter(2);
     QString text=QString::fromStdString(story.getChapterStory());
@@ -37,21 +39,22 @@ void Chapter3::createRooms(){
         Story().replace_all(chapterStory,"mother","father");
         Story().replace_all(chapterStory,"DAD!!!","MOM!!!");
         Story().replace_all(chapterStory," her","him");
-
         Story().replace_all(chapterStory,"wife","husband");
 
     }
+
     Story().replace_all(chapterStory,"$race",races[player->getRaceType()]);
 
     vector<string> storyParts=FileParser().split(chapterStory,'~');
 
     map<int,string> storyMap;
+
     for(unsigned int i=0;i<storyParts.size();i++)
     {
-
         Story().replace(storyParts[i],"~","");
         storyMap[(int)i]=storyParts[i];
     }
+
     Enemy *salamander=new Enemy(130,8,7,50,INFERNO,false);
     salamander->setName("Salamader");
     salamander->setDescription("Salamander Doomer");
@@ -60,14 +63,12 @@ void Chapter3::createRooms(){
     salamander->setSoundUrl("iD3.wav");
 
 
-
     Enemy *dragoid=new Enemy(120,8,5,60,SHADOW,false);
     dragoid->setName("Dragoid");
     dragoid->setDescription("Shadow Doomer minion");
     dragoid->setId("Enemy");
     dragoid->setUrl("m1.png");
     dragoid->setSoundUrl("sD3.wav");
-
 
 
     Enemy *doomage=new Enemy(200,10,10,500,HYBRID,true);
@@ -84,12 +85,12 @@ void Chapter3::createRooms(){
     ji->setUrl("ji.png");
 
 
-
     Weapon *BattleAxe=new Weapon(100,50);
     BattleAxe->setName("AXe of Helion");
     BattleAxe->setDescription("Forged from the sun");
     BattleAxe->setId("WEAPON");
     BattleAxe->setUrl("BattleAxe.png");
+
 
     Weapon *Revolver=new Weapon(70,30);
     Revolver->setName("Revolver");
@@ -98,12 +99,12 @@ void Chapter3::createRooms(){
     Revolver->setUrl("Revolver.png");
 
 
-
     Hp *fifty=new Hp(50);
     fifty->setName("50 Hp");
     fifty->setDescription("Adds 50 Hp");
     fifty->setId("HP");
     fifty->setUrl("50h.png");
+
 
     Hp *twentyfive=new Hp(25);
     twentyfive->setName("25 Hp");
@@ -127,7 +128,6 @@ void Chapter3::createRooms(){
     c->addHp(hun);
     c->defaultImg="room1.png";
 
-
     d = new Room(storyMap[2],"room0.png");
 
     e = new Room(storyMap[3],dragoid->getUrl());
@@ -138,7 +138,6 @@ void Chapter3::createRooms(){
     f = new Room(storyMap[5],doomage->getUrl());
     f->addEnemy(doomage);
     f->defaultImg="room2.png";
-    // f->addWeapon(Revolver);
 
     //NESW
     a->setExits(b, nullptr, nullptr, nullptr);
@@ -148,10 +147,10 @@ void Chapter3::createRooms(){
     e->setExits(nullptr, b, nullptr, nullptr);
     f->setExits(nullptr,nullptr,nullptr,nullptr);
 
-
     currentRoom = a;
 }
-Room* Chapter3::resetRoom(){
+Room* Chapter3::resetRoom()
+{
     return a;
 }
 

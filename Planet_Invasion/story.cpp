@@ -3,8 +3,10 @@
 #include <QDebug>
 bool Story::replace(std::string& str, const std::string& from, const std::string& to) {
     size_t start_pos = str.find(from);
+
     if(start_pos == std::string::npos)
         return false;
+
     str.replace(start_pos, from.length(), to);
     return true;
 }
@@ -40,9 +42,7 @@ vector<S_Chapter> Story::getChapters()
 S_Chapter Story::getChapter(const unsigned long& chapter)
 {
     if(chapter>chapters.size())
-       {
-        qDebug()<< "IndexOutOfBounds"<<endl;
-        return  chapters[0];}
+        return  chapters[0];
     else
     return chapters[chapter];
 }
@@ -51,6 +51,7 @@ void Story::setChapters(vector<S_Chapter>& chapters)
 {
     this->chapters=chapters;
 }
+
 void Story::addChapter(const S_Chapter& chapter)
 {
     chapters.push_back(chapter);

@@ -19,11 +19,10 @@ void GamesScreenThread::setHealth(Hp *hp)
 void GamesScreenThread::setStop(bool stop)
 {
     this->stop=stop;
-    cout<<"I will: "<<stop<<endl;
 }
 
-void GamesScreenThread::run(){
-    cout<<"running thread..."<<endl;
+void GamesScreenThread::run()
+{
     int i=0;
     while(!stop)
     {
@@ -31,11 +30,8 @@ void GamesScreenThread::run(){
        emit itemSelected(item);
       if(hp!=nullptr)
           emit usePotion(hp);
-        //cout<<i++<<endl;
        if(player!=nullptr)
            emit refreshHealth(player);
-        this->msleep(100);
-
-
+       this->msleep(100);
     }
 }
